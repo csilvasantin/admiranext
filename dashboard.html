@@ -101,6 +101,44 @@
             transition: opacity 0.3s ease;
         }
 
+        /* Nameplate overlays */
+        .nameplates {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+        }
+        .np {
+            position: absolute;
+            padding: 2px 6px;
+            font-size: 0.55rem;
+            font-weight: 800;
+            text-align: center;
+            border-radius: 3px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+            transform: translateX(-50%);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.3);
+            text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+        }
+        .np.gold {
+            background: linear-gradient(180deg, #daa520, #b8860b);
+            color: #fff;
+            box-shadow: 0 0 6px rgba(218,165,32,0.5);
+        }
+        .np.gray {
+            background: linear-gradient(180deg, #555, #3a3a3a);
+            color: #888;
+            box-shadow: none;
+        }
+        .np .np-role {
+            font-size: 0.45rem;
+            opacity: 0.8;
+            display: block;
+        }
+
         /* Status grid */
         .status-grid {
             display: grid;
@@ -211,6 +249,7 @@
 
         <div class="council-image">
             <img id="council-img" src="assets/council-leyendas.jpg" alt="Consejo AdmiraNext">
+            <div class="nameplates" id="nameplates"></div>
         </div>
 
         <div class="status-grid">
@@ -255,6 +294,35 @@
         { name: "CXO", role: "Chief Experience Officer",  persona: "Carlos Ratti",    side: "creativo", gen: "coetaneos", icon: "🧭", machineId: "admira-macbookairblanco" },
         { name: "CSO", role: "Chief Storytelling Officer", persona: "Ryan Reynolds",   side: "creativo", gen: "coetaneos", icon: "📖", machineId: "admira-macbookairblanco" },
     ];
+
+    // Nameplate positions on image (% from left, % from top) mapped to each character
+    // Positions match the visual location of each person in the pixel art
+    const NAMEPLATE_POS = {
+        leyendas: [
+            // Racional (left/red) — positions in the Leyendas image
+            { role: "CEO", persona: "Steve Jobs",      x: 17, y: 88, machineId: "admira-macbookair16" },
+            { role: "CTO", persona: "Steve Wozniak",   x: 22, y: 60, machineId: "admira-macbookpronegro14" },
+            { role: "COO", persona: "Tim Cook",        x: 37, y: 52, machineId: "admira-macbookair16" },
+            { role: "CFO", persona: "Warren Buffett",  x: 37, y: 38, machineId: "admira-macmini" },
+            // Creativo (right/blue)
+            { role: "CCO", persona: "Walt Disney",     x: 53, y: 52, machineId: "admira-macbookairblanco" },
+            { role: "CDO", persona: "Dieter Rams",     x: 63, y: 55, machineId: "admira-macbookairblanco" },
+            { role: "CXO", persona: "Howard Schultz",  x: 72, y: 60, machineId: "admira-macbookairblanco" },
+            { role: "CSO", persona: "George Lucas",    x: 83, y: 88, machineId: "admira-macbookairblanco" },
+        ],
+        coetaneos: [
+            // Racional (left/red) — positions in the Coetáneos image
+            { role: "CEO", persona: "Elon Musk",       x: 17, y: 88, machineId: "admira-macbookair16" },
+            { role: "CTO", persona: "Jensen Huang",    x: 24, y: 62, machineId: "admira-macbookpronegro14" },
+            { role: "COO", persona: "Gwynne Shotwell", x: 35, y: 52, machineId: "admira-macbookair16" },
+            { role: "CFO", persona: "Ruth Porat",      x: 42, y: 52, machineId: "admira-macmini" },
+            // Creativo (right/blue)
+            { role: "CCO", persona: "John Lasseter",   x: 53, y: 52, machineId: "admira-macbookairblanco" },
+            { role: "CDO", persona: "Jony Ive",        x: 63, y: 58, machineId: "admira-macbookairblanco" },
+            { role: "CXO", persona: "Carlos Ratti",    x: 75, y: 62, machineId: "admira-macbookairblanco" },
+            { role: "CSO", persona: "Ryan Reynolds",   x: 85, y: 88, machineId: "admira-macbookairblanco" },
+        ],
+    };
 
     let machineStatus = {};
     let apiOk = false;
@@ -332,6 +400,18 @@
             if (member.side === "creativo") creativoEl.innerHTML += html;
             else racionalEl.innerHTML += html;
         });
+
+        // Render nameplates on image
+        const npEl = document.getElementById("nameplates");
+        const plates = NAMEPLATE_POS[currentGen] || [];
+        npEl.innerHTML = plates.map(p => {
+            const machine = p.machineId ? machineStatus[p.machineId] : null;
+            const isOnline = machine ? machine.online : false;
+            const cls = isOnline ? "gold" : "gray";
+            return `<div class="np ${cls}" style="left:${p.x}%;top:${p.y}%">
+                ${p.persona}<span class="np-role">${p.role}</span>
+            </div>`;
+        }).join("");
 
         document.getElementById("summary").innerHTML = `
             <div class="summary-item">
