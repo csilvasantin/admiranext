@@ -25,17 +25,71 @@
         .subtitle {
             text-align: center;
             color: #555;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             font-size: 0.9rem;
         }
         .subtitle .live { color: #44bb44; }
+
+        /* Generation toggle */
+        .gen-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin-bottom: 1.5rem;
+        }
+        .gen-btn {
+            padding: 0.7rem 2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border: 2px solid #333;
+            background: #1a1a2e;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+        }
+        .gen-btn:first-child { border-radius: 10px 0 0 10px; }
+        .gen-btn:last-child { border-radius: 0 10px 10px 0; }
+        .gen-btn:hover { background: #222; color: #aaa; }
+        .gen-btn.active-leyendas {
+            background: linear-gradient(135deg, #b8860b, #daa520);
+            color: #fff;
+            border-color: #daa520;
+            box-shadow: 0 0 15px rgba(218, 165, 32, 0.3);
+        }
+        .gen-btn.active-coetaneos {
+            background: linear-gradient(135deg, #2980b9, #3498db);
+            color: #fff;
+            border-color: #3498db;
+            box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+        }
+
+        /* Summary bar */
+        .summary {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0 1.5rem;
+            flex-wrap: wrap;
+        }
+        .summary-item {
+            text-align: center;
+            padding: 0.6rem 1.2rem;
+            background: #1a1a2e;
+            border-radius: 10px;
+        }
+        .summary-number { font-size: 1.8rem; font-weight: 800; }
+        .summary-number.green { color: #44bb44; }
+        .summary-number.red { color: #e74c3c; }
+        .summary-number.blue { color: #3498db; }
+        .summary-label { font-size: 0.7rem; color: #888; margin-top: 0.2rem; }
 
         /* Council image */
         .council-image {
             position: relative;
             width: 100%;
             max-width: 1000px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 1.5rem;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0,0,0,0.5);
@@ -51,7 +105,6 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
-            margin-top: 1.5rem;
         }
 
         .side-panel {
@@ -71,6 +124,11 @@
             align-items: center;
             gap: 0.5rem;
         }
+        .side-machines {
+            font-size: 0.7rem;
+            color: #666;
+            margin-left: auto;
+        }
 
         .member-row {
             display: flex;
@@ -79,7 +137,7 @@
             padding: 0.6rem 0.8rem;
             border-radius: 8px;
             margin-bottom: 0.5rem;
-            transition: background 0.2s;
+            transition: all 0.3s;
         }
         .member-row:hover { background: rgba(255,255,255,0.05); }
 
@@ -101,63 +159,25 @@
             50% { opacity: 0.5; }
         }
 
+        .member-icon { font-size: 1.2rem; }
         .member-info { flex: 1; }
-        .member-name {
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-        .member-role {
-            font-size: 0.75rem;
-            color: #888;
-        }
-        .member-persona {
-            font-size: 0.75rem;
-            color: #aaa;
-            font-style: italic;
-        }
+        .member-name { font-weight: 600; font-size: 0.95rem; }
+        .member-role { font-size: 0.7rem; color: #888; }
 
         .machine-tag {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             padding: 0.2rem 0.5rem;
             border-radius: 6px;
             background: #16213e;
-            color: #888;
+            color: #666;
+            text-align: right;
+            line-height: 1.3;
         }
-        .machine-tag.online {
-            background: rgba(68, 187, 68, 0.15);
-            color: #44bb44;
-        }
+        .machine-tag.online { background: rgba(68, 187, 68, 0.12); color: #44bb44; }
 
         /* Nameplate colors */
         .nameplate-gold .member-name { color: #DAA520; }
-        .nameplate-gray .member-name { color: #666; }
-
-        /* Summary bar */
-        .summary {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 1.5rem 0;
-            flex-wrap: wrap;
-        }
-        .summary-item {
-            text-align: center;
-            padding: 0.8rem 1.5rem;
-            background: #1a1a2e;
-            border-radius: 10px;
-        }
-        .summary-number {
-            font-size: 2rem;
-            font-weight: 800;
-        }
-        .summary-number.green { color: #44bb44; }
-        .summary-number.red { color: #e74c3c; }
-        .summary-number.blue { color: #3498db; }
-        .summary-label {
-            font-size: 0.75rem;
-            color: #888;
-            margin-top: 0.2rem;
-        }
+        .nameplate-gray .member-name { color: #555; }
 
         .footer {
             text-align: center;
@@ -167,6 +187,11 @@
             padding: 1rem;
         }
         #last-check { color: #555; }
+
+        @media (max-width: 768px) {
+            .status-grid { grid-template-columns: 1fr; }
+            .gen-btn { padding: 0.5rem 1.2rem; font-size: 0.85rem; }
+        }
     </style>
 </head>
 <body>
@@ -176,9 +201,12 @@
             Estado en tiempo real del Consejo de Dirección · <span class="live">● LIVE</span>
         </div>
 
-        <div class="summary" id="summary">
-            <!-- Filled by JS -->
+        <div class="gen-toggle">
+            <button class="gen-btn active-leyendas" id="btn-leyendas" onclick="setGen('leyendas')">⭐ Leyendas</button>
+            <button class="gen-btn" id="btn-coetaneos" onclick="setGen('coetaneos')">🚀 Coetáneos</button>
         </div>
+
+        <div class="summary" id="summary"></div>
 
         <div class="council-image">
             <img src="assets/council-header.jpg" alt="Consejo Creativo AdmiraNext">
@@ -186,11 +214,11 @@
 
         <div class="status-grid">
             <div class="side-panel creativo">
-                <div class="side-title">🎨 Consejo Creativo <span style="font-size:0.7rem;color:#666;margin-left:auto">MacBookAirBlanco</span></div>
+                <div class="side-title">🎨 Consejo Creativo <span class="side-machines">💻 MacBookAirBlanco</span></div>
                 <div id="creativo-members"></div>
             </div>
             <div class="side-panel racional">
-                <div class="side-title">🧠 Consejo Racional <span style="font-size:0.7rem;color:#666;margin-left:auto">MacBookAir16 + ProNegro14</span></div>
+                <div class="side-title">🧠 Consejo Racional <span class="side-machines">🌐 Air16 + ProNegro14</span></div>
                 <div id="racional-members"></div>
             </div>
         </div>
@@ -203,22 +231,40 @@
     <script>
     const CONTROL_API = "http://localhost:3030/api/machines";
 
-    // Council member → machine mapping (machineId matches Control Agent)
+    // All 16 council members mapped to machines
     const COUNCIL = [
-        // Creativo — Leyendas
-        { name: "CCO", role: "Chief Creative Officer", persona: "Walt Disney", side: "creativo", gen: "Leyenda", icon: "💡", machineId: "admira-macbookairblanco" },
-        { name: "CDO", role: "Chief Design Officer", persona: "Dieter Rams", side: "creativo", gen: "Leyenda", icon: "🎨", machineId: "admira-macbookair16" },
-        { name: "CXO", role: "Chief Experience Officer", persona: "Howard Schultz", side: "creativo", gen: "Leyenda", icon: "🧭", machineId: null },
-        { name: "CSO", role: "Chief Storytelling Officer", persona: "George Lucas", side: "creativo", gen: "Leyenda", icon: "📖", machineId: "admira-macbookpronegro14" },
-        // Racional — Leyendas
-        { name: "CEO", role: "Chief Executive Officer", persona: "Steve Jobs", side: "racional", gen: "Leyenda", icon: "🏛️", machineId: "admira-macbookair16" },
-        { name: "CTO", role: "Chief Technology Officer", persona: "Steve Wozniak", side: "racional", gen: "Leyenda", icon: "⚙️", machineId: "admira-macbookpronegro14" },
-        { name: "COO", role: "Chief Operations Officer", persona: "Tim Cook", side: "racional", gen: "Leyenda", icon: "📋", machineId: "admira-macbookair16" },
-        { name: "CFO", role: "Chief Financial Officer", persona: "Warren Buffett", side: "racional", gen: "Leyenda", icon: "💰", machineId: "admira-macbookair16" },
+        // ── Creativo ── Leyendas ──
+        { name: "CCO", role: "Chief Creative Officer",    persona: "Walt Disney",     side: "creativo", gen: "leyendas", icon: "💡", machineId: "admira-macbookairblanco" },
+        { name: "CDO", role: "Chief Design Officer",      persona: "Dieter Rams",     side: "creativo", gen: "leyendas", icon: "🎨", machineId: "admira-macbookair16" },
+        { name: "CXO", role: "Chief Experience Officer",  persona: "Howard Schultz",  side: "creativo", gen: "leyendas", icon: "🧭", machineId: null },
+        { name: "CSO", role: "Chief Storytelling Officer", persona: "George Lucas",    side: "creativo", gen: "leyendas", icon: "📖", machineId: "admira-macbookpronegro14" },
+        // ── Creativo ── Coetáneos ──
+        { name: "CCO", role: "Chief Creative Officer",    persona: "John Lasseter",   side: "creativo", gen: "coetaneos", icon: "💡", machineId: "admira-macbookairblanco" },
+        { name: "CDO", role: "Chief Design Officer",      persona: "Jony Ive",        side: "creativo", gen: "coetaneos", icon: "🎨", machineId: "admira-macbookair16" },
+        { name: "CXO", role: "Chief Experience Officer",  persona: "Es Devlin",       side: "creativo", gen: "coetaneos", icon: "🧭", machineId: null },
+        { name: "CSO", role: "Chief Storytelling Officer", persona: "Ryan Reynolds",   side: "creativo", gen: "coetaneos", icon: "📖", machineId: "admira-macbookpronegro14" },
+        // ── Racional ── Leyendas ──
+        { name: "CEO", role: "Chief Executive Officer",   persona: "Steve Jobs",      side: "racional", gen: "leyendas", icon: "🏛️", machineId: "admira-macbookair16" },
+        { name: "CTO", role: "Chief Technology Officer",  persona: "Steve Wozniak",   side: "racional", gen: "leyendas", icon: "⚙️", machineId: "admira-macbookpronegro14" },
+        { name: "COO", role: "Chief Operations Officer",  persona: "Tim Cook",        side: "racional", gen: "leyendas", icon: "📋", machineId: "admira-macbookair16" },
+        { name: "CFO", role: "Chief Financial Officer",   persona: "Warren Buffett",  side: "racional", gen: "leyendas", icon: "💰", machineId: "admira-macmini" },
+        // ── Racional ── Coetáneos ──
+        { name: "CEO", role: "Chief Executive Officer",   persona: "Elon Musk",       side: "racional", gen: "coetaneos", icon: "🏛️", machineId: "admira-macbookair16" },
+        { name: "CTO", role: "Chief Technology Officer",  persona: "Jensen Huang",    side: "racional", gen: "coetaneos", icon: "⚙️", machineId: "admira-macbookpronegro14" },
+        { name: "COO", role: "Chief Operations Officer",  persona: "Gwynne Shotwell", side: "racional", gen: "coetaneos", icon: "📋", machineId: "admira-macbookair16" },
+        { name: "CFO", role: "Chief Financial Officer",   persona: "Amy Hood",        side: "racional", gen: "coetaneos", icon: "💰", machineId: "admira-macmini" },
     ];
 
-    let machineStatus = {};  // id → {status, name}
+    let machineStatus = {};
     let apiOk = false;
+    let currentGen = "leyendas";
+
+    function setGen(gen) {
+        currentGen = gen;
+        document.getElementById("btn-leyendas").className = "gen-btn" + (gen === "leyendas" ? " active-leyendas" : "");
+        document.getElementById("btn-coetaneos").className = "gen-btn" + (gen === "coetaneos" ? " active-coetaneos" : "");
+        render();
+    }
 
     async function fetchMachines() {
         try {
@@ -239,35 +285,38 @@
         }
     }
 
-    function render(onlineMachineCount) {
+    function render() {
+        const filtered = COUNCIL.filter(m => m.gen === currentGen);
         const creativoEl = document.getElementById("creativo-members");
         const racionalEl = document.getElementById("racional-members");
         creativoEl.innerHTML = "";
         racionalEl.innerHTML = "";
 
         const liveEl = document.querySelector(".live");
-        liveEl.textContent = apiOk ? "● LIVE" : "● OFFLINE (API no disponible)";
+        liveEl.textContent = apiOk ? "● LIVE" : "● OFFLINE";
         liveEl.style.color = apiOk ? "#44bb44" : "#e74c3c";
 
         let onlineCount = 0;
         let offlineCount = 0;
+        let totalMachinesOnline = Object.values(machineStatus).filter(m => m.online).length;
 
-        COUNCIL.forEach(member => {
+        filtered.forEach(member => {
             const machine = member.machineId ? machineStatus[member.machineId] : null;
             const isOnline = machine ? machine.online : false;
-            const machineName = machine ? machine.name : "Sin asignar";
+            const machineName = machine ? machine.name.split(" (")[0] : "Sin asignar";
+            const machineStatusText = machine ? machine.status : "";
             if (isOnline) onlineCount++; else offlineCount++;
 
             const html = `
                 <div class="member-row ${isOnline ? 'nameplate-gold' : 'nameplate-gray'}">
                     <div class="status-dot ${isOnline ? 'online' : 'offline'}"></div>
-                    <span style="font-size:1.2rem">${member.icon}</span>
+                    <span class="member-icon">${member.icon}</span>
                     <div class="member-info">
                         <div class="member-name">${member.name} — ${member.persona}</div>
                         <div class="member-role">${member.role}</div>
                     </div>
                     <div class="machine-tag ${isOnline ? 'online' : ''}">
-                        ${machineName}${machine ? ' · ' + machine.status : ''}
+                        ${machineName}${machineStatusText ? '<br>' + machineStatusText : ''}
                     </div>
                 </div>
             `;
@@ -286,7 +335,7 @@
                 <div class="summary-label">Sin conexión</div>
             </div>
             <div class="summary-item">
-                <div class="summary-number blue">${onlineMachineCount}</div>
+                <div class="summary-number blue">${totalMachinesOnline}</div>
                 <div class="summary-label">Máquinas online</div>
             </div>
         `;
@@ -295,11 +344,10 @@
     }
 
     async function refresh() {
-        const count = await fetchMachines();
-        render(count);
+        await fetchMachines();
+        render();
     }
 
-    // Initial load + auto-refresh every 15s
     refresh();
     setInterval(refresh, 15000);
     </script>
