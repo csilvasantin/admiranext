@@ -98,6 +98,7 @@
             width: 100%;
             display: block;
             image-rendering: pixelated;
+            transition: opacity 0.3s ease;
         }
 
         /* Status grid */
@@ -209,7 +210,7 @@
         <div class="summary" id="summary"></div>
 
         <div class="council-image">
-            <img src="assets/council-header.jpg" alt="Consejo Creativo AdmiraNext">
+            <img id="council-img" src="assets/council-leyendas.jpg" alt="Consejo AdmiraNext">
         </div>
 
         <div class="status-grid">
@@ -263,6 +264,13 @@
         currentGen = gen;
         document.getElementById("btn-leyendas").className = "gen-btn" + (gen === "leyendas" ? " active-leyendas" : "");
         document.getElementById("btn-coetaneos").className = "gen-btn" + (gen === "coetaneos" ? " active-coetaneos" : "");
+        // Swap council image
+        const img = document.getElementById("council-img");
+        img.style.opacity = "0";
+        setTimeout(() => {
+            img.src = gen === "leyendas" ? "assets/council-leyendas.jpg" : "assets/council-coetaneos.jpg";
+            img.style.opacity = "1";
+        }, 300);
         render();
     }
 
