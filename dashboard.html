@@ -213,13 +213,13 @@
         </div>
 
         <div class="status-grid">
-            <div class="side-panel creativo">
-                <div class="side-title">🎨 Consejo Creativo <span class="side-machines">💻 MacBookAirBlanco</span></div>
-                <div id="creativo-members"></div>
-            </div>
             <div class="side-panel racional">
-                <div class="side-title">🧠 Consejo Racional <span class="side-machines">🌐 Air16 + ProNegro14</span></div>
+                <div class="side-title">🧠 Racional <span class="side-machines">🔴 Sillas rojas</span></div>
                 <div id="racional-members"></div>
+            </div>
+            <div class="side-panel creativo">
+                <div class="side-title">🎨 Creativo <span class="side-machines">🔵 Sillas azules</span></div>
+                <div id="creativo-members"></div>
             </div>
         </div>
 
@@ -231,28 +231,28 @@
     <script>
     const CONTROL_API = "http://localhost:3030/api/machines";
 
-    // All 16 council members mapped to machines
+    // All 16 council members — mixed council (racional left/red + creativo right/blue)
     const COUNCIL = [
-        // ── Creativo ── Leyendas ──
-        { name: "CCO", role: "Chief Creative Officer",    persona: "Walt Disney",     side: "creativo", gen: "leyendas", icon: "💡", machineId: "admira-macbookairblanco" },
-        { name: "CDO", role: "Chief Design Officer",      persona: "Dieter Rams",     side: "creativo", gen: "leyendas", icon: "🎨", machineId: "admira-macbookair16" },
-        { name: "CXO", role: "Chief Experience Officer",  persona: "Howard Schultz",  side: "creativo", gen: "leyendas", icon: "🧭", machineId: null },
-        { name: "CSO", role: "Chief Storytelling Officer", persona: "George Lucas",    side: "creativo", gen: "leyendas", icon: "📖", machineId: "admira-macbookpronegro14" },
-        // ── Creativo ── Coetáneos ──
-        { name: "CCO", role: "Chief Creative Officer",    persona: "John Lasseter",   side: "creativo", gen: "coetaneos", icon: "💡", machineId: "admira-macbookairblanco" },
-        { name: "CDO", role: "Chief Design Officer",      persona: "Jony Ive",        side: "creativo", gen: "coetaneos", icon: "🎨", machineId: "admira-macbookair16" },
-        { name: "CXO", role: "Chief Experience Officer",  persona: "Es Devlin",       side: "creativo", gen: "coetaneos", icon: "🧭", machineId: null },
-        { name: "CSO", role: "Chief Storytelling Officer", persona: "Ryan Reynolds",   side: "creativo", gen: "coetaneos", icon: "📖", machineId: "admira-macbookpronegro14" },
-        // ── Racional ── Leyendas ──
+        // ── Racional ── Leyendas ── (sillas rojas, izquierda)
         { name: "CEO", role: "Chief Executive Officer",   persona: "Steve Jobs",      side: "racional", gen: "leyendas", icon: "🏛️", machineId: "admira-macbookair16" },
         { name: "CTO", role: "Chief Technology Officer",  persona: "Steve Wozniak",   side: "racional", gen: "leyendas", icon: "⚙️", machineId: "admira-macbookpronegro14" },
         { name: "COO", role: "Chief Operations Officer",  persona: "Tim Cook",        side: "racional", gen: "leyendas", icon: "📋", machineId: "admira-macbookair16" },
         { name: "CFO", role: "Chief Financial Officer",   persona: "Warren Buffett",  side: "racional", gen: "leyendas", icon: "💰", machineId: "admira-macmini" },
-        // ── Racional ── Coetáneos ──
+        // ── Creativo ── Leyendas ── (sillas azules, derecha)
+        { name: "CCO", role: "Chief Creative Officer",    persona: "Walt Disney",     side: "creativo", gen: "leyendas", icon: "💡", machineId: "admira-macbookairblanco" },
+        { name: "CDO", role: "Chief Design Officer",      persona: "Dieter Rams",     side: "creativo", gen: "leyendas", icon: "🎨", machineId: "admira-macbookairblanco" },
+        { name: "CXO", role: "Chief Experience Officer",  persona: "Howard Schultz",  side: "creativo", gen: "leyendas", icon: "🧭", machineId: "admira-macbookairblanco" },
+        { name: "CSO", role: "Chief Storytelling Officer", persona: "George Lucas",    side: "creativo", gen: "leyendas", icon: "📖", machineId: "admira-macbookairblanco" },
+        // ── Racional ── Coetáneos ── (sillas rojas, izquierda)
         { name: "CEO", role: "Chief Executive Officer",   persona: "Elon Musk",       side: "racional", gen: "coetaneos", icon: "🏛️", machineId: "admira-macbookair16" },
         { name: "CTO", role: "Chief Technology Officer",  persona: "Jensen Huang",    side: "racional", gen: "coetaneos", icon: "⚙️", machineId: "admira-macbookpronegro14" },
         { name: "COO", role: "Chief Operations Officer",  persona: "Gwynne Shotwell", side: "racional", gen: "coetaneos", icon: "📋", machineId: "admira-macbookair16" },
-        { name: "CFO", role: "Chief Financial Officer",   persona: "Amy Hood",        side: "racional", gen: "coetaneos", icon: "💰", machineId: "admira-macmini" },
+        { name: "CFO", role: "Chief Financial Officer",   persona: "Ruth Porat",      side: "racional", gen: "coetaneos", icon: "💰", machineId: "admira-macmini" },
+        // ── Creativo ── Coetáneos ── (sillas azules, derecha)
+        { name: "CCO", role: "Chief Creative Officer",    persona: "John Lasseter",   side: "creativo", gen: "coetaneos", icon: "💡", machineId: "admira-macbookairblanco" },
+        { name: "CDO", role: "Chief Design Officer",      persona: "Jony Ive",        side: "creativo", gen: "coetaneos", icon: "🎨", machineId: "admira-macbookairblanco" },
+        { name: "CXO", role: "Chief Experience Officer",  persona: "Carlos Ratti",    side: "creativo", gen: "coetaneos", icon: "🧭", machineId: "admira-macbookairblanco" },
+        { name: "CSO", role: "Chief Storytelling Officer", persona: "Ryan Reynolds",   side: "creativo", gen: "coetaneos", icon: "📖", machineId: "admira-macbookairblanco" },
     ];
 
     let machineStatus = {};

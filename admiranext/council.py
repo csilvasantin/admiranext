@@ -16,33 +16,19 @@ from admiranext.models import AgentResponse, Brief, CouncilOutput
 
 
 GROUPS = {
-    "creativo_leyendas": {
-        "label": "🎨 Creativo · ⭐ Leyendas",
-        "side": "creativo",
+    "leyendas": {
+        "label": "⭐ Consejo Leyendas",
         "generation": "leyendas",
-        "machine": "MacBookAirBlanco",
-        "agents": [CCO, CDO, CXO, CSO],
+        "agents": [CEO, CTO, COO, CFO, CCO, CDO, CXO, CSO],
+        "racional": [CEO, CTO, COO, CFO],
+        "creativo": [CCO, CDO, CXO, CSO],
     },
-    "creativo_coetaneos": {
-        "label": "🎨 Creativo · 🚀 Coetáneos",
-        "side": "creativo",
+    "coetaneos": {
+        "label": "🚀 Consejo Coetáneos",
         "generation": "coetaneos",
-        "machine": "MacBookAirBlanco",
-        "agents": [CCO_Coetaneo, CDO_Coetaneo, CXO_Coetaneo, CSO_Coetaneo],
-    },
-    "racional_leyendas": {
-        "label": "🧠 Racional · ⭐ Leyendas",
-        "side": "racional",
-        "generation": "leyendas",
-        "machine": "MacBookAir16",
-        "agents": [CEO, CTO, COO, CFO],
-    },
-    "racional_coetaneos": {
-        "label": "🧠 Racional · 🚀 Coetáneos",
-        "side": "racional",
-        "generation": "coetaneos",
-        "machine": "MacBookAir16",
-        "agents": [CEO_Coetaneo, CTO_Coetaneo, COO_Coetaneo, CFO_Coetaneo],
+        "agents": [CEO_Coetaneo, CTO_Coetaneo, COO_Coetaneo, CFO_Coetaneo, CCO_Coetaneo, CDO_Coetaneo, CXO_Coetaneo, CSO_Coetaneo],
+        "racional": [CEO_Coetaneo, CTO_Coetaneo, COO_Coetaneo, CFO_Coetaneo],
+        "creativo": [CCO_Coetaneo, CDO_Coetaneo, CXO_Coetaneo, CSO_Coetaneo],
     },
 }
 
@@ -50,18 +36,16 @@ GROUPS = {
 class Council:
     """Orquesta el debate colaborativo entre los 4 agentes del consejo."""
 
-    def __init__(self, group: str = "creativo_leyendas", client: Optional[anthropic.Anthropic] = None):
+    def __init__(self, group: str = "leyendas", client: Optional[anthropic.Anthropic] = None):
         self.client = client or anthropic.Anthropic()
         self.group = group
 
-        group_config = GROUPS.get(group, GROUPS["creativo_leyendas"])
+        group_config = GROUPS.get(group, GROUPS["leyendas"])
         self.group_label = group_config["label"]
-        self.side = group_config["side"]
-        self.machine = group_config["machine"]
         self.agents = [
             agent_cls(client=self.client) for agent_cls in group_config["agents"]
         ]
-        self.leader = self.agents[0]  # CCO o CEO lidera la síntesis
+        self.leader = self.agents[0]  # CEO lidera la síntesis
 
     def run(
         self,

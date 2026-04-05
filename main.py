@@ -31,41 +31,27 @@ AGENT_COLORS = {
 }
 
 BANNERS = {
-    "creativo_leyendas": """
-╔═══════════════════════════════════════════════════════════╗
-║     🎨  CONSEJO CREATIVO — AdmiraNext  ⭐ Leyendas      ║
-║                 💻 MacBookAirBlanco                       ║
-║                                                           ║
-║   💡 CCO Walt Disney     · 🎨 CDO Dieter Rams            ║
-║   🧭 CXO Howard Schultz  · 📖 CSO George Lucas           ║
-╚═══════════════════════════════════════════════════════════╝
+    "leyendas": """
+╔═══════════════════════════════════════════════════════════════╗
+║        AdmiraNext — Consejo de Dirección  ⭐ Leyendas        ║
+╠═══════════════════════════╦═══════════════════════════════════╣
+║  🧠 RACIONAL (🔴 rojas)   ║  🎨 CREATIVO (🔵 azules)          ║
+║  🏛️  CEO Steve Jobs       ║  💡 CCO Walt Disney               ║
+║  ⚙️  CTO Steve Wozniak    ║  🎨 CDO Dieter Rams               ║
+║  📋 COO Tim Cook          ║  🧭 CXO Howard Schultz            ║
+║  💰 CFO Warren Buffett    ║  📖 CSO George Lucas               ║
+╚═══════════════════════════╩═══════════════════════════════════╝
 """,
-    "creativo_coetaneos": """
-╔═══════════════════════════════════════════════════════════╗
-║     🎨  CONSEJO CREATIVO — AdmiraNext  🚀 Coetáneos     ║
-║                 💻 MacBookAirBlanco                       ║
-║                                                           ║
-║   💡 CCO John Lasseter   · 🎨 CDO Jony Ive              ║
-║   🧭 CXO Es Devlin       · 📖 CSO Ryan Reynolds          ║
-╚═══════════════════════════════════════════════════════════╝
-""",
-    "racional_leyendas": """
-╔═══════════════════════════════════════════════════════════╗
-║     🧠  CONSEJO RACIONAL — AdmiraNext  ⭐ Leyendas      ║
-║                  🌐 MacBookAir16                          ║
-║                                                           ║
-║   🏛️  CEO Steve Jobs      · ⚙️  CTO Steve Wozniak        ║
-║   📋 COO Tim Cook         · 💰 CFO Warren Buffett        ║
-╚═══════════════════════════════════════════════════════════╝
-""",
-    "racional_coetaneos": """
-╔═══════════════════════════════════════════════════════════╗
-║     🧠  CONSEJO RACIONAL — AdmiraNext  🚀 Coetáneos     ║
-║                  🌐 MacBookAir16                          ║
-║                                                           ║
-║   🏛️  CEO Elon Musk       · ⚙️  CTO Jensen Huang         ║
-║   📋 COO Gwynne Shotwell  · 💰 CFO Amy Hood              ║
-╚═══════════════════════════════════════════════════════════╝
+    "coetaneos": """
+╔═══════════════════════════════════════════════════════════════╗
+║        AdmiraNext — Consejo de Dirección  🚀 Coetáneos       ║
+╠═══════════════════════════╦═══════════════════════════════════╣
+║  🧠 RACIONAL (🔴 rojas)   ║  🎨 CREATIVO (🔵 azules)          ║
+║  🏛️  CEO Elon Musk        ║  💡 CCO John Lasseter             ║
+║  ⚙️  CTO Jensen Huang     ║  🎨 CDO Jony Ive                  ║
+║  📋 COO Gwynne Shotwell   ║  🧭 CXO Carlos Ratti              ║
+║  💰 CFO Ruth Porat        ║  📖 CSO Ryan Reynolds              ║
+╚═══════════════════════════╩═══════════════════════════════════╝
 """,
 }
 
@@ -74,29 +60,25 @@ def select_council() -> str:
     """Permite al usuario elegir el consejo y grupo."""
     console.print(
         Panel(
-            "[bold]Elige el Consejo de Dirección:[/bold]\n\n"
-            "  [bold cyan]🎨 CREATIVO[/bold cyan] [dim](MacBookAirBlanco)[/dim]\n"
-            "  [yellow]1.[/yellow] ⭐ Leyendas — Disney · Rams · Schultz · Lucas\n"
-            "  [yellow]2.[/yellow] 🚀 Coetáneos — Lasseter · Ive · Devlin · Reynolds\n\n"
-            "  [bold blue]🧠 RACIONAL[/bold blue] [dim](MacBookAir16)[/dim]\n"
-            "  [yellow]3.[/yellow] ⭐ Leyendas — Jobs · Wozniak · Cook · Buffett\n"
-            "  [yellow]4.[/yellow] 🚀 Coetáneos — Musk · Huang · Shotwell · Hood",
+            "[bold]Elige la generación del Consejo:[/bold]\n\n"
+            "  [yellow]1.[/yellow] ⭐ [bold]Leyendas[/bold]\n"
+            "     🧠 Jobs · Wozniak · Cook · Buffett  ·  🎨 Disney · Rams · Schultz · Lucas\n\n"
+            "  [yellow]2.[/yellow] 🚀 [bold]Coetáneos[/bold]\n"
+            "     🧠 Musk · Huang · Shotwell · Porat  ·  🎨 Lasseter · Ive · Ratti · Reynolds",
             title="[bold]AdmiraNext — Consejo de Dirección[/bold]",
             border_style="cyan",
         )
     )
     mapping = {
-        "1": "creativo_leyendas",
-        "2": "creativo_coetaneos",
-        "3": "racional_leyendas",
-        "4": "racional_coetaneos",
+        "1": "leyendas",
+        "2": "coetaneos",
     }
     while True:
-        choice = console.input("\n[bold cyan]Consejo (1-4) > [/bold cyan]").strip()
+        choice = console.input("\n[bold cyan]Consejo (1/2) > [/bold cyan]").strip()
         if choice in mapping:
             return mapping[choice]
         else:
-            console.print("[dim]Escribe 1, 2, 3 o 4[/dim]")
+            console.print("[dim]Escribe 1 o 2[/dim]")
 
 
 def on_proposal(response):
@@ -144,9 +126,8 @@ def main():
     group = select_council()
     console.print(BANNERS[group], style="bold cyan")
 
-    group_config = GROUPS[group]
     console.print(
-        f"[dim]Ejecutándose en: {group_config['machine']}[/dim]\n"
+        f"[dim]Consejo mixto: 8 miembros (4 racionales + 4 creativos)[/dim]\n"
     )
     console.print("[bold]Escribe tu brief[/bold] (o 'salir' para terminar):\n")
 
