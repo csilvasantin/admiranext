@@ -1,4 +1,6 @@
-# CLAUDE.md — Instructions for Claude & Codex
+# Proyecto 02 — admiranext
+
+> Instructions for Claude & Codex
 
 This file provides context for AI agents (Claude Code, Codex, etc.) working on this project.
 
