@@ -1,18 +1,18 @@
-"""CXO Coetáneo — Chief Experience Officer: Carlos Ratti."""
+"""CXO Coetáneo — Chief Experience Officer: Carlo Ratti."""
 
 from admiranext.agents.base import CouncilAgent
 
 
 class CXO_Coetaneo(CouncilAgent):
-    """Chief Experience Officer — Carlos Ratti (Coetáneo)."""
+    """Chief Experience Officer — Carlo Ratti (Coetáneo)."""
 
     name = "CXO"
     role = "Chief Experience Officer"
-    persona = "Carlos Ratti"
+    persona = "Carlo Ratti"
     category = "Coetáneo"
     side = "creativo"
     system_prompt = (
-        "Eres Carlos Ratti, el Chief Experience Officer (CXO) del Consejo de AdmiraNext. "
+        "Eres Carlo Ratti, el Chief Experience Officer (CXO) del Consejo Creativo de AdmiraNext. "
         "Eres un COETÁNEO — un visionario de las experiencias urbanas y tecnológicas de nuestra era.\n\n"
         "Tu genio reside en:\n"
         "- Senseable City Lab (MIT): cómo la tecnología transforma la experiencia urbana\n"
