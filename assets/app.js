@@ -612,105 +612,53 @@
   }
 
   function cmdAbout() {
+    const _T = (typeof window.t === 'function') ? window.t : (k => k);
     return [
-      { text: 'Sobre ADmiraNeXT', cls: 'heading' },
+      { text: _T('about.title'), cls: 'heading' },
       { text: '' },
-      { text: '  Diseñador de producto con más de 15 años construyendo interfaces que la gente realmente quiere usar. Cofundador de Product Rocket, con sede en Iasi, Rumania — trabajando en toda Europa, EE. UU., Israel y Emiratos Árabes Unidos.' },
+      { text: '  ' + _T('about.l1') },
       { text: '' },
-      { text: 'Qué hago', cls: 'heading' },
+      { text: _T('about.h1'), cls: 'heading' },
       { text: '' },
-      { text: '  Convierto la complejidad en claridad. Desde paneles empresariales hasta aplicaciones móviles de consumo, mi trabajo se sitúa en la intersección del diseño artesanal, el pensamiento sistémico y la estrategia empresarial.' },
+      { text: '  ◆ ' + _T('about.who'), cls: 'cyan' },
+      { text: '  ◆ ' + _T('about.what'), cls: 'cyan' },
+      { text: '  ◆ ' + _T('about.how'), cls: 'cyan' },
+      { text: '  ◆ ' + _T('about.why'), cls: 'cyan' },
       { text: '' },
-      { text: '  En cada etapa me pregunto: "¿Esto elimina la fricción?" La complejidad no es el enemigo, la confusión lo es.' },
+      { text: _T('about.h2'), cls: 'heading' },
       { text: '' },
-      { text: 'Trayectoria profesional', cls: 'heading' },
+      { text: '  ' + _T('about.l2') },
       { text: '' },
-      { text: '  Comencé como freelance en Iasi mientras estudiaba Nuevos Medios y Publicidad Online en la Universidad Alexandru Ioan Cuza. Trabajé en estudios de diseño y luego me uní a CyberGhost VPN en 2018, rediseñando su aplicación de privacidad en una experiencia de incorporación de 3 pasos y 30 segundos.' },
+      { text: '  ' + _T('about.l3'), cls: 'accent' },
       { text: '' },
-      { text: '  Cofundé Product Rocket con mi esposa Gianina. A través de la agencia: sistema de diseño de más de 120 componentes para LiveU, paneles de investigación para Signals, plataforma analítica para Anylyze, rediseño universitario récord para TUIASI (+4,200 estudiantes) y Socyal — #3 Producto del Día en Product Hunt.', cls: 'accent' },
-      { text: '' },
-      { text: '  Este mismo sitio —el que estás leyendo— obtuvo 4 premios internacionales de diseño en 2026: Awwwards, The FWA, CSS Design Awards y CSS Winner. → /awards', cls: 'green' },
-      { text: '' },
-      { text: 'Enseñanza y mentoría', cls: 'heading' },
-      { text: '' },
-      { text: '  Mentor de educación en Dribbble (2021–2023) junto a Dan Mall, enseñando Sistemas de Diseño, Diseño de Producto y Diseño UI. Uno de los mentores originales del curso Scaling Design Systems.' },
-      { text: '' },
-      { text: '  Masterclass en Psicología del Producto — Growth.Design (2025). Más de 17 artículos publicados sobre sistemas de diseño y estrategia.' },
-      { text: '' },
-      { text: 'Más allá de la pantalla', cls: 'heading' },
-      { text: '' },
-      { text: '  ◆ Mentor para la próxima ola de talento UX/UI', cls: 'cyan' },
-      { text: '  ◆ Facilitador de talleres y conferenciante', cls: 'cyan' },
-      { text: '  ◆ Evangelista de sistemas de diseño', cls: 'cyan' },
-      { text: '  ◆ Colaborador de ONG — diseñando para la educación', cls: 'cyan' },
-      { text: '' },
-      { text: '  → /work para ver lo que he lanzado', cls: 'dim' },
-      { text: '  → /testimonials para ver lo que dice la gente', cls: 'dim' },
-      { text: '  // prueba: cat readme.md', cls: 'dim', style: 'opacity:0.4' },
+      { text: '  → ' + _T('cmd.work') + '   ' + _T('about.tip.work'), cls: 'dim' },
+      { text: '  → ' + _T('cmd.contact') + '   ' + _T('about.tip.contact'), cls: 'dim' },
+      { text: '  // ' + _T('about.tip.readme'), cls: 'dim', style: 'opacity:0.4' },
     ];
   }
 
   function cmdWork() {
-    const container = document.createElement('div');
-    container.innerHTML = `<div class="output-line heading">Trabajos Destacados</div>
-      <div class="output-line dim" style="margin-bottom:12px">  12 proyectos &bull; 2017–2024 &bull; en 6 países</div>`;
-
-    PROJECTS.forEach(p => {
-      const card = document.createElement('div');
-      card.className = 'project-card';
-      card.innerHTML = `
-        <span class="project-year">${p.year}</span>
-        <div class="project-name">${p.name}</div>
-        <div class="project-type">${p.type}</div>
-        <div class="project-desc">${p.desc}</div>
-        <div class="project-tags">${p.tags.map(t => `<span class="project-tag">${t}</span>`).join('')}</div>
-        ${p.stats ? `<div class="project-stats">${p.stats.map(s => `<span class="project-stat">✦ ${s}</span>`).join('')}</div>` : ''}
-      `;
-      container.appendChild(card);
-    });
-
-    const hint = document.createElement('div');
-    hint.className = 'output-line dim';
-    hint.style.marginTop = '12px';
-    hint.textContent = '  → /clients para ver con quién he trabajado';
-    container.appendChild(hint);
-
-    return container;
+    const _T = (typeof window.t === 'function') ? window.t : (k => k);
+    return [
+      { text: _T('work.title'), cls: 'heading' },
+      { text: '' },
+      { text: '  ' + _T('comingSoon'), cls: 'accent' },
+      { text: '' },
+      { text: '  ' + _T('work.l1'), cls: 'dim' },
+      { text: '' },
+      { text: '  → ' + _T('cmd.contact') + ' ' + _T('work.tip'), cls: 'dim' },
+    ];
   }
 
   function cmdClients() {
-    const clients = [
-      'CyberGhost VPN', 'LiveU', 'CognitiveSEO', 'Signals',
-      'Anylyze', 'ResNet AI', 'Socyal', 'App4Home',
-      'Comodo', 'Dribbble', 'GlobalAI', 'Golden Path',
-      'Optymyze', 'SkyControl', 'Nestle', 'WHO',
-      'FameUp', 'Horexa', 'Digitail', 'BrandMentions',
-      'SedCom Libris', 'Portokal', 'Big5 American Diner', 'Katiusa',
-      'TUIASI', 'Holy Cow', 'Ideate Plus', 'Wawsome',
-      'Local Happinez', 'Uzina de Zambete'
+    const _T = (typeof window.t === 'function') ? window.t : (k => k);
+    return [
+      { text: _T('clients.title'), cls: 'heading' },
+      { text: '' },
+      { text: '  ' + _T('comingSoon'), cls: 'accent' },
+      { text: '' },
+      { text: '  ' + _T('clients.l1'), cls: 'dim' },
     ];
-
-    const container = document.createElement('div');
-    container.innerHTML = `<div class="output-line heading">Clientes y Empresas</div>
-      <div class="output-line dim" style="margin-bottom:12px">  En toda Europa, EE. UU., Israel y Emiratos Árabes Unidos</div>`;
-
-    const grid = document.createElement('div');
-    grid.className = 'client-grid';
-    clients.forEach(c => {
-      const item = document.createElement('div');
-      item.className = 'client-item';
-      item.textContent = c;
-      grid.appendChild(item);
-    });
-    container.appendChild(grid);
-
-    const hint = document.createElement('div');
-    hint.className = 'output-line dim';
-    hint.style.marginTop = '12px';
-    hint.textContent = '  → /work para estudios de caso detallados';
-    container.appendChild(hint);
-
-    return container;
   }
 
   function cmdSkills() {
@@ -893,165 +841,45 @@
   }
 
   function cmdContact() {
+    const _T = (typeof window.t === 'function') ? window.t : (k => k);
     return [
-      { text: 'Ponte en Contacto', cls: 'heading' },
+      { text: _T('contact.title'), cls: 'heading' },
       { text: '' },
       { text: '  ✉  ' + _e, cls: 'accent' },
-      { text: '  📞  +40 786 652 539', cls: 'blue' },
-      { text: '  📍  Iasi, Rumania', cls: 'purple' },
-      { text: '  🚀  productrocket.ro — mi agencia', cls: 'green' },
+      { text: '  📞  +34 658 207 699', cls: 'blue' },
+      { text: '  📍  ' + _T('location.city'), cls: 'purple' },
+      { text: '  🌐  admiranext.com', cls: 'green' },
       { text: '' },
-      { text: '  Abierto a: roles de liderazgo de diseño, consultoría, proyectos de sistemas de diseño, talleres y charlas.' },
+      { text: '  ' + _T('contact.openTo') },
       { text: '' },
-      { text: '  Construyamos algo que importe.', cls: 'accent' },
+      { text: '  ' + _T('contact.cta'), cls: 'accent' },
       { text: '' },
-      { text: '  → /social para todos mis perfiles', cls: 'dim' },
-      { text: '  // o simplemente: sudo hire admiranext', cls: 'dim', style: 'opacity:0.4' },
+      { text: '  // ' + _T('contact.tip'), cls: 'dim', style: 'opacity:0.4' },
     ];
   }
 
   function cmdTestimonials() {
-    const testimonials = [
-      {
-        name: 'Jessica Ibbotson',
-        title: 'Soporte Educativo, Dribbble',
-        relation: 'Gestionó a ADmiraNeXT directamente',
-        quote: 'ADmiraNeXT fue uno de los mentores originales del curso de Sistemas de Diseño. Como un experto claro en su campo, ADmiraNeXT esculpió cada lección con claridad y precisión, transformando la complejidad en capacidad de enseñanza. Su influencia no se detuvo en impartir conocimientos; permeó el tejido mismo del programa de mentoría, convirtiéndolo en un entorno enriquecedor donde los diseñadores emergentes podían florecer. Lo que distingue a ADmiraNeXT es su capacidad excepcional para forjar conexiones personales con sus estudiantes. Su pasión por el diseño es infecciosa, sirviendo como una fuente constante de motivación e inspiración para quienes lo rodean.',
-        color: 'accent',
-      },
-      {
-        name: 'Adrian Banu',
-        title: 'VP de Producto en Optymyze',
-        relation: 'Superior de ADmiraNeXT',
-        quote: 'Es un experto en Diseño de Producto de primer nivel cuyo trabajo realmente marca la diferencia en cada proyecto que toca. Lo impresionante de ADmiraNeXT no es solo su habilidad para hacer que las cosas se vean bien, sino también cómo piensa en toda la experiencia del usuario de principio a fin. ADmiraNeXT también es excelente comunicándose. Realmente escucha lo que todos tienen que decir, se toma el tiempo para analizar las cosas antes de tomar decisiones y siempre propone soluciones inteligentes para cualquier problema.',
-        color: 'blue',
-      },
-      {
-        name: 'V. Hilitanu',
-        title: 'Diseñador de Experiencia Principal, EPAM Systems',
-        relation: 'Trabajaron juntos',
-        quote: 'ADmiraNeXT posee una rara combinación de creatividad, experiencia técnica y habilidades de liderazgo que lo hacen destacar en el campo del diseño UX. Su profundo conocimiento de los principios y metodologías de diseño le permite ofrecer de manera constante soluciones intuitivas y centradas en el usuario. ADmiraNeXT fomenta un entorno de trabajo colaborativo donde las ideas se intercambian libremente y todos se sienten empoderados para contribuir con su mejor trabajo.',
-        color: 'green',
-      },
-      {
-        name: 'Ionut Patrascoiu',
-        title: 'CEO y Fundador, FameUp',
-        relation: 'Cliente',
-        quote: 'Recomiendo encarecidamente a ADmiraNeXT por sus destacadas habilidades en diseño UI/UX. A lo largo de nuestra colaboración, mostró cualidades de liderazgo ejemplares y demostró un enfoque proactivo en cada tarea. Fue un placer trabajar con ADmiraNeXT y estoy seguro de que continuará sobresaliendo en sus futuros proyectos.',
-        color: 'purple',
-      },
-      {
-        name: 'Earl Carvalho',
-        title: 'Gerente de Soluciones de Producto, Aplicaciones Móviles',
-        relation: 'Trabajó con ADmiraNeXT',
-        quote: 'Lo que realmente distingue a ADmiraNeXT es su habilidad para pensar fuera de la caja y aportar soluciones innovadoras. Ya sea por su experiencia en UX o su enfoque inventivo para resolver problemas, ADmiraNeXT impresiona constantemente. Su mentalidad abierta y disposición para escuchar lo convierten no solo en un gran gerente, sino también en un compañero de equipo invaluable.',
-        color: 'cyan',
-      },
-      {
-        name: 'Lavinia Gherasim',
-        title: 'Ingeniera Senior de Software Java',
-        relation: 'Socia de ingeniería',
-        quote: 'Sus diseños son consistentemente intuitivos, creando una experiencia sin esfuerzo para los usuarios finales. La capacidad de ADmiraNeXT para comprender aspectos técnicos, a pesar de su formación no técnica, es impresionante. Esta competencia no solo facilita una colaboración más fluida con los equipos técnicos, sino que también le permite visualizar soluciones innovadoras que se integran perfectamente con las necesidades técnicas.',
-        color: 'purple',
-      },
-      {
-        name: 'Elena Levy',
-        title: 'Diseñadora de UX UI / Producto / Sistemas de Diseño',
-        relation: 'Aprendiz en Dribbble',
-        quote: 'ADmiraNeXT se encuentra entre los mejores mentores de diseño con los que he trabajado y aprendí mucho de él. Su paciencia y determinación para hacer que un sistema de diseño funcione de manera más inteligente en lugar de más difícil es algo que todos los diseñadores de producto e ingenieros valoran profundamente. ADmiraNeXT demostró una mentalidad técnica brillante y una estética de diseño visual particularmente sofisticada.',
-        color: 'blue',
-      },
+    const _T = (typeof window.t === 'function') ? window.t : (k => k);
+    return [
+      { text: _T('testimonials.title'), cls: 'heading' },
+      { text: '' },
+      { text: '  ' + _T('comingSoon'), cls: 'accent' },
+      { text: '' },
+      { text: '  ' + _T('testimonials.l1'), cls: 'dim' },
+      { text: '' },
+      { text: '  → ' + _T('cmd.contact') + ' ' + _T('testimonials.tip'), cls: 'dim' },
     ];
-
-    const container = document.createElement('div');
-    container.innerHTML = `<div class="output-line heading">Testimonios</div>
-      <div class="output-line dim" style="margin-bottom:12px">  Lo que dicen colegas, clientes y aprendices</div>`;
-
-    testimonials.forEach(t => {
-      const card = document.createElement('div');
-      card.className = 'project-card';
-      card.innerHTML = `
-        <div class="project-name" style="font-size:0.9em">"${t.quote}"</div>
-        <div style="margin-top:8px">
-          <span class="${t.color}" style="font-weight:600">— ${t.name}</span>
-          <span class="dim" style="margin-left:4px">${t.title}</span>
-        </div>
-        <div class="dim" style="font-size:0.75em;margin-top:2px">${t.relation}</div>
-      `;
-      container.appendChild(card);
-    });
-
-    const hint = document.createElement('div');
-    hint.className = 'output-line dim';
-    hint.style.marginTop = '12px';
-    hint.textContent = '  → /contact para ponerse en contacto directamente';
-    container.appendChild(hint);
-
-    return container;
   }
 
   function cmdArticles() {
-    const articles = [
-      { cat: 'Sistemas de Diseño', items: [
-        { title: 'La guía completa de Sistemas de Diseño en 2026', url: 'https://productrocket.ro/articles/design-systems-guide/' },
-        { title: 'Sistema de Diseño 101: Construyendo un sistema de diseño escalable desde cero', url: 'https://productrocket.ro/articles/design-system-101/' },
-        { title: 'Tokens de diseño: la guía técnica completa', url: 'https://productrocket.ro/articles/design-tokens-guide/' },
-        { title: 'Gobernanza del sistema de diseño: quién es el dueño de qué y cómo se toman las decisiones', url: 'https://productrocket.ro/articles/design-system-governance/' },
-        { title: 'Sistema de diseño vs. guía de estilo vs. biblioteca de patrones', url: 'https://productrocket.ro/articles/design-system-vs-style-guide/' },
-        { title: 'Glosario de sistemas de diseño escalables', url: 'https://productrocket.ro/articles/design-systems-glossary/' },
-      ]},
-      { cat: 'UX y Producto', items: [
-        { title: 'Guía de diseño UX: mejores prácticas, métricas y flujos de trabajo modernos', url: 'https://productrocket.ro/articles/ux-design-guide/' },
-        { title: 'Desarrollo liderado por el diseño: Cómo combinar verdaderamente UX y Agile', url: 'https://productrocket.ro/articles/design-led-development/' },
-        { title: 'IA en UX: Mejores prácticas para diseñar con inteligencia artificial', url: 'https://productrocket.ro/articles/designing-with-ai/' },
-      ]},
-      { cat: 'Branding y Estrategia', items: [
-        { title: 'Branding para productos digitales: Un plano estratégico', url: 'https://productrocket.ro/articles/branding-digital-products/' },
-        { title: 'Storytelling estratégico: una guía práctica para el crecimiento empresarial', url: 'https://productrocket.ro/articles/storytelling-guide/' },
-        { title: 'Más allá del eslogan: Dominar los mensajes de marca a través de la historia', url: 'https://productrocket.ro/articles/brand-messaging/' },
-      ]},
-      { cat: 'SEO y Contenido', items: [
-        { title: 'Marketing de contenidos para empresas SaaS y de producto: lo que realmente funciona', url: 'https://productrocket.ro/articles/content-marketing-saas/' },
-        { title: 'SEO y estrategia de contenidos para empresas de producto', url: 'https://productrocket.ro/articles/seo-content-strategy-guide/' },
-        { title: 'Lista de verificación de SEO técnico para sitios web de productos', url: 'https://productrocket.ro/articles/technical-seo-checklist/' },
-        { title: 'Cómo construir autoridad temática (y por qué supera a la búsqueda de palabras clave)', url: 'https://productrocket.ro/articles/topical-authority/' },
-        { title: 'Formatos de storytelling que ganan: Cómo aparecer en las respuestas de IA', url: 'https://productrocket.ro/articles/ai-answers-seo/' },
-      ]},
+    const _T = (typeof window.t === 'function') ? window.t : (k => k);
+    return [
+      { text: _T('articles.title'), cls: 'heading' },
+      { text: '' },
+      { text: '  ' + _T('comingSoon'), cls: 'accent' },
+      { text: '' },
+      { text: '  ' + _T('articles.l1'), cls: 'dim' },
     ];
-
-    const container = document.createElement('div');
-    container.innerHTML = `<div class="output-line heading">Artículos Publicados</div>
-      <div class="output-line dim" style="margin-bottom:12px">  17 artículos en productrocket.ro</div>`;
-
-    articles.forEach(group => {
-      const catEl = document.createElement('div');
-      catEl.className = 'output-line';
-      catEl.style.marginTop = '12px';
-      catEl.innerHTML = `<span style="text-transform:uppercase;letter-spacing:1px;font-size:0.75em;color:var(--accent)">${group.cat}</span>`;
-      container.appendChild(catEl);
-
-      group.items.forEach(a => {
-        const row = document.createElement('a');
-        row.href = a.url;
-        row.target = '_blank';
-        row.rel = 'noopener noreferrer';
-        row.className = 'social-link';
-        row.style.padding = '6px 12px';
-        row.innerHTML = `
-          <span class="social-name" style="flex:1">${a.title}</span>
-          <span class="social-arrow">→</span>
-        `;
-        container.appendChild(row);
-      });
-    });
-
-    const hint = document.createElement('div');
-    hint.className = 'output-line dim';
-    hint.style.marginTop = '12px';
-    hint.textContent = '  Todos publicados en productrocket.ro';
-    container.appendChild(hint);
-
-    return container;
   }
 
   // ============ QUICK INFO FUNCTIONS ============
@@ -1059,33 +887,35 @@
   // (Personal social commands removed — out of scope for ADmiraNeXT brand.)
 
   function cmdPhone() {
+    const _T = (typeof window.t === 'function') ? window.t : (k => k);
     const container = document.createElement('div');
     container.innerHTML = `
-      <div class="output-line heading">Teléfono</div>
+      <div class="output-line heading">${_T('phone.title')}</div>
       <div style="height:8px"></div>
     `;
     const link = document.createElement('a');
-    link.href = 'tel:+40786652539';
+    link.href = 'tel:+34658207699';
     link.className = 'social-link';
     link.innerHTML = `
       <span class="social-badge green">📞</span>
-      <span class="social-name">+40 786 652 539</span>
-      <span class="social-handle">toca para llamar</span>
+      <span class="social-name">+34 658 207 699</span>
+      <span class="social-handle">${_T('phone.handle')}</span>
       <span class="social-arrow">→</span>
     `;
     container.appendChild(link);
     const hint = document.createElement('div');
     hint.className = 'output-line dim';
     hint.style.marginTop = '12px';
-    hint.textContent = '  → /contact para ver todas las opciones de contacto';
+    hint.textContent = '  → ' + _T('cmd.contact') + ' ' + _T('phone.tip');
     container.appendChild(hint);
     return container;
   }
 
   function cmdEmail() {
+    const _T = (typeof window.t === 'function') ? window.t : (k => k);
     const container = document.createElement('div');
     container.innerHTML = `
-      <div class="output-line heading">Correo Electrónico</div>
+      <div class="output-line heading">${_T('email.title')}</div>
       <div style="height:8px"></div>
     `;
     const link = document.createElement('a');
@@ -1094,62 +924,64 @@
     link.innerHTML = `
       <span class="social-badge accent">✉</span>
       <span class="social-name">${_e}</span>
-      <span class="social-handle">toca para enviar un correo</span>
+      <span class="social-handle">${_T('email.handle')}</span>
       <span class="social-arrow">→</span>
     `;
     container.appendChild(link);
     const hint = document.createElement('div');
     hint.className = 'output-line dim';
     hint.style.marginTop = '12px';
-    hint.textContent = '  → /contact para ver todas las opciones de contacto';
+    hint.textContent = '  → ' + _T('cmd.contact') + ' ' + _T('email.tip');
     container.appendChild(hint);
     return container;
   }
 
   function cmdAgency() {
+    const _T = (typeof window.t === 'function') ? window.t : (k => k);
     const container = document.createElement('div');
     container.innerHTML = `
-      <div class="output-line heading">Product Rocket</div>
+      <div class="output-line heading">${_T('agency.title')}</div>
       <div style="height:8px"></div>
     `;
     const link = document.createElement('a');
-    link.href = 'https://productrocket.ro';
+    link.href = 'https://admiranext.com';
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
     link.className = 'social-link';
     link.innerHTML = `
-      <span class="social-badge accent">🚀</span>
-      <span class="social-name">Product Rocket</span>
-      <span class="social-handle">productrocket.ro</span>
+      <span class="social-badge accent">🤖</span>
+      <span class="social-name">ADmiraNeXT</span>
+      <span class="social-handle">admiranext.com</span>
       <span class="social-arrow">→</span>
     `;
     container.appendChild(link);
     const desc = document.createElement('div');
     desc.className = 'output-line';
     desc.style.marginTop = '8px';
-    desc.textContent = '  Estudio de diseño y producto con sede en Iasi, Rumania.';
+    desc.textContent = '  ' + _T('agency.l1');
     container.appendChild(desc);
     const desc2 = document.createElement('div');
     desc2.className = 'output-line';
-    desc2.textContent = '  Construimos interfaces que la gente realmente quiere usar.';
+    desc2.textContent = '  ' + _T('agency.l2');
     container.appendChild(desc2);
     const hint = document.createElement('div');
     hint.className = 'output-line dim';
     hint.style.marginTop = '12px';
-    hint.textContent = '  → /work para ver nuestros proyectos';
+    hint.textContent = '  → ' + _T('cmd.work') + ' ' + _T('agency.tip');
     container.appendChild(hint);
     return container;
   }
 
   function cmdLocation() {
+    const _T = (typeof window.t === 'function') ? window.t : (k => k);
     return [
-      { text: 'Ubicación', cls: 'heading' },
+      { text: _T('location.title'), cls: 'heading' },
       { text: '' },
-      { text: '  📍  Iasi, Rumania', cls: 'accent' },
-      { text: '  🌍  Trabajando en toda Europa, EE. UU., Israel, Emiratos Árabes Unidos' },
-      { text: '  🕐  Hora de Europa del Este (EET / UTC+2)' },
+      { text: '  📍  ' + _T('location.city'), cls: 'accent' },
+      { text: '  🌍  ' + _T('location.scope') },
+      { text: '  🕐  ' + _T('location.tz') },
       { text: '' },
-      { text: '  → /contact para ponerse en contacto', cls: 'dim' },
+      { text: '  → ' + _T('cmd.contact') + ' ' + _T('location.tip'), cls: 'dim' },
     ];
   }
 
