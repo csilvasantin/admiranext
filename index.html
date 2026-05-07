@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="ADmiraNeXT" />
-  <meta name="admiranext-version" content="AdmiraNext v26.05.07.1" />
+  <meta name="admiranext-version" content="AdmiraNext v26.05.07.2" />
   <link rel="manifest" href="site.webmanifest" />
   <script type="application/ld+json">
   {
@@ -101,13 +101,44 @@
   <script src="assets/app.js" defer></script>
 </head>
 <body data-route="">
-<div id="password-screen" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:999999;font-family:monospace;">
-  <h1 style="font-size:24px;margin-bottom:20px;letter-spacing:2px;">ACCESO RESTRINGIDO</h1>
-  <div style="border:1px solid #333;padding:20px;background:#050505;box-shadow:0 0 20px rgba(0,0,0,0.5);">
-    <p style="margin-bottom:10px;color:#888;">Introduce la contraseña para continuar:</p>
-    <input type="password" id="password-input" style="padding:12px;font-size:18px;border:1px solid #444;background:#111;color:#fff;text-align:center;outline:none;width:260px;display:block;margin-bottom:15px;" autofocus>
-    <button id="password-btn" style="width:100%;padding:10px;background:#fff;color:#000;border:none;cursor:pointer;font-weight:bold;font-family:monospace;">DESBLOQUEAR</button>
-    <p id="password-error" style="color:#ff4444;margin-top:10px;font-size:12px;display:none;text-align:center;">Contraseña incorrecta. Inténtalo de nuevo.</p>
+<style id="crt-gate-style">
+  #password-screen{font-family:'JetBrains Mono','Fira Code','Cascadia Code',monospace}
+  #password-screen .crt{position:relative;display:flex;flex-direction:column;align-items:center;gap:18px;padding:34px 40px;background:#0a0703;border:1px solid #5a3a00;box-shadow:0 0 0 2px #1a0e00,0 0 60px rgba(255,176,0,.15) inset,0 0 80px rgba(255,176,0,.08);border-radius:8px;max-width:90vw;overflow:hidden}
+  #password-screen .crt::before{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0px,rgba(0,0,0,.18) 1px,transparent 1px,transparent 3px)}
+  #password-screen .crt::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.55) 100%)}
+  #password-screen pre.logo{margin:0;font-family:inherit;font-size:9px;line-height:1.05;letter-spacing:0;color:#ffb000;text-shadow:0 0 4px #ffb000,0 0 12px rgba(255,176,0,.55),0 0 30px rgba(255,176,0,.25);white-space:pre;font-weight:700}
+  #password-screen pre.logo b{display:block;color:#ffb000;animation:crt-flicker 6s infinite}
+  #password-screen .gate-tag{font-size:11px;letter-spacing:.4em;color:#ffb000;text-shadow:0 0 6px rgba(255,176,0,.6);margin:0;text-transform:uppercase}
+  #password-screen .gate-prompt{margin:0;color:#cc8a00;font-size:12px;letter-spacing:.05em}
+  #password-screen .gate-prompt .cursor{display:inline-block;background:#ffb000;width:.6em;height:.9em;vertical-align:-2px;animation:crt-blink 1s steps(2) infinite}
+  #password-screen input{padding:11px 14px;font-size:14px;font-family:inherit;border:1px solid #5a3a00;background:#1a0e00;color:#ffb000;text-align:center;outline:0;width:280px;letter-spacing:.3em;text-shadow:0 0 4px #ffb000;caret-color:#ffb000}
+  #password-screen input:focus{border-color:#ffb000;box-shadow:0 0 0 2px rgba(255,176,0,.25)}
+  #password-screen button{width:100%;padding:11px;background:#ffb000;color:#1a0e00;border:0;cursor:pointer;font-weight:700;font-family:inherit;letter-spacing:.3em;font-size:13px;box-shadow:0 0 12px rgba(255,176,0,.4)}
+  #password-screen button:hover{background:#ffd166}
+  #password-screen #password-error{color:#ff4f4f;margin:0;font-size:11px;letter-spacing:.15em;text-shadow:0 0 6px rgba(255,79,79,.7)}
+  @keyframes crt-flicker{0%,90%,92%,100%{opacity:1}91%{opacity:.85}}
+  @keyframes crt-blink{0%{opacity:1}50%{opacity:0}}
+  @media(max-width:680px){#password-screen pre.logo{font-size:7px}}
+  @media(max-width:480px){#password-screen pre.logo{font-size:5px}#password-screen .crt{padding:22px 18px}#password-screen input{width:88vw;max-width:280px}}
+</style>
+<div id="password-screen" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:999999;padding:24px">
+  <div class="crt">
+    <pre class="logo" aria-label="ADMIRA NEXT"><b> █████╗ ██████╗ ███╗   ███╗██╗██████╗  █████╗
+██╔══██╗██╔══██╗████╗ ████║██║██╔══██╗██╔══██╗
+███████║██║  ██║██╔████╔██║██║██████╔╝███████║
+██╔══██║██║  ██║██║╚██╔╝██║██║██╔══██╗██╔══██║
+██║  ██║██████╔╝██║ ╚═╝ ██║██║██║  ██║██║  ██║
+╚═╝  ╚═╝╚═════╝ ╚═╝     ╚═╝╚═╝╚═╝  ╚═╝╚═╝  ╚═╝</b><b>           ███╗   ██╗███████╗██╗  ██╗████████╗
+          ████╗  ██║██╔════╝╚██╗██╔╝╚══██╔══╝
+          ██╔██╗ ██║█████╗   ╚███╔╝    ██║
+          ██║╚██╗██║██╔══╝   ██╔██╗    ██║
+          ██║ ╚████║███████╗██╔╝ ██╗   ██║
+          ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝   ╚═╝   </b></pre>
+    <p class="gate-tag">▶ ACCESO RESTRINGIDO</p>
+    <p class="gate-prompt">&gt; password<span class="cursor"></span></p>
+    <input type="password" id="password-input" autocomplete="current-password" autofocus>
+    <button id="password-btn">DESBLOQUEAR</button>
+    <p id="password-error" style="display:none">▲ CONTRASEÑA INCORRECTA</p>
   </div>
 </div>
 <script>
