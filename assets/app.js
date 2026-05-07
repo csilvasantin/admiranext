@@ -1465,16 +1465,16 @@
   // ls
   registerHidden('ls', function() {
     return [
-      { text: '  drwxr-xr-x  admira  iot-platform/', cls: 'green' },
-      { text: '  drwxr-xr-x  admira  fleet-orchestration/', cls: 'blue' },
-      { text: '  -rwxr-xr-x  admira  physical-ai.bin', cls: 'accent' },
-      { text: '  -rw-r--r--  admira  robot-as-a-service.so', cls: 'purple' },
-      { text: '  -rwxr-xr-x  admira  edge-runtime.bin', cls: 'cyan' },
-      { text: '  drwxr-xr-x  admira  customer-deployments/', cls: 'green' },
-      { text: '  -rw-r--r--  admira  uptime-sla.cfg', cls: 'yellow' },
-      { text: '  -rwxr-xr-x  admira  brand-identity.svg', cls: 'accent' },
-      { text: '  -rw-r--r--  admira  coffee-dependency.lock', cls: 'dim' },
-      { text: '  -rw-------  admira  secret-sauce.enc', cls: 'red' },
+      { text: '  drwxr-xr-x  AdmiraNext  iot-platform/', cls: 'green' },
+      { text: '  drwxr-xr-x  AdmiraNext  fleet-orchestration/', cls: 'blue' },
+      { text: '  -rwxr-xr-x  AdmiraNext  physical-ai.bin', cls: 'accent' },
+      { text: '  -rw-r--r--  AdmiraNext  robot-as-a-service.so', cls: 'purple' },
+      { text: '  -rwxr-xr-x  AdmiraNext  edge-runtime.bin', cls: 'cyan' },
+      { text: '  drwxr-xr-x  AdmiraNext  customer-deployments/', cls: 'green' },
+      { text: '  -rw-r--r--  AdmiraNext  uptime-sla.cfg', cls: 'yellow' },
+      { text: '  -rwxr-xr-x  AdmiraNext  brand-identity.svg', cls: 'accent' },
+      { text: '  -rw-r--r--  AdmiraNext  coffee-dependency.lock', cls: 'dim' },
+      { text: '  -rw-------  AdmiraNext  secret-sauce.enc', cls: 'red' },
     ];
   });
 
@@ -1895,20 +1895,21 @@
 
     // Command counter milestones
     cmdCount++;
-    const milestones = {
-      3: 'You\'ve run 3 commands. There are more hiding beneath the surface.',
-      5: 'Bored of the dark? Try /themes — there are 4 looks to choose from.',
-      7: 'Getting curious? Try typing whoami or ls — this isn\'t your average portfolio.',
-      12: 'Power user detected. Type /secrets for the full map.',
+    const milestoneKeys = {
+      3: 'milestone.3',
+      5: 'milestone.5',
+      7: 'milestone.7',
+      12: 'milestone.12',
     };
-    if (milestones[cmdCount]) {
+    if (milestoneKeys[cmdCount]) {
       setTimeout(() => {
         const note = document.createElement('div');
         note.className = 'output-block';
         const sys = document.createElement('div');
         sys.className = 'output-line dim';
         sys.style.fontStyle = 'italic';
-        sys.innerHTML = `  <span class="accent" style="opacity:0.7">[system]</span> ${milestones[cmdCount]}`;
+        const _T = (typeof window.t === 'function') ? window.t : function(k){return k;};
+        sys.innerHTML = `  <span class="accent" style="opacity:0.7">[system]</span> ${_T(milestoneKeys[cmdCount])}`;
         note.appendChild(sys);
         outputArea.appendChild(note);
         terminalBody.scrollTop = terminalBody.scrollHeight;
