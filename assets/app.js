@@ -14,18 +14,18 @@
     '/articles': 'articles',
   };
   const ROUTE_TITLES = {
-    '': 'Vlad Burca | Diseñador de Producto y Líder de Sistemas de Diseño',
-    'about': 'Sobre Vlad Burca | 15 años en Diseño de Producto',
-    'work': 'Trabajo | 12 Proyectos en 6 Países | Vlad Burca',
-    'clients': 'Clientes | Más de 30 Empresas | Vlad Burca',
-    'skills': 'Habilidades | Sistemas de Diseño, UX, Diseño de Producto | Vlad Burca',
-    'contact': 'Contacto Vlad Burca | Diseño y Consultoría',
-    'social': 'Perfiles Sociales | Vlad Burca',
-    'philosophy': 'Filosofía de Diseño | Vlad Burca',
-    'testimonials': 'Testimonios | Lo que dicen Clientes y Colegas | Vlad Burca',
-    'awards': 'Premios y Reconocimientos | Vlad Burca',
-    'privacy': 'Política de Privacidad | Vlad Burca',
-    'articles': 'Artículos sobre Sistemas de Diseño, UX y Estrategia | Vlad Burca',
+    '': 'Replicante | Diseñador de Producto y Líder de Sistemas de Diseño',
+    'about': 'Sobre Replicante | 15 años en Diseño de Producto',
+    'work': 'Trabajo | 12 Proyectos en 6 Países | Replicante',
+    'clients': 'Clientes | Más de 30 Empresas | Replicante',
+    'skills': 'Habilidades | Sistemas de Diseño, UX, Diseño de Producto | Replicante',
+    'contact': 'Contacto Replicante | Diseño y Consultoría',
+    'social': 'Perfiles Sociales | Replicante',
+    'philosophy': 'Filosofía de Diseño | Replicante',
+    'testimonials': 'Testimonios | Lo que dicen Clientes y Colegas | Replicante',
+    'awards': 'Premios y Reconocimientos | Replicante',
+    'privacy': 'Política de Privacidad | Replicante',
+    'articles': 'Artículos sobre Sistemas de Diseño, UX y Estrategia | Replicante',
   };
 
   function updateUrl(command) {
@@ -63,7 +63,7 @@
       fn: cmdHelp
     },
     '/about': {
-      desc: '¿Quién es Vlad Burca?',
+      desc: '¿Quién es Replicante?',
       fn: cmdAbout
     },
     '/work': {
@@ -284,7 +284,7 @@
   };
 
   // ============ EMAIL OBFUSCATION ============
-  const _e = ['contact', 'vladburca.com'].join('@');
+  const _e = ['contacto', 'replicante.com'].join('@');
   function mailto() { return 'mai' + 'lto:' + _e; }
 
   // ============ DOM ============
@@ -370,12 +370,12 @@
 
   // ============ ASCII ART ============
   const ASCII_NAME = `
-██╗   ██╗██╗      █████╗ ██████╗     ██████╗ ██╗   ██╗██████╗  ██████╗ █████╗
-██║   ██║██║     ██╔══██╗██╔══██╗    ██╔══██╗██║   ██║██╔══██╗██╔════╝██╔══██╗
-██║   ██║██║     ███████║██║  ██║    ██████╔╝██║   ██║██████╔╝██║     ███████║
-╚██╗ ██╔╝██║     ██╔══██║██║  ██║    ██╔══██╗██║   ██║██╔══██╗██║     ██╔══██║
- ╚████╔╝ ███████╗██║  ██║██████╔╝    ██████╔╝╚██████╔╝██║  ██║╚██████╗██║  ██║
-  ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═════╝     ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝`.trim();
+██████╗ ███████╗██████╗ ██╗     ██╗ ██████╗ █████╗ ███╗   ██╗████████╗███████╗
+██╔══██╗██╔════╝██╔══██╗██║     ██║██╔════╝██╔══██╗████╗  ██║╚══██╔══╝██╔════╝
+██████╔╝█████╗  ██████╔╝██║     ██║██║     ███████║██╔██╗ ██║   ██║   █████╗  
+██╔══██╗██╔══╝  ██╔═══╝ ██║     ██║██║     ██╔══██║██║╚██╗██║   ██║   ██╔══╝  
+██║  ██║███████╗██║     ███████╗██║╚██████╗██║  ██║██║ ╚████║   ██║   ███████╗
+╚═╝  ╚═╝╚══════╝╚═╝     ╚══════╝╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝`.trim();
 
   // ============ PIXEL ROCKET SCALE-TO-FIT ============
   function scalePixelRocket() {
@@ -398,22 +398,22 @@
 
   // ============ BOOT SEQUENCE ============
   const bootLines = [
-    { text: 'Initializing portfolio system...', delay: 200 },
-    { text: 'Loading design tokens...', delay: 150 },
-    { text: 'Mounting component library... ', delay: 200 },
+    { text: 'Iniciando sistema de portafolio...', delay: 200 },
+    { text: 'Cargando tokens de diseño...', delay: 150 },
+    { text: 'Montando biblioteca de componentes... ', delay: 200 },
     { text: '[████████████████████████] ', delay: 100, append: true },
-    { text: 'done', delay: 100, cls: 'done', append: true },
-    { text: '\nResolving 12 case studies...', delay: 150 },
-    { text: 'Connecting to Product Rocket core... ', delay: 200 },
+    { text: 'hecho', delay: 100, cls: 'done', append: true },
+    { text: '\nResolviendo 12 casos de estudio...', delay: 150 },
+    { text: 'Conectando con el núcleo de Product Rocket... ', delay: 200 },
     { text: 'ok', delay: 80, cls: 'done', append: true },
-    { text: '\nDesign systems: operational', delay: 100 },
-    { text: 'UX research modules: loaded', delay: 100 },
-    { text: 'Don\'t search for /secrets here...', delay: 80, cls: 'dim' },
-    { text: 'Strategic thinking: engaged', delay: 100 },
+    { text: '\nSistemas de diseño: operativos', delay: 100 },
+    { text: 'Módulos de investigación UX: cargados', delay: 100 },
+    { text: 'No busques /secrets aquí...', delay: 80, cls: 'dim' },
+    { text: 'Pensamiento estratégico: activado', delay: 100 },
     { text: '\n✦ ', delay: 300 },
-    { text: 'vlad.burca v10.0', delay: 80, cls: 'accent', append: true },
-    { text: ' — ready.\n', delay: 200, append: true },
-    { text: 'Press Enter to continue...', delay: 100 },
+    { text: 'replicante v10.0', delay: 80, cls: 'accent', append: true },
+    { text: ' — listo.\n', delay: 200, append: true },
+    { text: 'Presiona Enter para continuar...', delay: 100 },
   ];
 
   async function runBoot() {
@@ -495,7 +495,7 @@
     const msg = document.createElement('div');
     msg.className = 'output-line dim';
     msg.style.fontStyle = 'italic';
-    msg.innerHTML = `  <span class="accent" style="opacity:0.7">[system]</span> This site uses analytics cookies (GA4) to understand traffic.`;
+    msg.innerHTML = `  <span class="accent" style="opacity:0.7">[sistema]</span> Este sitio utiliza cookies de análisis (GA4) para comprender el tráfico.`;
     banner.appendChild(msg);
 
     const actions = document.createElement('div');
@@ -503,11 +503,11 @@
     actions.style.marginTop = '4px';
     actions.innerHTML = `
       <span style="margin-left:2ch">
-        <a href="#" id="consentAccept" style="cursor:pointer;text-decoration:underline;color:var(--text-dim);font-style:italic">Accept</a>
+        <a href="#" id="consentAccept" style="cursor:pointer;text-decoration:underline;color:var(--text-dim);font-style:italic">Aceptar</a>
         <span class="dim"> · </span>
-        <a href="#" id="consentDecline" style="cursor:pointer;text-decoration:underline;color:var(--text-dim);font-style:italic">Decline</a>
+        <a href="#" id="consentDecline" style="cursor:pointer;text-decoration:underline;color:var(--text-dim);font-style:italic">Rechazar</a>
         <span class="dim"> · </span>
-        <span class="dim" style="font-style:italic">/privacy for details</span>
+        <span class="dim" style="font-style:italic">/privacy para más detalles</span>
       </span>
     `;
     banner.appendChild(actions);
@@ -518,111 +518,111 @@
       e.preventDefault();
       localStorage.setItem('cookie_consent', 'granted');
       gtag('consent', 'update', { analytics_storage: 'granted' });
-      banner.innerHTML = '<div class="output-line dim" style="font-style:italic">  <span class="accent" style="opacity:0.7">[system]</span> Analytics cookies accepted. Thank you.</div>';
+      banner.innerHTML = '<div class="output-line dim" style="font-style:italic">  <span class="accent" style="opacity:0.7">[sistema]</span> Cookies de análisis aceptadas. Gracias.</div>';
       setTimeout(() => banner.remove(), 3000);
     });
 
     document.getElementById('consentDecline').addEventListener('click', (e) => {
       e.preventDefault();
       localStorage.setItem('cookie_consent', 'denied');
-      banner.innerHTML = '<div class="output-line dim" style="font-style:italic">  <span class="accent" style="opacity:0.7">[system]</span> Analytics cookies declined. No tracking cookies will be used.</div>';
+      banner.innerHTML = '<div class="output-line dim" style="font-style:italic">  <span class="accent" style="opacity:0.7">[sistema]</span> Cookies de análisis rechazadas. No se utilizarán cookies de seguimiento.</div>';
       setTimeout(() => banner.remove(), 3000);
     });
   }
 
   // ============ PROJECT DATA (shared by cmdWork + cmdProject) ============
   const PROJECTS = [
-    { name: 'Signals', year: '2024', type: 'Research Integrity Platform', desc: 'Redesigned dense research dashboards for clarity. Tabbed navigation, sticky metrics, dynamic filtering.', tags: ['UX Design', 'Dashboard', 'Research'], stats: ['60% faster retrieval', '100% WCAG', '5x less scrolling'] },
-    { name: 'Anylyze', year: '2024', type: 'Analytics Data Platform', desc: 'Rebuilt data visualization layer with three-tiered typography and five component states.', tags: ['Dashboard UX', 'Data Viz', 'SaaS'], stats: ['38% faster tasks', '71% fewer errors', '9.4/10 confidence'] },
-    { name: 'LiveU — Signa Design System', year: '2024', type: 'Broadcasting Enterprise', desc: '120+ components for global live video platform. Atomic Design, Plus Jakarta Sans + Inter, 8px grid.', tags: ['Design System', 'Enterprise', 'Broadcasting'], stats: ['60% faster velocity', '120+ components', '100% consistency'] },
-    { name: 'TUIASI — University Redesign', year: '2023', type: 'Education Platform', desc: 'Emergency 4-week rebuild of decade-old university site. Record admissions followed.', tags: ['Web Design', 'Education UX', 'Architecture'], stats: ['+4,200 students', '91% lighter pages', '10x faster'] },
-    { name: 'ResNet AI', year: '2023', type: 'Hospitality Design System', desc: 'Tamed 1,300+ scattered variants into a governed token-based system with full documentation.', tags: ['Design System', 'Tokens', 'SaaS'], stats: ['60% fewer components', '40% faster handoff', '100% a11y'] },
-    { name: 'Socyal', year: '2023', type: 'HR Mobile Platform', desc: 'Took an HR tool to an investor-ready standalone mobile product. #3 Product of the Day on Product Hunt.', tags: ['Product Design', 'Mobile UX', 'Product Hunt'], stats: ['#3 Product Hunt', '5-month delivery'] },
-    { name: 'App4Home', year: '2024', type: 'Smart Home IoT App', desc: 'Reimagined smart home controls with time-aware dashboard, room-based navigation, and AI recommendations.', tags: ['Mobile UX', 'IoT', 'Product Design'], stats: ['40% less clutter', '2x faster onboarding'] },
-    { name: 'CyberGhost VPN', year: '2018', type: 'Consumer Privacy App', desc: 'Made VPN accessible to non-technical users. Dark mode, slide-to-connect, 30-second onboarding.', tags: ['Cybersecurity', 'Mobile UX', 'Product Design'], stats: ['3-step onboarding', 'Privacy UX leader'] },
-    { name: 'CognitiveSEO', year: '2017', type: 'SEO Dashboard', desc: 'Three-module restructure with progressive disclosure. Made power-user tools accessible to marketers.', tags: ['Dashboard UX', 'Data Viz', 'SaaS'], stats: ['40% faster tasks', '30% retention ↑', '45% less cognitive load'] },
-    { name: 'Big5 American Diner', year: '2020', type: 'Restaurant Brand Identity', desc: 'Full brand system anchored around five founding recipes. Mid-century American diner aesthetic.', tags: ['Branding', 'Packaging', 'Storytelling'], stats: ['#1 Hospitality Brand Iasi', '100% organic growth'] },
-    { name: 'Darnic for Education', year: '2024', type: 'NGO Campaign Branding', desc: '"Generosity builds futures." Cohesive brand for Christmas gift-giving campaign for underserved children.', tags: ['Logo Design', 'NGO', 'Brand Guidelines'], stats: ['3x faster kit production', '100% visual cohesion'] },
-    { name: 'Crafting Social Stories', year: '2024', type: 'Educational Workshop Brand', desc: 'Dual-appeal identity for children\'s workshops — playful yet credible for corporate donors.', tags: ['Branding', 'NGO', 'Visual Identity'], stats: ['↑ Volunteer sign-ups', '↑ Donor engagement'] },
+    { name: 'Signals', year: '2024', type: 'Plataforma de Integridad de Investigación', desc: 'Rediseño de paneles de investigación densos para mayor claridad. Navegación por pestañas, métricas fijas, filtrado dinámico.', tags: ['Diseño UX', 'Dashboard', 'Investigación'], stats: ['60% recuperación más rápida', '100% WCAG', '5x menos scroll'] },
+    { name: 'Anylyze', year: '2024', type: 'Plataforma de Datos Analíticos', desc: 'Reconstrucción de la capa de visualización de datos con tipografía de tres niveles y cinco estados de componentes.', tags: ['UX Dashboard', 'Visualización de Datos', 'SaaS'], stats: ['38% tareas más rápidas', '71% menos errores', '9.4/10 confianza'] },
+    { name: 'LiveU — Sistema de Diseño Signa', year: '2024', type: 'Empresa de Transmisión', desc: 'Más de 120 componentes para una plataforma global de video en vivo. Diseño Atómico, Plus Jakarta Sans + Inter, cuadrícula de 8px.', tags: ['Sistema de Diseño', 'Empresa', 'Broadcasting'], stats: ['60% más velocidad', '120+ componentes', '100% consistencia'] },
+    { name: 'TUIASI — Rediseño Universitario', year: '2023', type: 'Plataforma Educativa', desc: 'Reconstrucción de emergencia en 4 semanas del sitio universitario de una década de antigüedad. Récord de admisiones posterior.', tags: ['Diseño Web', 'UX Educación', 'Arquitectura'], stats: ['+4,200 estudiantes', '91% páginas más ligeras', '10x más rápido'] },
+    { name: 'ResNet AI', year: '2023', type: 'Sistema de Diseño para Hostelería', desc: 'Consolidación de más de 1,300 variantes dispersas en un sistema gobernado basado en tokens con documentación completa.', tags: ['Sistema de Diseño', 'Tokens', 'SaaS'], stats: ['60% menos componentes', '40% entrega más rápida', '100% a11y'] },
+    { name: 'Socyal', year: '2023', type: 'Plataforma Móvil de RR.HH.', desc: 'Transformación de una herramienta de RR.HH. en un producto móvil independiente listo para inversores. #3 Producto del Día en Product Hunt.', tags: ['Diseño de Producto', 'UX Móvil', 'Product Hunt'], stats: ['#3 Product Hunt', 'entrega en 5 meses'] },
+    { name: 'App4Home', year: '2024', type: 'App IoT para el Hogar Inteligente', desc: 'Rediseño de controles domésticos inteligentes con panel consciente del tiempo, navegación por habitaciones y recomendaciones de IA.', tags: ['UX Móvil', 'IoT', 'Diseño de Producto'], stats: ['40% menos desorden', '2x incorporación más rápida'] },
+    { name: 'CyberGhost VPN', year: '2018', type: 'App de Privacidad del Consumidor', desc: 'VPN accesible para usuarios no técnicos. Modo oscuro, deslizar para conectar, incorporación en 30 segundos.', tags: ['Ciberseguridad', 'UX Móvil', 'Diseño de Producto'], stats: ['Incorporación en 3 pasos', 'Líder en UX de privacidad'] },
+    { name: 'CognitiveSEO', year: '2017', type: 'Dashboard de SEO', desc: 'Reestructuración de tres módulos con divulgación progresiva. Herramientas para usuarios avanzados accesibles para especialistas en marketing.', tags: ['UX Dashboard', 'Visualización de Datos', 'SaaS'], stats: ['40% tareas más rápidas', '30% ↑ retención', '45% menos carga cognitiva'] },
+    { name: 'Big5 American Diner', year: '2020', type: 'Identidad de Marca de Restaurante', desc: 'Sistema de marca completo anclado en cinco recetas fundadoras. Estética de restaurante americano de mediados de siglo.', tags: ['Branding', 'Packaging', 'Storytelling'], stats: ['#1 Marca Hostelería Iasi', '100% crecimiento orgánico'] },
+    { name: 'Darnic for Education', year: '2024', type: 'Branding de Campaña de ONG', desc: '"La generosidad construye futuros". Marca cohesiva para campaña navideña de entrega de regalos para niños desfavorecidos.', tags: ['Diseño de Logo', 'ONG', 'Guías de Marca'], stats: ['3x producción más rápida', '100% cohesión visual'] },
+    { name: 'Crafting Social Stories', year: '2024', type: 'Marca de Taller Educativo', desc: 'Identidad de doble atractivo para talleres infantiles: lúdica pero creíble para donantes corporativos.', tags: ['Branding', 'ONG', 'Identidad Visual'], stats: ['↑ registros de voluntarios', '↑ compromiso de donantes'] },
   ];
 
   // ============ COMMAND FUNCTIONS ============
 
   function cmdHelp() {
     const lines = [
-      { text: 'Available Commands', cls: 'heading' },
+      { text: 'Comandos Disponibles', cls: 'heading' },
       { text: '' },
-      { html: '  <span class="cmd-desc" style="text-transform:uppercase;letter-spacing:1px;font-size:0.75em">Navigation</span>' },
+      { html: '  <span class="cmd-desc" style="text-transform:uppercase;letter-spacing:1px;font-size:0.75em">Navegación</span>' },
     ];
     for (const [cmd, data] of Object.entries(COMMANDS)) {
       lines.push({ html: `  <span class="cmd-name">${cmd}</span> <span class="cmd-desc">${data.desc}</span>` });
     }
     lines.push({ text: '' });
-    lines.push({ html: '  <span class="cmd-desc" style="text-transform:uppercase;letter-spacing:1px;font-size:0.75em">Quick Info</span>' });
+    lines.push({ html: '  <span class="cmd-desc" style="text-transform:uppercase;letter-spacing:1px;font-size:0.75em">Información Rápida</span>' });
     for (const [cmd, data] of Object.entries(INFO_COMMANDS)) {
       lines.push({ html: `  <span class="cmd-name">${cmd}</span> <span class="cmd-desc">${data.desc}</span>` });
     }
     lines.push({ text: '' });
-    lines.push({ html: '  <span class="cmd-desc" style="text-transform:uppercase;letter-spacing:1px;font-size:0.75em">Projects</span>' });
+    lines.push({ html: '  <span class="cmd-desc" style="text-transform:uppercase;letter-spacing:1px;font-size:0.75em">Proyectos</span>' });
     for (const [cmd, data] of Object.entries(PROJECT_COMMANDS)) {
       lines.push({ html: `  <span class="cmd-name">${cmd}</span> <span class="cmd-desc">${data.desc}</span>` });
     }
     lines.push({ text: '' });
-    lines.push({ html: '  <span class="cmd-desc" style="text-transform:uppercase;letter-spacing:1px;font-size:0.75em">Themes</span>' });
+    lines.push({ html: '  <span class="cmd-desc" style="text-transform:uppercase;letter-spacing:1px;font-size:0.75em">Temas</span>' });
     for (const [cmd, data] of Object.entries(THEME_COMMANDS)) {
       lines.push({ html: `  <span class="cmd-name">${cmd}</span> <span class="cmd-desc">${data.desc}</span>` });
     }
     lines.push({ text: '' });
-    lines.push({ text: 'Aliases: /portfolio, /projects, /me, /hire, /call, /mail', cls: 'dim' });
-    lines.push({ text: 'Tip: Use ↑↓ arrows for command history, Tab for autocomplete', cls: 'dim' });
+    lines.push({ text: 'Alias: /portfolio, /projects, /me, /hire, /call, /mail', cls: 'dim' });
+    lines.push({ text: 'Consejo: Usa las flechas ↑↓ para el historial, Tab para autocompletar', cls: 'dim' });
     lines.push({ text: '' });
-    lines.push({ text: '  ...and a few others, if you know where to look.', cls: 'dim', style: 'opacity:0.5;font-style:italic' });
+    lines.push({ text: '  ...y algunos otros, si sabes dónde buscar.', cls: 'dim', style: 'opacity:0.5;font-style:italic' });
     return lines;
   }
 
   function cmdAbout() {
     return [
-      { text: 'About Vlad Burca', cls: 'heading' },
+      { text: 'Sobre Replicante', cls: 'heading' },
       { text: '' },
-      { text: '  Product designer with 15+ years building interfaces that people actually want to use. Co-founder of Product Rocket, based in Iasi, Romania — working across Europe, US, Israel, UAE.' },
+      { text: '  Diseñador de producto con más de 15 años construyendo interfaces que la gente realmente quiere usar. Cofundador de Product Rocket, con sede en Iasi, Rumania — trabajando en toda Europa, EE. UU., Israel y Emiratos Árabes Unidos.' },
       { text: '' },
-      { text: 'What I do', cls: 'heading' },
+      { text: 'Qué hago', cls: 'heading' },
       { text: '' },
-      { text: '  I turn complexity into clarity. From enterprise dashboards to consumer mobile apps, my work sits at the intersection of design craft, systems thinking, and business strategy.' },
+      { text: '  Convierto la complejidad en claridad. Desde paneles empresariales hasta aplicaciones móviles de consumo, mi trabajo se sitúa en la intersección del diseño artesanal, el pensamiento sistémico y la estrategia empresarial.' },
       { text: '' },
-      { text: '  At every stage I ask: "Does this remove friction?" Complexity isn\'t the enemy — confusion is.' },
+      { text: '  En cada etapa me pregunto: "¿Esto elimina la fricción?" La complejidad no es el enemigo, la confusión lo es.' },
       { text: '' },
-      { text: 'Career path', cls: 'heading' },
+      { text: 'Trayectoria profesional', cls: 'heading' },
       { text: '' },
-      { text: '  Started freelancing in Iasi while studying New Media & Online Advertising at Alexandru Ioan Cuza University. Worked at design studios, then joined CyberGhost VPN in 2018 — redesigning their privacy app into a 3-step, 30-second onboarding experience.' },
+      { text: '  Comencé como freelance en Iasi mientras estudiaba Nuevos Medios y Publicidad Online en la Universidad Alexandru Ioan Cuza. Trabajé en estudios de diseño y luego me uní a CyberGhost VPN en 2018, rediseñando su aplicación de privacidad en una experiencia de incorporación de 3 pasos y 30 segundos.' },
       { text: '' },
-      { text: '  Co-founded Product Rocket with my wife Gianina. Through the agency: 120+ component design system for LiveU, research dashboards for Signals, analytics platform for Anylyze, record-breaking university redesign for TUIASI (+4,200 students), and Socyal — #3 Product of the Day on Product Hunt.', cls: 'accent' },
+      { text: '  Cofundé Product Rocket con mi esposa Gianina. A través de la agencia: sistema de diseño de más de 120 componentes para LiveU, paneles de investigación para Signals, plataforma analítica para Anylyze, rediseño universitario récord para TUIASI (+4,200 estudiantes) y Socyal — #3 Producto del Día en Product Hunt.', cls: 'accent' },
       { text: '' },
-      { text: '  This very site — the one you\'re reading — picked up 4 international design awards in 2026: Awwwards, The FWA, CSS Design Awards, and CSS Winner. → /awards', cls: 'green' },
+      { text: '  Este mismo sitio —el que estás leyendo— obtuvo 4 premios internacionales de diseño en 2026: Awwwards, The FWA, CSS Design Awards y CSS Winner. → /awards', cls: 'green' },
       { text: '' },
-      { text: 'Teaching & mentoring', cls: 'heading' },
+      { text: 'Enseñanza y mentoría', cls: 'heading' },
       { text: '' },
-      { text: '  Dribbble Education mentor (2021–2023) alongside Dan Mall, teaching Design Systems, Product Design, and UI Design. One of the original mentors for the Scaling Design Systems course.' },
+      { text: '  Mentor de educación en Dribbble (2021–2023) junto a Dan Mall, enseñando Sistemas de Diseño, Diseño de Producto y Diseño UI. Uno de los mentores originales del curso Scaling Design Systems.' },
       { text: '' },
-      { text: '  Product Psychology Masterclass — Growth.Design (2025). 17+ published articles on design systems & strategy.' },
+      { text: '  Masterclass en Psicología del Producto — Growth.Design (2025). Más de 17 artículos publicados sobre sistemas de diseño y estrategia.' },
       { text: '' },
-      { text: 'Beyond the screen', cls: 'heading' },
+      { text: 'Más allá de la pantalla', cls: 'heading' },
       { text: '' },
-      { text: '  ◆ Mentor to the next wave of UX/UI talent', cls: 'cyan' },
-      { text: '  ◆ Workshop facilitator & public speaker', cls: 'cyan' },
-      { text: '  ◆ Design systems evangelist', cls: 'cyan' },
-      { text: '  ◆ NGO collaborator — designing for education', cls: 'cyan' },
+      { text: '  ◆ Mentor para la próxima ola de talento UX/UI', cls: 'cyan' },
+      { text: '  ◆ Facilitador de talleres y conferenciante', cls: 'cyan' },
+      { text: '  ◆ Evangelista de sistemas de diseño', cls: 'cyan' },
+      { text: '  ◆ Colaborador de ONG — diseñando para la educación', cls: 'cyan' },
       { text: '' },
-      { text: '  → /work to see what I\'ve shipped', cls: 'dim' },
-      { text: '  → /testimonials to see what people say', cls: 'dim' },
-      { text: '  // try: cat readme.md', cls: 'dim', style: 'opacity:0.4' },
+      { text: '  → /work para ver lo que he lanzado', cls: 'dim' },
+      { text: '  → /testimonials para ver lo que dice la gente', cls: 'dim' },
+      { text: '  // prueba: cat readme.md', cls: 'dim', style: 'opacity:0.4' },
     ];
   }
 
   function cmdWork() {
     const container = document.createElement('div');
-    container.innerHTML = `<div class="output-line heading">Featured Work</div>
-      <div class="output-line dim" style="margin-bottom:12px">  12 projects &bull; 2017–2024 &bull; across 6 countries</div>`;
+    container.innerHTML = `<div class="output-line heading">Trabajos Destacados</div>
+      <div class="output-line dim" style="margin-bottom:12px">  12 proyectos &bull; 2017–2024 &bull; en 6 países</div>`;
 
     PROJECTS.forEach(p => {
       const card = document.createElement('div');
@@ -641,7 +641,7 @@
     const hint = document.createElement('div');
     hint.className = 'output-line dim';
     hint.style.marginTop = '12px';
-    hint.textContent = '  → /clients to see who I\'ve worked with';
+    hint.textContent = '  → /clients para ver con quién he trabajado';
     container.appendChild(hint);
 
     return container;
@@ -660,8 +660,8 @@
     ];
 
     const container = document.createElement('div');
-    container.innerHTML = `<div class="output-line heading">Clients & Companies</div>
-      <div class="output-line dim" style="margin-bottom:12px">  Across Europe, US, Israel, and UAE</div>`;
+    container.innerHTML = `<div class="output-line heading">Clientes y Empresas</div>
+      <div class="output-line dim" style="margin-bottom:12px">  En toda Europa, EE. UU., Israel y Emiratos Árabes Unidos</div>`;
 
     const grid = document.createElement('div');
     grid.className = 'client-grid';
@@ -676,7 +676,7 @@
     const hint = document.createElement('div');
     hint.className = 'output-line dim';
     hint.style.marginTop = '12px';
-    hint.textContent = '  → /work for detailed case studies';
+    hint.textContent = '  → /work para estudios de caso detallados';
     container.appendChild(hint);
 
     return container;
@@ -684,20 +684,20 @@
 
   function cmdSkills() {
     const skills = [
-      { name: 'Product Design', pct: 97, color: 'accent' },
-      { name: 'Design Systems', pct: 95, color: 'accent' },
-      { name: 'UX Research & Strategy', pct: 90, color: 'green' },
-      { name: 'UI & Visual Design', pct: 95, color: 'green' },
-      { name: 'Data Visualization', pct: 88, color: 'blue' },
-      { name: 'Brand & Identity', pct: 85, color: 'purple' },
-      { name: 'Design Leadership', pct: 92, color: 'purple' },
-      { name: 'Accessibility (WCAG)', pct: 90, color: 'cyan' },
-      { name: 'Prototyping & Motion', pct: 85, color: 'cyan' },
-      { name: 'Workshop Facilitation', pct: 88, color: 'blue' },
+      { name: 'Diseño de Producto', pct: 97, color: 'accent' },
+      { name: 'Sistemas de Diseño', pct: 95, color: 'accent' },
+      { name: 'Investigación y Estrategia UX', pct: 90, color: 'green' },
+      { name: 'Diseño UI y Visual', pct: 95, color: 'green' },
+      { name: 'Visualización de Datos', pct: 88, color: 'blue' },
+      { name: 'Marca e Identidad', pct: 85, color: 'purple' },
+      { name: 'Liderazgo de Diseño', pct: 92, color: 'purple' },
+      { name: 'Accesibilidad (WCAG)', pct: 90, color: 'cyan' },
+      { name: 'Prototipado y Movimiento', pct: 85, color: 'cyan' },
+      { name: 'Facilitación de Talleres', pct: 88, color: 'blue' },
     ];
 
     const container = document.createElement('div');
-    container.innerHTML = `<div class="output-line heading">Expertise & Capabilities</div><div style="height:8px"></div>`;
+    container.innerHTML = `<div class="output-line heading">Experiencia y Capacidades</div><div style="height:8px"></div>`;
 
     skills.forEach(s => {
       const bar = document.createElement('div');
@@ -712,11 +712,11 @@
 
     const toolsSection = document.createElement('div');
     toolsSection.innerHTML = `
-      <div class="output-line heading" style="margin-top:20px">Tools</div>
+      <div class="output-line heading" style="margin-top:20px">Herramientas</div>
       <div class="output-line" style="margin-top:4px">  Figma &bull; Adobe XD &bull; Sketch &bull; After Effects</div>
       <div class="output-line">  Miro &bull; FigJam &bull; Notion &bull; Linear</div>
       <div class="output-line">  HTML/CSS &bull; Webflow &bull; Framer</div>
-      <div class="output-line dim" style="margin-top:12px">  → /philosophy to see how I think</div>
+      <div class="output-line dim" style="margin-top:12px">  → /philosophy para ver cómo pienso</div>
       <div class="output-line dim" style="margin-top:4px;opacity:0.4">  $ ls</div>
     `;
     container.appendChild(toolsSection);
@@ -735,34 +735,34 @@
 
   function cmdPhilosophy() {
     return [
-      { text: 'Design Philosophy', cls: 'heading' },
+      { text: 'Filosofía de Diseño', cls: 'heading' },
       { text: '' },
-      { text: '  "Does this remove friction?"', cls: 'accent' },
-      { text: '  — The question I ask at every stage.' },
+      { text: '  "¿Esto elimina la fricción?"', cls: 'accent' },
+      { text: '  — La pregunta que me hago en cada etapa.' },
       { text: '' },
-      { text: '  ◆ Research First', cls: 'green' },
-      { text: '    Analytics, session recordings, user feedback. Intuition is a hypothesis — data is the proof.' },
+      { text: '  ◆ La investigación primero', cls: 'green' },
+      { text: '    Análisis, grabaciones de sesiones, comentarios de los usuarios. La intuición es una hipótesis; los datos son la prueba.' },
       { text: '' },
-      { text: '  ◆ Built to Scale', cls: 'green' },
-      { text: '    Design systems for faster dev cycles and consistent experiences across platforms.' },
+      { text: '  ◆ Construido para escalar', cls: 'green' },
+      { text: '    Sistemas de diseño para ciclos de desarrollo más rápidos y experiencias consistentes en todas las plataformas.' },
       { text: '' },
-      { text: '  ◆ Outcomes Over Outputs', cls: 'green' },
-      { text: '    Beautiful screens mean nothing without measurable business results.' },
+      { text: '  ◆ Resultados sobre productos', cls: 'green' },
+      { text: '    Las pantallas hermosas no significan nada sin resultados comerciales medibles.' },
       { text: '' },
-      { text: '  ◆ Clarity Over Density', cls: 'green' },
-      { text: '    Complexity isn\'t the enemy — confusion is. Every element earns its pixel.' },
+      { text: '  ◆ Claridad sobre densidad', cls: 'green' },
+      { text: '    La complejidad no es el enemigo, la confusión lo es. Cada elemento gana su píxel.' },
       { text: '' },
-      { text: '  ◆ Accessibility as Baseline', cls: 'green' },
-      { text: '    Not an afterthought. WCAG compliance is where design starts, not where it ends.' },
+      { text: '  ◆ La accesibilidad como base', cls: 'green' },
+      { text: '    No es una ocurrencia tardía. El cumplimiento de WCAG es donde comienza el diseño, no donde termina.' },
       { text: '' },
-      { text: '  → /contact to start a conversation', cls: 'dim' },
+      { text: '  → /contact para iniciar una conversación', cls: 'dim' },
     ];
   }
 
   function cmdSocial() {
     const container = document.createElement('div');
     container.innerHTML = `
-      <div class="output-line heading">Social Profiles</div>
+      <div class="output-line heading">Perfiles Sociales</div>
       <div style="height:8px"></div>
     `;
 
@@ -771,7 +771,7 @@
       { icon: 'fb', name: 'Facebook', url: 'https://www.facebook.com/im.vladburca', color: 'blue', handle: '/im.vladburca' },
       { icon: 'ig', name: 'Instagram', url: 'https://www.instagram.com/vlad.burca/', color: 'purple', handle: '@vlad.burca' },
       { icon: '🚀', name: 'Product Rocket', url: 'https://productrocket.ro', color: 'accent', handle: 'productrocket.ro' },
-      { icon: '🌐', name: 'Website', url: 'https://vladburca.com', color: 'green', handle: 'vladburca.com' },
+      { icon: '🌐', name: 'Sitio Web', url: 'https://replicante.com', color: 'green', handle: 'replicante.com' },
     ];
 
     links.forEach(l => {
@@ -792,7 +792,7 @@
     const hint = document.createElement('div');
     hint.className = 'output-line dim';
     hint.style.marginTop = '12px';
-    hint.textContent = '  → /contact to get in touch directly';
+    hint.textContent = '  → /contact para ponerse en contacto directamente';
     container.appendChild(hint);
 
     return container;
@@ -801,15 +801,15 @@
   function cmdAwards() {
     const container = document.createElement('div');
     container.innerHTML = `
-      <div class="output-line heading">Awards & Recognition</div>
-      <div class="output-line dim" style="margin-bottom:12px">  vladburca.com — 2026</div>
+      <div class="output-line heading">Premios y Reconocimientos</div>
+      <div class="output-line dim" style="margin-bottom:12px">  replicante.com — 2026</div>
     `;
 
     const awards = [
-      { icon: '✦', name: 'Awwwards',          handle: 'Honorable Mention',              url: 'https://www.awwwards.com/sites/vlad-burca-product-designer',                  color: 'accent' },
-      { icon: '✦', name: 'The FWA',           handle: 'Featured Case',                  url: 'https://thefwa.com/cases/vlad-burca-product-designer-design-systems-lead',     color: 'purple' },
-      { icon: '✦', name: 'CSS Design Awards', handle: 'Best UI · Best UX · Innovation', url: 'https://www.cssdesignawards.com/sites/vlad-burca/49065',                       color: 'green'  },
-      { icon: '✦', name: 'CSS Winner',        handle: 'Site of the Day',                url: 'https://www.csswinner.com/details/vlad-burca-personal-portfolio-web/19122',   color: 'blue'   },
+      { icon: '✦', name: 'Awwwards',          handle: 'Mención de Honor',              url: 'https://www.awwwards.com/sites/vlad-burca-product-designer',                  color: 'accent' },
+      { icon: '✦', name: 'The FWA',           handle: 'Caso Destacado',                  url: 'https://thefwa.com/cases/vlad-burca-product-designer-design-systems-lead',     color: 'purple' },
+      { icon: '✦', name: 'CSS Design Awards', handle: 'Mejor UI · Mejor UX · Innovación', url: 'https://www.cssdesignawards.com/sites/vlad-burca/49065',                       color: 'green'  },
+      { icon: '✦', name: 'CSS Winner',        handle: 'Sitio del Día',                url: 'https://www.csswinner.com/details/vlad-burca-personal-portfolio-web/19122',   color: 'blue'   },
     ];
 
     awards.forEach(a => {
@@ -830,13 +830,13 @@
     const blurb = document.createElement('div');
     blurb.className = 'output-line dim';
     blurb.style.marginTop = '12px';
-    blurb.textContent = '  Four international design awards for a single site in one year — a CLI-themed portfolio that argued you don\'t need a carousel to win juries.';
+    blurb.textContent = '  Cuatro premios internacionales de diseño para un solo sitio en un año: un portafolio con temática CLI que demostró que no necesitas un carrusel para convencer a los jurados.';
     container.appendChild(blurb);
 
     const certHeading = document.createElement('div');
     certHeading.className = 'output-line heading';
     certHeading.style.marginTop = '20px';
-    certHeading.textContent = 'Certifications';
+    certHeading.textContent = 'Certificaciones';
     container.appendChild(certHeading);
     container.insertAdjacentHTML('beforeend', '<div style="height:8px"></div>');
 
@@ -848,7 +848,7 @@
     cert.innerHTML = `
       <span class="social-badge green">✓</span>
       <span class="social-name">Growth.Design</span>
-      <span class="social-handle">Product Psychology Masterclass · 2025</span>
+      <span class="social-handle">Masterclass en Psicología del Producto · 2025</span>
       <span class="social-arrow">→</span>
     `;
     container.appendChild(cert);
@@ -856,7 +856,7 @@
     const hint = document.createElement('div');
     hint.className = 'output-line dim';
     hint.style.marginTop = '12px';
-    hint.innerHTML = '  → /about for the full story<br>  → /work to see what else has shipped';
+    hint.innerHTML = '  → /about para conocer la historia completa<br>  → /work para ver qué más se ha lanzado';
     container.appendChild(hint);
 
     const easter = document.createElement('div');
@@ -870,19 +870,19 @@
 
   function cmdContact() {
     return [
-      { text: 'Get in Touch', cls: 'heading' },
+      { text: 'Ponte en Contacto', cls: 'heading' },
       { text: '' },
       { text: '  ✉  ' + _e, cls: 'accent' },
       { text: '  📞  +40 786 652 539', cls: 'blue' },
-      { text: '  📍  Iasi, Romania', cls: 'purple' },
-      { text: '  🚀  productrocket.ro — my agency', cls: 'green' },
+      { text: '  📍  Iasi, Rumania', cls: 'purple' },
+      { text: '  🚀  productrocket.ro — mi agencia', cls: 'green' },
       { text: '' },
-      { text: '  Open to: design leadership roles, consulting, design system engagements, workshops & talks.' },
+      { text: '  Abierto a: roles de liderazgo de diseño, consultoría, proyectos de sistemas de diseño, talleres y charlas.' },
       { text: '' },
-      { text: '  Let\'s build something that matters.', cls: 'accent' },
+      { text: '  Construyamos algo que importe.', cls: 'accent' },
       { text: '' },
-      { text: '  → /social for all my profiles', cls: 'dim' },
-      { text: '  // or just: sudo hire vlad', cls: 'dim', style: 'opacity:0.4' },
+      { text: '  → /social para todos mis perfiles', cls: 'dim' },
+      { text: '  // o simplemente: sudo hire replicante', cls: 'dim', style: 'opacity:0.4' },
     ];
   }
 
@@ -890,58 +890,58 @@
     const testimonials = [
       {
         name: 'Jessica Ibbotson',
-        title: 'Education Support, Dribbble',
-        relation: 'Managed Vlad directly',
-        quote: 'Vlad was one of the original mentors for the Design Systems course. As a clear expert in his field, Vlad sculpted each lesson with clarity and precision, transforming complexity into teachability. His influence didn\'t stop at imparting knowledge; it permeated the very fabric of the mentorship program, shaping it into a nurturing environment where budding designers could flourish. What sets Vlad apart is his exceptional ability to forge personal connections with his students. His passion for design is infectious, serving as a constant source of motivation and inspiration for those around him.',
+        title: 'Soporte Educativo, Dribbble',
+        relation: 'Gestionó a Replicante directamente',
+        quote: 'Replicante fue uno de los mentores originales del curso de Sistemas de Diseño. Como un experto claro en su campo, Replicante esculpió cada lección con claridad y precisión, transformando la complejidad en capacidad de enseñanza. Su influencia no se detuvo en impartir conocimientos; permeó el tejido mismo del programa de mentoría, convirtiéndolo en un entorno enriquecedor donde los diseñadores emergentes podían florecer. Lo que distingue a Replicante es su capacidad excepcional para forjar conexiones personales con sus estudiantes. Su pasión por el diseño es infecciosa, sirviendo como una fuente constante de motivación e inspiración para quienes lo rodean.',
         color: 'accent',
       },
       {
         name: 'Adrian Banu',
-        title: 'VP, Product at Optymyze',
-        relation: 'Senior to Vlad',
-        quote: 'He\'s a top-notch Product Design expert whose work really makes a difference in every project he touches. What\'s impressive about Vlad is not just his skill in making things look good, but also how he thinks about the whole user experience from start to finish. Vlad is also great at communicating. He really listens to what everyone has to say, takes the time to analyze things before making decisions, and always comes up with smart solutions to any problem.',
+        title: 'VP de Producto en Optymyze',
+        relation: 'Superior de Replicante',
+        quote: 'Es un experto en Diseño de Producto de primer nivel cuyo trabajo realmente marca la diferencia en cada proyecto que toca. Lo impresionante de Replicante no es solo su habilidad para hacer que las cosas se vean bien, sino también cómo piensa en toda la experiencia del usuario de principio a fin. Replicante también es excelente comunicándose. Realmente escucha lo que todos tienen que decir, se toma el tiempo para analizar las cosas antes de tomar decisiones y siempre propone soluciones inteligentes para cualquier problema.',
         color: 'blue',
       },
       {
         name: 'Vlad Hilitanu',
-        title: 'Lead Experience Designer, EPAM Systems',
-        relation: 'Worked together',
-        quote: 'Vlad possesses a rare combination of creativity, technical expertise, and leadership skills that make him stand out in the field of UX design. His deep understanding of design principles and methodologies enables him to consistently deliver intuitive and user-centric solutions. Vlad fosters a collaborative work environment where ideas are freely exchanged, and everyone feels empowered to contribute their best work.',
+        title: 'Diseñador de Experiencia Principal, EPAM Systems',
+        relation: 'Trabajaron juntos',
+        quote: 'Replicante posee una rara combinación de creatividad, experiencia técnica y habilidades de liderazgo que lo hacen destacar en el campo del diseño UX. Su profundo conocimiento de los principios y metodologías de diseño le permite ofrecer de manera constante soluciones intuitivas y centradas en el usuario. Replicante fomenta un entorno de trabajo colaborativo donde las ideas se intercambian libremente y todos se sienten empoderados para contribuir con su mejor trabajo.',
         color: 'green',
       },
       {
         name: 'Ionut Patrascoiu',
-        title: 'CEO & Founder, FameUp',
-        relation: 'Client',
-        quote: 'I highly recommend Vlad for his outstanding skills in UI/UX design. Throughout our collaboration, he showcased exemplary leadership qualities and demonstrated a proactive approach to every task. It was a pleasure working with Vlad, and I\'m confident he will continue to excel in his future endeavors.',
+        title: 'CEO y Fundador, FameUp',
+        relation: 'Cliente',
+        quote: 'Recomiendo encarecidamente a Replicante por sus destacadas habilidades en diseño UI/UX. A lo largo de nuestra colaboración, mostró cualidades de liderazgo ejemplares y demostró un enfoque proactivo en cada tarea. Fue un placer trabajar con Replicante y estoy seguro de que continuará sobresaliendo en sus futuros proyectos.',
         color: 'purple',
       },
       {
         name: 'Earl Carvalho',
-        title: 'Product Solutions Manager, Mobile Apps',
-        relation: 'Worked with Vlad',
-        quote: 'What truly sets Vlad apart is his knack for thinking outside the box and bringing innovative solutions to the table. Whether it\'s his UX expertise or his inventive approach to problem-solving, Vlad consistently impresses. His open-mindedness and willingness to listen make him not only a great manager but also an invaluable teammate.',
+        title: 'Gerente de Soluciones de Producto, Aplicaciones Móviles',
+        relation: 'Trabajó con Replicante',
+        quote: 'Lo que realmente distingue a Replicante es su habilidad para pensar fuera de la caja y aportar soluciones innovadoras. Ya sea por su experiencia en UX o su enfoque inventivo para resolver problemas, Replicante impresiona constantemente. Su mentalidad abierta y disposición para escuchar lo convierten no solo en un gran gerente, sino también en un compañero de equipo invaluable.',
         color: 'cyan',
       },
       {
         name: 'Lavinia Gherasim',
-        title: 'Senior Java Software Engineer',
-        relation: 'Engineering partner',
-        quote: 'His designs are consistently intuitive, creating an effortless experience for end-users. Vlad\'s capacity to grasp technical aspects, despite his non-technical background, is impressive. This proficiency not only facilitates smoother collaboration with technical teams but also enables him to envision innovative solutions that seamlessly integrate with technical needs.',
+        title: 'Ingeniera Senior de Software Java',
+        relation: 'Socia de ingeniería',
+        quote: 'Sus diseños son consistentemente intuitivos, creando una experiencia sin esfuerzo para los usuarios finales. La capacidad de Replicante para comprender aspectos técnicos, a pesar de su formación no técnica, es impresionante. Esta competencia no solo facilita una colaboración más fluida con los equipos técnicos, sino que también le permite visualizar soluciones innovadoras que se integran perfectamente con las necesidades técnicas.',
         color: 'purple',
       },
       {
         name: 'Elena Levy',
-        title: 'UX UI / Product / Design Systems Designer',
-        relation: 'Mentee at Dribbble',
-        quote: 'Vlad is among the best of the design mentors I\'ve worked with, and I learned a lot from him. His patience and determination to make a design system work smarter rather than harder is something all Product Designers and engineers truly value. Vlad demonstrated a brilliant technical mindset and a particularly sophisticated visual design aesthetic.',
+        title: 'Diseñadora de UX UI / Producto / Sistemas de Diseño',
+        relation: 'Aprendiz en Dribbble',
+        quote: 'Replicante se encuentra entre los mejores mentores de diseño con los que he trabajado y aprendí mucho de él. Su paciencia y determinación para hacer que un sistema de diseño funcione de manera más inteligente en lugar de más difícil es algo que todos los diseñadores de producto e ingenieros valoran profundamente. Replicante demostró una mentalidad técnica brillante y una estética de diseño visual particularmente sofisticada.',
         color: 'blue',
       },
     ];
 
     const container = document.createElement('div');
-    container.innerHTML = `<div class="output-line heading">Testimonials</div>
-      <div class="output-line dim" style="margin-bottom:12px">  What colleagues, clients, and mentees say</div>`;
+    container.innerHTML = `<div class="output-line heading">Testimonios</div>
+      <div class="output-line dim" style="margin-bottom:12px">  Lo que dicen colegas, clientes y aprendices</div>`;
 
     testimonials.forEach(t => {
       const card = document.createElement('div');
@@ -960,7 +960,7 @@
     const hint = document.createElement('div');
     hint.className = 'output-line dim';
     hint.style.marginTop = '12px';
-    hint.innerHTML = '  → <a href="https://www.linkedin.com/in/vladburca/details/recommendations/" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">LinkedIn</a> for all recommendations';
+    hint.innerHTML = '  → <a href="https://www.linkedin.com/in/vladburca/details/recommendations/" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">LinkedIn</a> para ver todas las recomendaciones';
     container.appendChild(hint);
 
     return container;
@@ -968,36 +968,36 @@
 
   function cmdArticles() {
     const articles = [
-      { cat: 'Design Systems', items: [
-        { title: 'The complete guide to Design Systems in 2026', url: 'https://productrocket.ro/articles/design-systems-guide/' },
-        { title: 'Design System 101: Building a scalable Design System from scratch', url: 'https://productrocket.ro/articles/design-system-101/' },
-        { title: 'Design tokens: the complete technical guide', url: 'https://productrocket.ro/articles/design-tokens-guide/' },
-        { title: 'Design system governance: who owns what and how decisions get made', url: 'https://productrocket.ro/articles/design-system-governance/' },
-        { title: 'Design System vs. style guide vs. pattern library', url: 'https://productrocket.ro/articles/design-system-vs-style-guide/' },
-        { title: 'Glossary of scalable Design Systems', url: 'https://productrocket.ro/articles/design-systems-glossary/' },
+      { cat: 'Sistemas de Diseño', items: [
+        { title: 'La guía completa de Sistemas de Diseño en 2026', url: 'https://productrocket.ro/articles/design-systems-guide/' },
+        { title: 'Sistema de Diseño 101: Construyendo un sistema de diseño escalable desde cero', url: 'https://productrocket.ro/articles/design-system-101/' },
+        { title: 'Tokens de diseño: la guía técnica completa', url: 'https://productrocket.ro/articles/design-tokens-guide/' },
+        { title: 'Gobernanza del sistema de diseño: quién es el dueño de qué y cómo se toman las decisiones', url: 'https://productrocket.ro/articles/design-system-governance/' },
+        { title: 'Sistema de diseño vs. guía de estilo vs. biblioteca de patrones', url: 'https://productrocket.ro/articles/design-system-vs-style-guide/' },
+        { title: 'Glosario de sistemas de diseño escalables', url: 'https://productrocket.ro/articles/design-systems-glossary/' },
       ]},
-      { cat: 'UX & Product', items: [
-        { title: 'UX design guide: best practices, metrics, and modern workflows', url: 'https://productrocket.ro/articles/ux-design-guide/' },
-        { title: 'Design-led development: How to truly blend UX and Agile', url: 'https://productrocket.ro/articles/design-led-development/' },
-        { title: 'AI in UX: Best practices for designing with artificial intelligence', url: 'https://productrocket.ro/articles/designing-with-ai/' },
+      { cat: 'UX y Producto', items: [
+        { title: 'Guía de diseño UX: mejores prácticas, métricas y flujos de trabajo modernos', url: 'https://productrocket.ro/articles/ux-design-guide/' },
+        { title: 'Desarrollo liderado por el diseño: Cómo combinar verdaderamente UX y Agile', url: 'https://productrocket.ro/articles/design-led-development/' },
+        { title: 'IA en UX: Mejores prácticas para diseñar con inteligencia artificial', url: 'https://productrocket.ro/articles/designing-with-ai/' },
       ]},
-      { cat: 'Branding & Strategy', items: [
-        { title: 'Branding for digital products: A strategy blueprint', url: 'https://productrocket.ro/articles/branding-digital-products/' },
-        { title: 'Strategic storytelling: a practical guide for business growth', url: 'https://productrocket.ro/articles/storytelling-guide/' },
-        { title: 'Beyond the slogan: Mastering brand messaging through story', url: 'https://productrocket.ro/articles/brand-messaging/' },
+      { cat: 'Branding y Estrategia', items: [
+        { title: 'Branding para productos digitales: Un plano estratégico', url: 'https://productrocket.ro/articles/branding-digital-products/' },
+        { title: 'Storytelling estratégico: una guía práctica para el crecimiento empresarial', url: 'https://productrocket.ro/articles/storytelling-guide/' },
+        { title: 'Más allá del eslogan: Dominar los mensajes de marca a través de la historia', url: 'https://productrocket.ro/articles/brand-messaging/' },
       ]},
-      { cat: 'SEO & Content', items: [
-        { title: 'Content marketing for SaaS and product companies: what actually works', url: 'https://productrocket.ro/articles/content-marketing-saas/' },
-        { title: 'SEO and content strategy for product companies', url: 'https://productrocket.ro/articles/seo-content-strategy-guide/' },
-        { title: 'Technical SEO checklist for product websites', url: 'https://productrocket.ro/articles/technical-seo-checklist/' },
-        { title: 'How to build topical authority (and why it beats keyword chasing)', url: 'https://productrocket.ro/articles/topical-authority/' },
-        { title: 'Storytelling formats that win: How to get featured in AI answers', url: 'https://productrocket.ro/articles/ai-answers-seo/' },
+      { cat: 'SEO y Contenido', items: [
+        { title: 'Marketing de contenidos para empresas SaaS y de producto: lo que realmente funciona', url: 'https://productrocket.ro/articles/content-marketing-saas/' },
+        { title: 'SEO y estrategia de contenidos para empresas de producto', url: 'https://productrocket.ro/articles/seo-content-strategy-guide/' },
+        { title: 'Lista de verificación de SEO técnico para sitios web de productos', url: 'https://productrocket.ro/articles/technical-seo-checklist/' },
+        { title: 'Cómo construir autoridad temática (y por qué supera a la búsqueda de palabras clave)', url: 'https://productrocket.ro/articles/topical-authority/' },
+        { title: 'Formatos de storytelling que ganan: Cómo aparecer en las respuestas de IA', url: 'https://productrocket.ro/articles/ai-answers-seo/' },
       ]},
     ];
 
     const container = document.createElement('div');
-    container.innerHTML = `<div class="output-line heading">Published Articles</div>
-      <div class="output-line dim" style="margin-bottom:12px">  17 articles on productrocket.ro</div>`;
+    container.innerHTML = `<div class="output-line heading">Artículos Publicados</div>
+      <div class="output-line dim" style="margin-bottom:12px">  17 artículos en productrocket.ro</div>`;
 
     articles.forEach(group => {
       const catEl = document.createElement('div');
@@ -1024,7 +1024,7 @@
     const hint = document.createElement('div');
     hint.className = 'output-line dim';
     hint.style.marginTop = '12px';
-    hint.textContent = '  All published on productrocket.ro';
+    hint.textContent = '  Todos publicados en productrocket.ro';
     container.appendChild(hint);
 
     return container;
@@ -1045,7 +1045,7 @@
     link.className = 'social-link';
     link.innerHTML = `
       <span class="social-badge blue">in</span>
-      <span class="social-name">Vlad Burca</span>
+      <span class="social-name">Replicante</span>
       <span class="social-handle">/in/vladburca</span>
       <span class="social-arrow">→</span>
     `;
@@ -1053,7 +1053,7 @@
     const hint = document.createElement('div');
     hint.className = 'output-line dim';
     hint.style.marginTop = '12px';
-    hint.textContent = '  → /social for all profiles';
+    hint.textContent = '  → /social para ver todos los perfiles';
     container.appendChild(hint);
     return container;
   }
@@ -1071,7 +1071,7 @@
     link.className = 'social-link';
     link.innerHTML = `
       <span class="social-badge blue">fb</span>
-      <span class="social-name">Vlad Burca</span>
+      <span class="social-name">Replicante</span>
       <span class="social-handle">/im.vladburca</span>
       <span class="social-arrow">→</span>
     `;
@@ -1079,7 +1079,7 @@
     const hint = document.createElement('div');
     hint.className = 'output-line dim';
     hint.style.marginTop = '12px';
-    hint.textContent = '  → /social for all profiles';
+    hint.textContent = '  → /social para ver todos los perfiles';
     container.appendChild(hint);
     return container;
   }
@@ -1097,7 +1097,7 @@
     link.className = 'social-link';
     link.innerHTML = `
       <span class="social-badge purple">ig</span>
-      <span class="social-name">Vlad Burca</span>
+      <span class="social-name">Replicante</span>
       <span class="social-handle">@vlad.burca</span>
       <span class="social-arrow">→</span>
     `;
@@ -1105,7 +1105,7 @@
     const hint = document.createElement('div');
     hint.className = 'output-line dim';
     hint.style.marginTop = '12px';
-    hint.textContent = '  → /social for all profiles';
+    hint.textContent = '  → /social para ver todos los perfiles';
     container.appendChild(hint);
     return container;
   }
@@ -1113,7 +1113,7 @@
   function cmdPhone() {
     const container = document.createElement('div');
     container.innerHTML = `
-      <div class="output-line heading">Phone</div>
+      <div class="output-line heading">Teléfono</div>
       <div style="height:8px"></div>
     `;
     const link = document.createElement('a');
@@ -1122,14 +1122,14 @@
     link.innerHTML = `
       <span class="social-badge green">📞</span>
       <span class="social-name">+40 786 652 539</span>
-      <span class="social-handle">tap to call</span>
+      <span class="social-handle">toca para llamar</span>
       <span class="social-arrow">→</span>
     `;
     container.appendChild(link);
     const hint = document.createElement('div');
     hint.className = 'output-line dim';
     hint.style.marginTop = '12px';
-    hint.textContent = '  → /contact for all contact options';
+    hint.textContent = '  → /contact para ver todas las opciones de contacto';
     container.appendChild(hint);
     return container;
   }
@@ -1137,7 +1137,7 @@
   function cmdEmail() {
     const container = document.createElement('div');
     container.innerHTML = `
-      <div class="output-line heading">Email</div>
+      <div class="output-line heading">Correo Electrónico</div>
       <div style="height:8px"></div>
     `;
     const link = document.createElement('a');
@@ -1146,14 +1146,14 @@
     link.innerHTML = `
       <span class="social-badge accent">✉</span>
       <span class="social-name">${_e}</span>
-      <span class="social-handle">tap to email</span>
+      <span class="social-handle">toca para enviar un correo</span>
       <span class="social-arrow">→</span>
     `;
     container.appendChild(link);
     const hint = document.createElement('div');
     hint.className = 'output-line dim';
     hint.style.marginTop = '12px';
-    hint.textContent = '  → /contact for all contact options';
+    hint.textContent = '  → /contact para ver todas las opciones de contacto';
     container.appendChild(hint);
     return container;
   }
@@ -1179,70 +1179,70 @@
     const desc = document.createElement('div');
     desc.className = 'output-line';
     desc.style.marginTop = '8px';
-    desc.textContent = '  Design & product studio based in Iasi, Romania.';
+    desc.textContent = '  Estudio de diseño y producto con sede en Iasi, Rumania.';
     container.appendChild(desc);
     const desc2 = document.createElement('div');
     desc2.className = 'output-line';
-    desc2.textContent = '  We build interfaces that people actually want to use.';
+    desc2.textContent = '  Construimos interfaces que la gente realmente quiere usar.';
     container.appendChild(desc2);
     const hint = document.createElement('div');
     hint.className = 'output-line dim';
     hint.style.marginTop = '12px';
-    hint.textContent = '  → /work to see our projects';
+    hint.textContent = '  → /work para ver nuestros proyectos';
     container.appendChild(hint);
     return container;
   }
 
   function cmdLocation() {
     return [
-      { text: 'Location', cls: 'heading' },
+      { text: 'Ubicación', cls: 'heading' },
       { text: '' },
-      { text: '  📍  Iasi, Romania', cls: 'accent' },
-      { text: '  🌍  Working across Europe, US, Israel, UAE' },
-      { text: '  🕐  Eastern European Time (EET / UTC+2)' },
+      { text: '  📍  Iasi, Rumania', cls: 'accent' },
+      { text: '  🌍  Trabajando en toda Europa, EE. UU., Israel, Emiratos Árabes Unidos' },
+      { text: '  🕐  Hora de Europa del Este (EET / UTC+2)' },
       { text: '' },
-      { text: '  → /contact to get in touch', cls: 'dim' },
+      { text: '  → /contact para ponerse en contacto', cls: 'dim' },
     ];
   }
 
   function cmdPrivacy() {
     const consent = localStorage.getItem('cookie_consent');
-    const status = consent === 'granted' ? 'accepted' : consent === 'denied' ? 'declined' : 'not set';
+    const status = consent === 'granted' ? 'aceptado' : consent === 'denied' ? 'rechazado' : 'no establecido';
     return [
-      { text: 'Privacy Policy', cls: 'heading' },
+      { text: 'Política de Privacidad', cls: 'heading' },
       { text: '' },
-      { text: '  Last updated: March 2026' },
+      { text: '  Última actualización: marzo de 2026' },
       { text: '' },
-      { text: 'What this site collects', cls: 'heading' },
+      { text: 'Qué recopila este sitio', cls: 'heading' },
       { text: '' },
-      { text: '  This site uses Google Analytics 4 (via Google Tag Manager) to understand how visitors interact with the site — pages viewed, time spent, and general traffic patterns.' },
+      { text: '  Este sitio utiliza Google Analytics 4 (a través de Google Tag Manager) para comprender cómo interactúan los visitantes con el sitio: páginas vistas, tiempo de permanencia y patrones generales de tráfico.' },
       { text: '' },
-      { text: '  No personal data is collected beyond what GA4 gathers by default. No names, no emails, no tracking across other websites.' },
+      { text: '  No se recopilan datos personales más allá de lo que GA4 recopila por defecto. Sin nombres, sin correos electrónicos, sin seguimiento en otros sitios web.' },
       { text: '' },
       { text: 'Cookies', cls: 'heading' },
       { text: '' },
-      { text: '  Analytics cookies are only set if you accept them. If you decline, GA4 runs in cookieless mode — aggregated data only, no identifying information.' },
+      { text: '  Las cookies de análisis solo se establecen si las aceptas. Si las rechazas, GA4 se ejecuta en modo sin cookies: solo datos agregados, sin información de identificación.' },
       { text: '' },
-      { text: `  Your current choice: ${status}`, cls: status === 'accepted' ? 'green' : status === 'declined' ? 'red' : 'dim' },
+      { text: `  Tu elección actual: ${status}`, cls: status === 'aceptado' ? 'green' : status === 'rechazado' ? 'red' : 'dim' },
       { text: '' },
-      { text: 'Your rights (GDPR)', cls: 'heading' },
+      { text: 'Tus derechos (GDPR)', cls: 'heading' },
       { text: '' },
-      { text: '  You have the right to:' },
-      { text: '  ◆ Know what data is collected about you', cls: 'cyan' },
-      { text: '  ◆ Request deletion of your data', cls: 'cyan' },
-      { text: '  ◆ Withdraw consent at any time', cls: 'cyan' },
-      { text: '  ◆ File a complaint with a supervisory authority', cls: 'cyan' },
+      { text: '  Tienes derecho a:' },
+      { text: '  ◆ Saber qué datos se recopilan sobre ti', cls: 'cyan' },
+      { text: '  ◆ Solicitar la eliminación de tus datos', cls: 'cyan' },
+      { text: '  ◆ Retirar el consentimiento en cualquier momento', cls: 'cyan' },
+      { text: '  ◆ Presentar una reclamación ante una autoridad de control', cls: 'cyan' },
       { text: '' },
-      { text: '  To exercise these rights or ask questions, email ' + _e, cls: 'accent' },
+      { text: '  Para ejercer estos derechos o hacer preguntas, envía un correo electrónico a ' + _e, cls: 'accent' },
       { text: '' },
-      { text: 'Data controller', cls: 'heading' },
+      { text: 'Responsable del tratamiento de datos', cls: 'heading' },
       { text: '' },
-      { text: '  Vlad Burca' },
+      { text: '  Replicante' },
       { text: '  Product Rocket (productrocket.ro)' },
-      { text: '  Str. Trei Fantani 6A, Iasi, Romania' },
+      { text: '  Str. Trei Fantani 6A, Iasi, Rumania' },
       { text: '  ' + _e },
       { text: '' },
-      { text: '  → /contact for all contact options', cls: 'dim' },
+      { text: '  → /contact para ver todas las opciones de contacto', cls: 'dim' },
     ];
   }
 
@@ -1250,7 +1250,7 @@
 
   function cmdProject(projectName) {
     const project = PROJECTS.find(p => p.name === projectName);
-    if (!project) return [{ text: `  Project "${projectName}" not found.`, cls: 'red' }];
+    if (!project) return [{ text: `  Proyecto "${projectName}" no encontrado.`, cls: 'red' }];
 
     const container = document.createElement('div');
     const card = document.createElement('div');
@@ -1268,7 +1268,7 @@
     const hint = document.createElement('div');
     hint.className = 'output-line dim';
     hint.style.marginTop = '12px';
-    hint.textContent = '  → /work for all projects  •  /contact to discuss this project';
+    hint.textContent = '  → /work para ver todos los proyectos  •  /contact para discutir este proyecto';
     container.appendChild(hint);
     return container;
   }
@@ -1289,7 +1289,7 @@
     currentTheme = 'dark';
     setWallpaper('dark');
     return [
-      { text: '  ✦ Dark mode activated. The way it should be.', cls: 'accent' },
+      { text: '  ✦ Modo oscuro activado. Como debe ser.', cls: 'accent' },
     ];
   }
 
@@ -1298,7 +1298,7 @@
     currentTheme = 'light';
     setWallpaper('light');
     return [
-      { text: '  ☀ Light mode activated. My eyes... but okay.', cls: 'yellow' },
+      { text: '  ☀ Modo claro activado. Mis ojos... pero está bien.', cls: 'yellow' },
     ];
   }
 
@@ -1307,8 +1307,8 @@
     currentTheme = 'retro';
     setWallpaper('retro');
     return [
-      { text: '  ▓ CRT mode engaged. Welcome to 1983.', cls: 'green' },
-      { text: '  Scanlines: ON | Phosphor: GREEN | Nostalgia: MAX', cls: 'dim' },
+      { text: '  ▓ Modo CRT activado. Bienvenido a 1983.', cls: 'green' },
+      { text: '  Líneas de escaneo: ON | Fósforo: VERDE | Nostalgia: MÁX', cls: 'dim' },
     ];
   }
 
@@ -1317,27 +1317,27 @@
     currentTheme = 'glass';
     setWallpaper('glass');
     return [
-      { text: '  ◈ Glass mode activated. Transparency at its finest.', cls: 'accent' },
+      { text: '  ◈ Modo cristal activado. Transparencia en su máxima expresión.', cls: 'accent' },
     ];
   }
 
   function cmdThemes() {
     const themes = [
-      { cmd: '/dark', label: 'Dark', desc: 'Default — deep tones, easy on the eyes', colors: ['#1a1b26', '#24273a', '#e8a87c', '#c3c7d1'], active: currentTheme === 'dark' },
-      { cmd: '/light', label: 'Light', desc: 'Clean, bright, and professional', colors: ['#f5f5f5', '#ffffff', '#d08a5a', '#3c3c3c'], active: currentTheme === 'light' },
-      { cmd: '/retro', label: 'Retro', desc: '1983 CRT phosphor glow — scanlines included', colors: ['#2b2b2b', '#1a1a1a', '#33ff33', '#00cc00'], active: currentTheme === 'retro' },
-      { cmd: '/glass', label: 'Glass', desc: 'Frosted glass with depth and blur', colors: ['#1a1b26', '#2a2d3a', '#e8a87c', '#8b9cc7'], active: currentTheme === 'glass' },
+      { cmd: '/dark', label: 'Oscuro', desc: 'Predeterminado — tonos profundos, agradables a la vista', colors: ['#1a1b26', '#24273a', '#e8a87c', '#c3c7d1'], active: currentTheme === 'dark' },
+      { cmd: '/light', label: 'Claro', desc: 'Limpio, brillante y profesional', colors: ['#f5f5f5', '#ffffff', '#d08a5a', '#3c3c3c'], active: currentTheme === 'light' },
+      { cmd: '/retro', label: 'Retro', desc: 'Resplandor de fósforo CRT de 1983 — líneas de escaneo incluidas', colors: ['#2b2b2b', '#1a1a1a', '#33ff33', '#00cc00'], active: currentTheme === 'retro' },
+      { cmd: '/glass', label: 'Cristal', desc: 'Cristal esmerilado con profundidad y desenfoque', colors: ['#1a1b26', '#2a2d3a', '#e8a87c', '#8b9cc7'], active: currentTheme === 'glass' },
     ];
 
     const container = document.createElement('div');
-    container.innerHTML = `<div class="output-line heading">Themes</div><div class="output-line" style="margin-bottom:12px">  Type a theme name to switch. Current: <span class="accent">${currentTheme}</span></div>`;
+    container.innerHTML = `<div class="output-line heading">Temas</div><div class="output-line" style="margin-bottom:12px">  Escribe el nombre de un tema para cambiar. Actual: <span class="accent">${currentTheme}</span></div>`;
 
     themes.forEach(t => {
       const row = document.createElement('div');
       row.style.cssText = 'display:flex;align-items:center;gap:12px;padding:8px 12px;margin:4px 0;border:1px solid var(--border);border-radius:6px;cursor:pointer;transition:border-color 0.2s,background 0.2s';
       if (t.active) row.style.borderColor = 'var(--accent)';
       const swatches = t.colors.map(c => `<span style="display:inline-block;width:14px;height:14px;border-radius:3px;background:${c};border:1px solid rgba(255,255,255,0.1)"></span>`).join('');
-      row.innerHTML = `<div style="display:flex;gap:4px">${swatches}</div><span class="cmd-name">${t.cmd}</span><span class="cmd-desc">${t.desc}</span>${t.active ? '<span class="accent" style="margin-left:auto;font-size:0.75em">● active</span>' : ''}`;
+      row.innerHTML = `<div style="display:flex;gap:4px">${swatches}</div><span class="cmd-name">${t.cmd}</span><span class="cmd-desc">${t.desc}</span>${t.active ? '<span class="accent" style="margin-left:auto;font-size:0.75em">● activo</span>' : ''}`;
       row.addEventListener('click', () => executeCommand(t.cmd));
       row.addEventListener('mouseenter', () => { row.style.borderColor = 'var(--accent)'; row.style.background = 'rgba(232,168,124,0.04)'; });
       row.addEventListener('mouseleave', () => { row.style.borderColor = t.active ? 'var(--accent)' : 'var(--border)'; row.style.background = ''; });
@@ -1347,7 +1347,7 @@
     const hint = document.createElement('div');
     hint.className = 'output-line dim';
     hint.style.cssText = 'margin-top:12px;font-style:italic';
-    hint.textContent = '  Themes persist during your session. Refresh to reset.';
+    hint.textContent = '  Los temas persisten durante tu sesión. Recarga para restablecer.';
     container.appendChild(hint);
     return container;
   }
@@ -1429,7 +1429,7 @@
     container.innerHTML = `
       <div class="output-line green">  [sudo] password for visitor: ********</div>
       <div class="output-line green">  ✓ Authentication successful.</div>
-      <div class="output-line" style="margin-top:8px">  Sending contract to Vlad Burca...</div>
+      <div class="output-line" style="margin-top:8px">  Sending contract to Replicante...</div>
       <div class="output-line dim" id="hireProgress">  [░░░░░░░░░░░░░░░░░░░░] 0%</div>
       <div class="output-line accent" id="hireDone" style="display:none;margin-top:8px">  ✦ Contract sent! Vlad will be in touch shortly.</div>
       <div class="output-line dim" id="hireHint" style="display:none"></div>
@@ -1590,7 +1590,7 @@
   registerHidden('git log', function() {
     return [
       { text: '  commit a1b2c3d (HEAD -> main)', cls: 'yellow' },
-      { text: '  Author: Vlad Burca <' + _e + '>', cls: 'dim' },
+      { text: '  Author: Replicante <' + _e + '>', cls: 'dim' },
       { text: '  Date: today', cls: 'dim' },
       { text: '' },
       { text: '      Fixed pixel that was 1px off. Again.', cls: 'accent' },

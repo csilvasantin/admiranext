@@ -54,4 +54,4 @@ Disallow: /
 User-agent: ImagesiftBot
 Disallow: /
 
-Sitemap: https://vladburca.com/sitemap.xml
+Sitemap: https://replicante.com/sitemap.xml
