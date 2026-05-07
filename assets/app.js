@@ -110,18 +110,6 @@
 
   // ============ QUICK INFO COMMANDS ============
   const INFO_COMMANDS = {
-    '/linkedin': {
-      desc: 'Perfil de LinkedIn',
-      fn: cmdLinkedin
-    },
-    '/facebook': {
-      desc: 'Perfil de Facebook',
-      fn: cmdFacebook
-    },
-    '/instagram': {
-      desc: 'Perfil de Instagram',
-      fn: cmdInstagram
-    },
     '/phone': {
       desc: 'Número de teléfono',
       fn: cmdPhone
@@ -288,9 +276,6 @@
     '/productrocket': '/agency',
     '/product-rocket': '/agency',
     '/rocket': '/agency',
-    '/fb': '/facebook',
-    '/ig': '/instagram',
-    '/insta': '/instagram',
     '/mail': '/email',
     // Skill names → /skills
     '/product design': '/skills',
@@ -813,11 +798,8 @@
     `;
 
     const links = [
-      { icon: 'in', name: 'LinkedIn', url: 'https://www.linkedin.com/in/vladburca/', color: 'blue', handle: '/in/vladburca' },
-      { icon: 'fb', name: 'Facebook', url: 'https://www.facebook.com/im.vladburca', color: 'blue', handle: '/im.vladburca' },
-      { icon: 'ig', name: 'Instagram', url: 'https://www.instagram.com/vlad.burca/', color: 'purple', handle: '@vlad.burca' },
-      { icon: '🚀', name: 'Product Rocket', url: 'https://productrocket.ro', color: 'accent', handle: 'productrocket.ro' },
-      { icon: '🌐', name: 'Sitio Web', url: 'https://admiranext.com', color: 'green', handle: 'admiranext.com' },
+      { icon: '🌐', name: 'Web', url: 'https://csilvasantin.github.io/ADmiraNeXT/', color: 'green', handle: 'csilvasantin.github.io/ADmiraNeXT' },
+      { icon: '✉', name: 'Email', url: 'mailto:info@admira.com', color: 'accent', handle: 'info@admira.com' },
     ];
 
     links.forEach(l => {
@@ -852,23 +834,19 @@
     `;
 
     const awards = [
-      { icon: '✦', name: 'Awwwards',          handle: 'Mención de Honor',              url: 'https://www.awwwards.com/sites/vlad-burca-product-designer',                  color: 'accent' },
-      { icon: '✦', name: 'The FWA',           handle: 'Caso Destacado',                  url: 'https://thefwa.com/cases/vlad-burca-product-designer-design-systems-lead',     color: 'purple' },
-      { icon: '✦', name: 'CSS Design Awards', handle: 'Mejor UI · Mejor UX · Innovación', url: 'https://www.cssdesignawards.com/sites/vlad-burca/49065',                       color: 'green'  },
-      { icon: '✦', name: 'CSS Winner',        handle: 'Sitio del Día',                url: 'https://www.csswinner.com/details/vlad-burca-personal-portfolio-web/19122',   color: 'blue'   },
+      { icon: '✦', name: 'Awwwards',          handle: 'Mención de Honor',                color: 'accent' },
+      { icon: '✦', name: 'The FWA',           handle: 'Caso Destacado',                  color: 'purple' },
+      { icon: '✦', name: 'CSS Design Awards', handle: 'Mejor UI · Mejor UX · Innovación', color: 'green'  },
+      { icon: '✦', name: 'CSS Winner',        handle: 'Sitio del Día',                   color: 'blue'   },
     ];
 
     awards.forEach(a => {
-      const row = document.createElement('a');
-      row.href = a.url;
-      row.target = '_blank';
-      row.rel = 'noopener noreferrer';
+      const row = document.createElement('div');
       row.className = 'social-link';
       row.innerHTML = `
         <span class="social-badge ${a.color}">${a.icon}</span>
         <span class="social-name">${a.name}</span>
         <span class="social-handle">${a.handle}</span>
-        <span class="social-arrow">→</span>
       `;
       container.appendChild(row);
     });
@@ -949,7 +927,7 @@
         color: 'blue',
       },
       {
-        name: 'Vlad Hilitanu',
+        name: 'V. Hilitanu',
         title: 'Diseñador de Experiencia Principal, EPAM Systems',
         relation: 'Trabajaron juntos',
         quote: 'ADmiraNeXT posee una rara combinación de creatividad, experiencia técnica y habilidades de liderazgo que lo hacen destacar en el campo del diseño UX. Su profundo conocimiento de los principios y metodologías de diseño le permite ofrecer de manera constante soluciones intuitivas y centradas en el usuario. ADmiraNeXT fomenta un entorno de trabajo colaborativo donde las ideas se intercambian libremente y todos se sienten empoderados para contribuir con su mejor trabajo.',
@@ -1006,7 +984,7 @@
     const hint = document.createElement('div');
     hint.className = 'output-line dim';
     hint.style.marginTop = '12px';
-    hint.innerHTML = '  → <a href="https://www.linkedin.com/in/vladburca/details/recommendations/" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">LinkedIn</a> para ver todas las recomendaciones';
+    hint.textContent = '  → /contact para ponerse en contacto directamente';
     container.appendChild(hint);
 
     return container;
@@ -1078,83 +1056,7 @@
 
   // ============ QUICK INFO FUNCTIONS ============
 
-  function cmdLinkedin() {
-    const container = document.createElement('div');
-    container.innerHTML = `
-      <div class="output-line heading">LinkedIn</div>
-      <div style="height:8px"></div>
-    `;
-    const link = document.createElement('a');
-    link.href = 'https://www.linkedin.com/in/vladburca/';
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    link.className = 'social-link';
-    link.innerHTML = `
-      <span class="social-badge blue">in</span>
-      <span class="social-name">ADmiraNeXT</span>
-      <span class="social-handle">/in/vladburca</span>
-      <span class="social-arrow">→</span>
-    `;
-    container.appendChild(link);
-    const hint = document.createElement('div');
-    hint.className = 'output-line dim';
-    hint.style.marginTop = '12px';
-    hint.textContent = '  → /social para ver todos los perfiles';
-    container.appendChild(hint);
-    return container;
-  }
-
-  function cmdFacebook() {
-    const container = document.createElement('div');
-    container.innerHTML = `
-      <div class="output-line heading">Facebook</div>
-      <div style="height:8px"></div>
-    `;
-    const link = document.createElement('a');
-    link.href = 'https://www.facebook.com/im.vladburca';
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    link.className = 'social-link';
-    link.innerHTML = `
-      <span class="social-badge blue">fb</span>
-      <span class="social-name">ADmiraNeXT</span>
-      <span class="social-handle">/im.vladburca</span>
-      <span class="social-arrow">→</span>
-    `;
-    container.appendChild(link);
-    const hint = document.createElement('div');
-    hint.className = 'output-line dim';
-    hint.style.marginTop = '12px';
-    hint.textContent = '  → /social para ver todos los perfiles';
-    container.appendChild(hint);
-    return container;
-  }
-
-  function cmdInstagram() {
-    const container = document.createElement('div');
-    container.innerHTML = `
-      <div class="output-line heading">Instagram</div>
-      <div style="height:8px"></div>
-    `;
-    const link = document.createElement('a');
-    link.href = 'https://www.instagram.com/vlad.burca/';
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    link.className = 'social-link';
-    link.innerHTML = `
-      <span class="social-badge purple">ig</span>
-      <span class="social-name">ADmiraNeXT</span>
-      <span class="social-handle">@vlad.burca</span>
-      <span class="social-arrow">→</span>
-    `;
-    container.appendChild(link);
-    const hint = document.createElement('div');
-    hint.className = 'output-line dim';
-    hint.style.marginTop = '12px';
-    hint.textContent = '  → /social para ver todos los perfiles';
-    container.appendChild(hint);
-    return container;
-  }
+  // (Personal social commands removed — out of scope for ADmiraNeXT brand.)
 
   function cmdPhone() {
     const container = document.createElement('div');
@@ -1419,14 +1321,14 @@
       { text: '  Shhh... you found the cheat sheet.', cls: 'dim' },
       { text: '' },
       { text: '  Hidden Commands', cls: 'heading' },
-      { html: '  <span class="cmd-name">sudo hire vlad</span> <span class="cmd-desc">Fake contract with progress bar</span>' },
+      { html: '  <span class="cmd-name">sudo hire admiranext</span> <span class="cmd-desc">Fake contract with progress bar</span>' },
       { html: '  <span class="cmd-name">rm -rf doubts</span> <span class="cmd-desc">Remove all your doubts</span>' },
       { html: '  <span class="cmd-name">/matrix</span> <span class="cmd-desc">Matrix green rain</span>' },
       { html: '  <span class="cmd-name">/figma</span> <span class="cmd-desc">Where I actually live</span>' },
       { html: '  <span class="cmd-name">/coffee</span> <span class="cmd-desc">Design fuel status</span>' },
       { html: '  <span class="cmd-name">ls</span> <span class="cmd-desc">Skills as Linux files</span>' },
       { html: '  <span class="cmd-name">cat readme.md</span> <span class="cmd-desc">A hidden personal message</span>' },
-      { html: '  <span class="cmd-name">ping vlad</span> <span class="cmd-desc">Am I available? Find out</span>' },
+      { html: '  <span class="cmd-name">ping admiranext</span> <span class="cmd-desc">Are we available? Find out</span>' },
       { html: '  <span class="cmd-name">git log</span> <span class="cmd-desc">Totally real commit history</span>' },
       { html: '  <span class="cmd-name">whoami</span> <span class="cmd-desc">The terminal knows you</span>' },
       { html: '  <span class="cmd-name">exit</span> <span class="cmd-desc">Try to leave. I dare you.</span>' },
@@ -1448,8 +1350,8 @@
 
   // /secret (singular) — "I'm feeling lucky" random hidden command
   const luckyCommands = [
-    '/matrix', 'sudo hire vlad', 'rm -rf doubts', '/figma', '/coffee',
-    'ls', 'cat readme.md', 'ping vlad', 'git log', 'whoami', '/konami'
+    '/matrix', 'sudo hire admiranext', 'rm -rf doubts', '/figma', '/coffee',
+    'ls', 'cat readme.md', 'ping admiranext', 'git log', 'whoami', '/konami'
   ];
   registerHidden('/secret', function() {
     const pick = luckyCommands[Math.floor(Math.random() * luckyCommands.length)];
@@ -1469,15 +1371,15 @@
     ];
   });
 
-  // sudo hire vlad
-  registerHidden('sudo hire vlad', function() {
+  // sudo hire admiranext
+  function sudoHireRender() {
     const container = document.createElement('div');
     container.innerHTML = `
       <div class="output-line green">  [sudo] password for visitor: ********</div>
       <div class="output-line green">  ✓ Authentication successful.</div>
       <div class="output-line" style="margin-top:8px">  Sending contract to ADmiraNeXT...</div>
       <div class="output-line dim" id="hireProgress">  [░░░░░░░░░░░░░░░░░░░░] 0%</div>
-      <div class="output-line accent" id="hireDone" style="display:none;margin-top:8px">  ✦ Contract sent! Vlad will be in touch shortly.</div>
+      <div class="output-line accent" id="hireDone" style="display:none;margin-top:8px">  ✦ Contract sent! The ADmiraNeXT team will be in touch shortly.</div>
       <div class="output-line dim" id="hireHint" style="display:none"></div>
     `;
     // Animate progress bar
@@ -1505,7 +1407,10 @@
       }, 200);
     }, 300);
     return container;
-  });
+  }
+  registerHidden('sudo hire admiranext', sudoHireRender);
+  registerHidden('sudo hire admira', sudoHireRender);
+  registerHidden('sudo contratar admiranext', sudoHireRender);
 
   // rm -rf doubts
   registerHidden('rm -rf doubts', function() {
@@ -1560,16 +1465,16 @@
   // ls
   registerHidden('ls', function() {
     return [
-      { text: '  drwxr-xr-x  vlad  design-systems.exe', cls: 'green' },
-      { text: '  drwxr-xr-x  vlad  ux-research.doc', cls: 'blue' },
-      { text: '  -rwxr-xr-x  vlad  figma-mastery.cfg', cls: 'accent' },
-      { text: '  -rw-r--r--  vlad  pixel-perfection.so', cls: 'purple' },
-      { text: '  -rwxr-xr-x  vlad  strategic-thinking.bin', cls: 'cyan' },
-      { text: '  drwxr-xr-x  vlad  workshop-facilitation/', cls: 'green' },
-      { text: '  -rw-r--r--  vlad  accessibility.a11y', cls: 'yellow' },
-      { text: '  -rwxr-xr-x  vlad  brand-identity.svg', cls: 'accent' },
-      { text: '  -rw-r--r--  vlad  coffee-dependency.lock', cls: 'dim' },
-      { text: '  -rw-------  vlad  secret-design-sauce.enc', cls: 'red' },
+      { text: '  drwxr-xr-x  admira  iot-platform/', cls: 'green' },
+      { text: '  drwxr-xr-x  admira  fleet-orchestration/', cls: 'blue' },
+      { text: '  -rwxr-xr-x  admira  physical-ai.bin', cls: 'accent' },
+      { text: '  -rw-r--r--  admira  robot-as-a-service.so', cls: 'purple' },
+      { text: '  -rwxr-xr-x  admira  edge-runtime.bin', cls: 'cyan' },
+      { text: '  drwxr-xr-x  admira  customer-deployments/', cls: 'green' },
+      { text: '  -rw-r--r--  admira  uptime-sla.cfg', cls: 'yellow' },
+      { text: '  -rwxr-xr-x  admira  brand-identity.svg', cls: 'accent' },
+      { text: '  -rw-r--r--  admira  coffee-dependency.lock', cls: 'dim' },
+      { text: '  -rw-------  admira  secret-sauce.enc', cls: 'red' },
     ];
   });
 
@@ -1584,27 +1489,27 @@
       { text: '  person who inspects elements, reads source code, and' },
       { text: '  appreciates the details. We\'d get along.' },
       { text: '' },
-      { text: '  I believe the best design is invisible. It doesn\'t' },
-      { text: '  make you think about the interface — it makes you' },
-      { text: '  think about your goals. Every pixel I push is in' },
-      { text: '  service of that belief.' },
+      { text: '  Physical AI is going to eat the world the way software did.' },
+      { text: '  Robots in the lobby, on the shop floor, in the warehouse.' },
+      { text: '  Owning the hardware is the wrong abstraction — most' },
+      { text: '  companies want the outcome, not a fleet to manage.' },
       { text: '' },
-      { text: '  The world has enough pretty mockups that never ship.' },
-      { text: '  I build things that do.', cls: 'green' },
+      { text: '  So we built ADmiraNeXT: Robot as a Service. You pay for' },
+      { text: '  the result; we run the platform, the IoT, and the robots.', cls: 'green' },
       { text: '' },
-      { text: '  — Vlad', cls: 'accent' },
+      { text: '  — ADmiraNeXT', cls: 'accent' },
     ];
   });
 
-  // ping vlad
-  registerHidden('ping vlad', function() {
+  // ping admiranext
+  function pingRender() {
     const container = document.createElement('div');
-    container.innerHTML = `<div class="output-line dim">  PING vlad.burca (192.168.1.337): 56 data bytes</div>`;
+    container.innerHTML = `<div class="output-line dim">  PING admiranext (192.168.1.337): 56 data bytes</div>`;
     const pings = [
-      '64 bytes from Iasi: icmp_seq=0 ttl=64 time=0.1ms — Always online',
-      '64 bytes from Iasi: icmp_seq=1 ttl=64 time=0.2ms — Available for great projects',
-      '64 bytes from Iasi: icmp_seq=2 ttl=64 time=0.1ms — Responds faster than your current designer',
-      '64 bytes from Iasi: icmp_seq=3 ttl=64 time=0.3ms — Will not ghost you',
+      '64 bytes from Barcelona: icmp_seq=0 ttl=64 time=0.1ms — Fleet online',
+      '64 bytes from Barcelona: icmp_seq=1 ttl=64 time=0.2ms — All robots reporting',
+      '64 bytes from Barcelona: icmp_seq=2 ttl=64 time=0.1ms — IoT platform healthy',
+      '64 bytes from Barcelona: icmp_seq=3 ttl=64 time=0.3ms — Ready for your project',
     ];
     pings.forEach((p, i) => {
       const line = document.createElement('div');
@@ -1620,7 +1525,7 @@
     stats.style.marginTop = '8px';
     stats.style.opacity = '0';
     stats.style.transition = 'opacity 0.3s';
-    stats.textContent = '  --- vlad.burca ping statistics ---';
+    stats.textContent = '  --- admiranext ping statistics ---';
     container.appendChild(stats);
     const stats2 = document.createElement('div');
     stats2.className = 'output-line dim';
@@ -1630,7 +1535,9 @@
     container.appendChild(stats2);
     setTimeout(() => { stats.style.opacity = '1'; stats2.style.opacity = '1'; }, 3000);
     return container;
-  });
+  }
+  registerHidden('ping admiranext', pingRender);
+  registerHidden('ping admira', pingRender);
 
   // git log
   registerHidden('git log', function() {
@@ -1716,7 +1623,7 @@
     canvas.height = window.innerHeight;
     canvas.classList.add('active');
 
-    const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789VLADBURCA';
+    const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ADMIRANEXT';
     const fontSize = 14;
     const columns = Math.floor(canvas.width / fontSize);
     const drops = Array(columns).fill(1);
@@ -1902,29 +1809,27 @@
   // ============ NATURAL LANGUAGE INTENT MATCHING ============
   const INTENT_MAP = [
     // About
-    { cmd: '/about', phrases: ['about vlad', 'who is vlad', 'who is this', 'tell me about', 'who are you', 'about you', 'about him', 'who is he', 'introduce yourself', 'bio', 'background', 'what do you do', 'what does vlad do'] },
+    { cmd: '/about', phrases: ['about admiranext', 'about admira', 'who is admiranext', 'who are you', 'who is this', 'tell me about', 'about you', 'introduce yourself', 'bio', 'background', 'what do you do'] },
     // Contact
-    { cmd: '/contact', phrases: ['get in touch', 'call vlad', 'reach out', 'hire vlad', 'contact vlad', 'how to reach', 'how to contact', 'want to hire', 'book a call', 'schedule a call', 'talk to vlad', 'message vlad', 'reach vlad', 'send a message', 'i need a designer', 'looking for a designer', 'need help with design'] },
+    { cmd: '/contact', phrases: ['get in touch', 'reach out', 'hire admiranext', 'contact admiranext', 'how to reach', 'how to contact', 'want to hire', 'book a call', 'schedule a call', 'talk to admiranext', 'send a message', 'i need a robot', 'need robotics', 'need help'] },
     // Work / Portfolio
-    { cmd: '/work', phrases: ['show work', 'show portfolio', 'show projects', 'your work', 'your projects', 'case studies', 'what have you done', 'what did you build', 'see your work', 'previous work', 'past projects', 'portfolio pieces'] },
+    { cmd: '/work', phrases: ['show work', 'show portfolio', 'show projects', 'your work', 'your projects', 'case studies', 'what have you done', 'what did you build', 'previous work', 'past projects'] },
     // Skills
-    { cmd: '/skills', phrases: ['what can you do', 'your skills', 'your capabilities', 'your expertise', 'what do you know', 'areas of expertise', 'skill set', 'services you offer', 'what services'] },
+    { cmd: '/skills', phrases: ['what can you do', 'your skills', 'your capabilities', 'your expertise', 'areas of expertise', 'skill set', 'services you offer', 'what services'] },
     // Clients
     { cmd: '/clients', phrases: ['who have you worked with', 'your clients', 'companies', 'who do you work for', 'worked with', 'client list', 'past clients'] },
     // Social
-    { cmd: '/social', phrases: ['social media', 'social links', 'social profiles', 'follow vlad', 'find vlad online', 'your socials', 'online presence'] },
+    { cmd: '/social', phrases: ['social media', 'social links', 'social profiles', 'your socials', 'online presence'] },
     // Testimonials
     { cmd: '/testimonials', phrases: ['what people say', 'reviews', 'feedback', 'recommendations', 'what others say', 'client feedback', 'endorsements'] },
     // Philosophy
     { cmd: '/philosophy', phrases: ['design philosophy', 'how do you work', 'your approach', 'your process', 'design approach', 'how you design', 'your methodology', 'your principles', 'values'] },
     // Email
-    { cmd: '/email', phrases: ['email address', 'your email', 'vlad email', 'mail address', 'send email', 'write email'] },
+    { cmd: '/email', phrases: ['email address', 'your email', 'mail address', 'send email', 'write email'] },
     // Phone
-    { cmd: '/phone', phrases: ['phone number', 'your phone', 'vlad phone', 'call number', 'telephone'] },
-    // LinkedIn
-    { cmd: '/linkedin', phrases: ['linkedin profile', 'your linkedin', 'vlad linkedin', 'find on linkedin'] },
+    { cmd: '/phone', phrases: ['phone number', 'your phone', 'call number', 'telephone'] },
     // Location
-    { cmd: '/location', phrases: ['where are you', 'where is vlad', 'your location', 'based in', 'where based', 'what city', 'which country'] },
+    { cmd: '/location', phrases: ['where are you', 'where is admiranext', 'your location', 'based in', 'where based', 'what city', 'which country'] },
     // Articles
     { cmd: '/articles', phrases: ['your articles', 'blog posts', 'what have you written', 'publications', 'your writing', 'read articles'] },
     // Awards
@@ -2157,7 +2062,7 @@
 
         // ~8% chance: briefly glitch a hidden command name into the thinking text
         if (Math.random() < 0.08) {
-          const glitchWords = ['matrix', 'sudo hire vlad', 'konami', 'secrets', 'ping vlad', 'git log', 'figma', 'coffee'];
+          const glitchWords = ['matrix', 'sudo hire admiranext', 'konami', 'secrets', 'ping admiranext', 'git log', 'figma', 'coffee'];
           const glitchWord = glitchWords[Math.floor(Math.random() * glitchWords.length)];
           const textEl = thinking.querySelector('.thinking-text');
           const glitchDelay = 200 + Math.random() * 400;
