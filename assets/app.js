@@ -370,12 +370,12 @@
 
   // ============ ASCII ART ============
   const ASCII_NAME = `
-██████╗ ███████╗██████╗ ██╗     ██╗ ██████╗ █████╗ ███╗   ██╗████████╗███████╗
-██╔══██╗██╔════╝██╔══██╗██║     ██║██╔════╝██╔══██╗████╗  ██║╚══██╔══╝██╔════╝
-██████╔╝█████╗  ██████╔╝██║     ██║██║     ███████║██╔██╗ ██║   ██║   █████╗  
-██╔══██╗██╔══╝  ██╔═══╝ ██║     ██║██║     ██╔══██║██║╚██╗██║   ██║   ██╔══╝  
-██║  ██║███████╗██║     ███████╗██║╚██████╗██║  ██║██║ ╚████║   ██║   ███████╗
-╚═╝  ╚═╝╚══════╝╚═╝     ╚══════╝╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝`.trim();
+ █████╗ ██████╗ ███╗   ███╗██╗██████╗  █████╗   ███╗   ██╗███████╗██╗  ██╗████████╗
+██╔══██╗██╔══██╗████╗ ████║██║██╔══██╗██╔══██╗  ████╗  ██║██╔════╝╚██╗██╔╝╚══██╔══╝
+███████║██║  ██║██╔████╔██║██║██████╔╝███████║  ██╔██╗ ██║█████╗   ╚███╔╝    ██║
+██╔══██║██║  ██║██║╚██╔╝██║██║██╔══██╗██╔══██║  ██║╚██╗██║██╔══╝   ██╔██╗    ██║
+██║  ██║██████╔╝██║ ╚═╝ ██║██║██║  ██║██║  ██║  ██║ ╚████║███████╗██╔╝ ██╗   ██║
+╚═╝  ╚═╝╚═════╝ ╚═╝     ╚═╝╚═╝╚═╝  ╚═╝╚═╝  ╚═╝  ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝   ╚═╝   `.trim();
 
   // ============ PIXEL ROCKET SCALE-TO-FIT ============
   function scalePixelRocket() {
@@ -411,7 +411,7 @@
     { text: 'No busques /secrets aquí...', delay: 80, cls: 'dim' },
     { text: 'Pensamiento estratégico: activado', delay: 100 },
     { text: '\n✦ ', delay: 300 },
-    { text: 'replicante v10.0', delay: 80, cls: 'accent', append: true },
+    { text: 'ADmiraNeXT v10.0', delay: 80, cls: 'accent', append: true },
     { text: ' — listo.\n', delay: 200, append: true },
     { text: 'Presiona Enter para continuar...', delay: 100 },
   ];
@@ -882,7 +882,7 @@
       { text: '  Construyamos algo que importe.', cls: 'accent' },
       { text: '' },
       { text: '  → /social para todos mis perfiles', cls: 'dim' },
-      { text: '  // o simplemente: sudo hire replicante', cls: 'dim', style: 'opacity:0.4' },
+      { text: '  // o simplemente: sudo hire admiranext', cls: 'dim', style: 'opacity:0.4' },
     ];
   }
 
