@@ -1668,14 +1668,19 @@
     ];
   });
 
-  // whoami
-  registerHidden('whoami', function() {
+  // whoami / quiensoyyo (alias ES)
+  function whoamiLines() {
+    const T = (typeof window.t === 'function') ? window.t : function (k) { return k; };
     return [
-      { text: '  You\'re the person about to hire a great designer.', cls: 'accent' },
+      { text: T('whoami.line1'), cls: 'accent' },
       { text: '' },
-      { text: '  (Trust the terminal. It knows things.)', cls: 'dim' },
+      { text: T('whoami.line2'), cls: 'dim' },
     ];
-  });
+  }
+  registerHidden('whoami', whoamiLines);
+  registerHidden('quiensoyyo', whoamiLines);
+  registerHidden('quien soy yo', whoamiLines);
+  registerHidden('quiensoy', whoamiLines);
 
   // exit / quit
   registerHidden('quit', function() { return HIDDEN_COMMANDS['exit'](); });
