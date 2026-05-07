@@ -225,6 +225,39 @@
 
   // Command aliases
   const ALIASES = {
+    // Spanish command aliases (válidos en cualquier idioma)
+    '/ayuda': '/help',
+    '/sobre': '/about',
+    '/acerca': '/about',
+    '/quien': '/about',
+    '/quienes': '/about',
+    '/trabajo': '/work',
+    '/proyectos': '/work',
+    '/portafolio': '/work',
+    '/clientes': '/clients',
+    '/habilidades': '/skills',
+    '/experiencia': '/skills',
+    '/contacto': '/contact',
+    '/contratar': '/contact',
+    '/correo': '/email',
+    '/telefono': '/phone',
+    '/temas': '/themes',
+    '/tema': '/themes',
+    '/agencia': '/agency',
+    '/articulos': '/articles',
+    '/escritos': '/articles',
+    '/premios': '/awards',
+    '/reconocimientos': '/awards',
+    '/testimonios': '/testimonials',
+    '/recomendaciones': '/testimonials',
+    '/redes': '/social',
+    '/perfiles': '/social',
+    '/limpiar': '/clear',
+    '/borrar': '/clear',
+    '/secretos': '/secrets',
+    '/salir': '/exit',
+    '/cerrar': '/exit',
+    // English aliases
     '/portfolio': '/work',
     '/projects': '/work',
     '/works': '/work',
@@ -397,24 +430,29 @@
   window.addEventListener('resize', scalePixelRocket);
 
   // ============ BOOT SEQUENCE ============
+  // bootLines uses i18n keys; texto resuelto en runtime via window.t() para
+  // que respete el idioma actual (en/es).
   const bootLines = [
-    { text: 'Iniciando sistema de portafolio...', delay: 200 },
-    { text: 'Cargando tokens de diseño...', delay: 150 },
-    { text: 'Montando biblioteca de componentes... ', delay: 200 },
-    { text: '[████████████████████████] ', delay: 100, append: true },
-    { text: 'hecho', delay: 100, cls: 'done', append: true },
-    { text: '\nResolviendo 12 casos de estudio...', delay: 150 },
-    { text: 'Conectando con el núcleo de Product Rocket... ', delay: 200 },
-    { text: 'ok', delay: 80, cls: 'done', append: true },
-    { text: '\nSistemas de diseño: operativos', delay: 100 },
-    { text: 'Módulos de investigación UX: cargados', delay: 100 },
-    { text: 'No busques /secrets aquí...', delay: 80, cls: 'dim' },
-    { text: 'Pensamiento estratégico: activado', delay: 100 },
-    { text: '\n✦ ', delay: 300 },
-    { text: 'ADmiraNeXT v10.0', delay: 80, cls: 'accent', append: true },
-    { text: ' — listo.\n', delay: 200, append: true },
-    { text: 'Presiona Enter para continuar...', delay: 100 },
+    { key: 'boot.l1',  delay: 200 },
+    { key: 'boot.l2',  delay: 150 },
+    { key: 'boot.l3',  delay: 200 },
+    { key: 'boot.l4',  delay: 100, append: true },
+    { key: 'boot.l5',  delay: 100, cls: 'done', append: true },
+    { key: 'boot.l6',  delay: 150 },
+    { key: 'boot.l7',  delay: 200 },
+    { key: 'boot.l8',  delay: 80, cls: 'done', append: true },
+    { key: 'boot.l9',  delay: 100 },
+    { key: 'boot.l10', delay: 100 },
+    { key: 'boot.l11', delay: 80, cls: 'dim' },
+    { key: 'boot.l12', delay: 100 },
+    { key: 'boot.l13', delay: 300 },
+    { key: 'boot.l14', delay: 80, cls: 'accent', append: true },
+    { key: 'boot.l15', delay: 200, append: true },
+    { key: 'boot.l16', delay: 100 },
   ];
+  function _bootText(step) {
+    return (typeof window.t === 'function' ? window.t(step.key) : step.key);
+  }
 
   async function runBoot() {
     // Esperar a que el gate de acceso esté desbloqueado antes de hacer nada
@@ -443,15 +481,16 @@
     let currentLine = '';
     for (const step of bootLines) {
       await sleep(step.delay || 100);
+      const text = _bootText(step);
       if (step.append) {
         const span = document.createElement('span');
         if (step.cls) span.className = step.cls;
-        span.textContent = step.text;
+        span.textContent = text;
         bootText.appendChild(span);
       } else {
         const div = document.createElement('div');
         if (step.cls) div.className = step.cls;
-        div.textContent = step.text;
+        div.textContent = text;
         bootText.appendChild(div);
       }
     }

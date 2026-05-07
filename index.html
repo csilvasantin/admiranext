@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="ADmiraNeXT" />
-  <meta name="admiranext-version" content="AdmiraNext v26.05.07.7" />
+  <meta name="admiranext-version" content="AdmiraNext v26.05.07.8" />
   <link rel="manifest" href="site.webmanifest" />
   <script type="application/ld+json">
   {
@@ -98,6 +98,141 @@
   <link rel="preload" as="image" href="assets/cortocircuito.jpg" type="image/jpeg" fetchpriority="high">
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/jetbrains-mono.woff2" crossorigin>
   <link rel="stylesheet" href="assets/app.css">
+  <script>
+    // ============ i18n bootstrap ============
+    // Default: English. Toggle button (titlebar) muestra el OPUESTO ("ESP"
+    // cuando está en EN, "ENG" cuando está en ES). Persiste en localStorage.
+    (function () {
+      window.I18N = {
+        en: {
+          'titlebar.path.exit': 'user@admiranext ~ /exit',
+          'titlebar.path.portfolio': 'user@admiranext ~ /portfolio',
+          'titlebar.dot.close': 'Close',
+          'titlebar.dot.minimize': 'Minimize',
+          'titlebar.dot.maximize': 'Maximize',
+          'close.kill': '$ kill -9 portfolio',
+          'close.terminated': '✗ Process terminated.',
+          'close.tagline1': '  But good design never really stops.',
+          'close.tagline2': '  Let\'s keep the conversation open.',
+          'close.reopen': 'Reopen terminal',
+          'sr.h1': 'ADmiraNeXT — Product Designer, Design Lead and Strategist',
+          'welcome.greeting': 'Welcome, visitor.',
+          'manifesto.title': 'Manifesto',
+          'manifesto.who.label': 'Who',
+          'manifesto.who.value': 'An Everything as a Service company',
+          'manifesto.what.label': 'What',
+          'manifesto.what.value': 'We build Physical AI projects',
+          'manifesto.how.label': 'How',
+          'manifesto.how.value': 'Proprietary IoT platform + the best robots',
+          'manifesto.why.label': 'Why',
+          'manifesto.why.value': 'Because it\'s our passion',
+          'nav.title': 'Navigation',
+          'nav.helphint': '... /help for all commands',
+          'nav.themehint': 'Try /themes to change the vibe',
+          'prompt.placeholder': 'Type a command... try "/help"',
+          'gate.tag': '▶ RESTRICTED ACCESS',
+          'gate.prompt': '> password',
+          'gate.button': 'UNLOCK',
+          'gate.error': '▲ INCORRECT PASSWORD',
+          'boot.l1': 'Booting portfolio system...',
+          'boot.l2': 'Loading design tokens...',
+          'boot.l3': 'Mounting component library... ',
+          'boot.l4': '[████████████████████████] ',
+          'boot.l5': 'done',
+          'boot.l6': '\nResolving 12 case studies...',
+          'boot.l7': 'Connecting to Product Rocket core... ',
+          'boot.l8': 'ok',
+          'boot.l9': '\nDesign systems: operational',
+          'boot.l10': 'UX research modules: loaded',
+          'boot.l11': 'Don\'t look for /secrets here...',
+          'boot.l12': 'Strategic thinking: activated',
+          'boot.l13': '\n✦ ',
+          'boot.l14': 'ADmiraNeXT v10.0',
+          'boot.l15': ' — ready.\n',
+          'boot.l16': 'Press Enter to continue...',
+        },
+        es: {
+          'titlebar.path.exit': 'user@admiranext ~ /salir',
+          'titlebar.path.portfolio': 'user@admiranext ~ /portafolio',
+          'titlebar.dot.close': 'Cerrar',
+          'titlebar.dot.minimize': 'Minimizar',
+          'titlebar.dot.maximize': 'Maximizar',
+          'close.kill': '$ kill -9 portafolio',
+          'close.terminated': '✗ Proceso terminado.',
+          'close.tagline1': '  Pero el buen diseño nunca se detiene realmente.',
+          'close.tagline2': '  Mantengamos la conversación abierta.',
+          'close.reopen': 'Reabrir terminal',
+          'sr.h1': 'ADmiraNeXT — Diseñador de Producto, Líder de Diseño y Estratega',
+          'welcome.greeting': 'Bienvenido, visitante.',
+          'manifesto.title': 'Manifiesto',
+          'manifesto.who.label': 'Quiénes',
+          'manifesto.who.value': 'Una empresa de Everything as a Service',
+          'manifesto.what.label': 'Qué',
+          'manifesto.what.value': 'Generamos proyectos de Physical AI',
+          'manifesto.how.label': 'Cómo',
+          'manifesto.how.value': 'Plataforma propia de IoT + los mejores robots',
+          'manifesto.why.label': 'Por qué',
+          'manifesto.why.value': 'Porque es nuestra pasión',
+          'nav.title': 'Navegación',
+          'nav.helphint': '... /ayuda para todos los comandos',
+          'nav.themehint': 'Prueba /temas para cambiar el rollo',
+          'prompt.placeholder': 'Escribe un comando... prueba "/ayuda"',
+          'gate.tag': '▶ ACCESO RESTRINGIDO',
+          'gate.prompt': '> contraseña',
+          'gate.button': 'DESBLOQUEAR',
+          'gate.error': '▲ CONTRASEÑA INCORRECTA',
+          'boot.l1': 'Iniciando sistema de portafolio...',
+          'boot.l2': 'Cargando tokens de diseño...',
+          'boot.l3': 'Montando biblioteca de componentes... ',
+          'boot.l4': '[████████████████████████] ',
+          'boot.l5': 'hecho',
+          'boot.l6': '\nResolviendo 12 casos de estudio...',
+          'boot.l7': 'Conectando con el núcleo de Product Rocket... ',
+          'boot.l8': 'ok',
+          'boot.l9': '\nSistemas de diseño: operativos',
+          'boot.l10': 'Módulos de investigación UX: cargados',
+          'boot.l11': 'No busques /secrets aquí...',
+          'boot.l12': 'Pensamiento estratégico: activado',
+          'boot.l13': '\n✦ ',
+          'boot.l14': 'ADmiraNeXT v10.0',
+          'boot.l15': ' — listo.\n',
+          'boot.l16': 'Presiona Enter para continuar...',
+        },
+      };
+      window.LANG_KEY = 'admiranext_lang';
+      try { window.currentLang = localStorage.getItem(window.LANG_KEY) || 'en'; }
+      catch (e) { window.currentLang = 'en'; }
+      window.t = function (key) {
+        var L = window.I18N[window.currentLang] || window.I18N.en;
+        return (L[key] != null ? L[key] : (window.I18N.en[key] != null ? window.I18N.en[key] : key));
+      };
+      window.applyLang = function () {
+        document.documentElement.lang = window.currentLang;
+        document.querySelectorAll('[data-i18n]').forEach(function (el) {
+          el.textContent = window.t(el.getAttribute('data-i18n'));
+        });
+        document.querySelectorAll('[data-i18n-title]').forEach(function (el) {
+          el.title = window.t(el.getAttribute('data-i18n-title'));
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+          el.placeholder = window.t(el.getAttribute('data-i18n-placeholder'));
+        });
+        document.querySelectorAll('.lang-toggle').forEach(function (b) {
+          b.textContent = window.currentLang === 'en' ? 'ESP' : 'ENG';
+          b.title = window.currentLang === 'en' ? 'Cambiar a español' : 'Switch to English';
+        });
+        window.dispatchEvent(new CustomEvent('admiranext:langchanged', { detail: window.currentLang }));
+      };
+      window.setLang = function (l) {
+        if (l !== 'en' && l !== 'es') return;
+        window.currentLang = l;
+        try { localStorage.setItem(window.LANG_KEY, l); } catch (e) {}
+        window.applyLang();
+      };
+      window.toggleLang = function () { window.setLang(window.currentLang === 'en' ? 'es' : 'en'); };
+      document.addEventListener('DOMContentLoaded', window.applyLang);
+    })();
+  </script>
   <script src="assets/app.js" defer></script>
 </head>
 <body data-route="">
@@ -134,11 +269,11 @@
           ██║╚██╗██║██╔══╝   ██╔██╗    ██║
           ██║ ╚████║███████╗██╔╝ ██╗   ██║
           ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝   ╚═╝   </b></pre>
-    <p class="gate-tag">▶ ACCESO RESTRINGIDO</p>
-    <p class="gate-prompt">&gt; password<span class="cursor"></span></p>
+    <p class="gate-tag" data-i18n="gate.tag"></p>
+    <p class="gate-prompt"><span data-i18n="gate.prompt">&gt; password</span><span class="cursor"></span></p>
     <input type="password" id="password-input" autocomplete="current-password" autofocus>
-    <button id="password-btn">DESBLOQUEAR</button>
-    <p id="password-error" style="display:none">▲ CONTRASEÑA INCORRECTA</p>
+    <button id="password-btn" data-i18n="gate.button"></button>
+    <p id="password-error" style="display:none" data-i18n="gate.error"></p>
   </div>
 </div>
 <script>
@@ -205,22 +340,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="close-overlay" id="closeOverlay">
   <div class="close-window">
     <div class="titlebar">
-      <div class="titlebar-dot red" title="Cerrar"></div>
-      <div class="titlebar-dot yellow" title="Minimizar"></div>
-      <div class="titlebar-dot green" title="Maximizar"></div>
-      <div class="titlebar-title">user@admiranext ~ /salir</div>
+      <div class="titlebar-dot red" data-i18n-title="titlebar.dot.close"></div>
+      <div class="titlebar-dot yellow" data-i18n-title="titlebar.dot.minimize"></div>
+      <div class="titlebar-dot green" data-i18n-title="titlebar.dot.maximize"></div>
+      <div class="titlebar-title" data-i18n="titlebar.path.exit"></div>
+      <button class="lang-toggle" type="button" onclick="window.toggleLang()">ESP</button>
     </div>
     <div class="close-body">
-      <div class="output-line red">$ kill -9 portafolio</div>
-      <div class="output-line red">✗ Proceso terminado.</div>
+      <div class="output-line red" data-i18n="close.kill"></div>
+      <div class="output-line red" data-i18n="close.terminated"></div>
       <div class="output-line"></div>
-      <div class="output-line dim">  Pero el buen diseño nunca se detiene realmente.</div>
-      <div class="output-line accent">  Mantengamos la conversación abierta.</div>
+      <div class="output-line dim" data-i18n="close.tagline1"></div>
+      <div class="output-line accent" data-i18n="close.tagline2"></div>
       <div class="close-actions">
         <span class="output-line accent" style="margin-right:4px">></span>
         <a href="https://www.linkedin.com/in/vladburca/" target="_blank" rel="noopener" class="close-btn primary">LinkedIn</a>
         <a href="https://www.instagram.com/vlad.burca/" target="_blank" rel="noopener" class="close-btn primary">Instagram</a>
-        <button class="close-btn" id="closeReopen">Reabrir terminal</button>
+        <button class="close-btn" id="closeReopen" data-i18n="close.reopen"></button>
       </div>
     </div>
   </div>
@@ -230,24 +366,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- psst... prueba escribiendo /secrets, o sudo hire vlad, o el código konami -->
 <div class="terminal-window booting" id="terminal">
   <div class="titlebar">
-    <div class="titlebar-dot red" title="Cerrar"></div>
-    <div class="titlebar-dot yellow" title="Minimizar"></div>
-    <div class="titlebar-dot green" title="Maximizar"></div>
-    <div class="titlebar-title">user@admiranext ~ /portafolio</div>
+    <div class="titlebar-dot red" data-i18n-title="titlebar.dot.close"></div>
+    <div class="titlebar-dot yellow" data-i18n-title="titlebar.dot.minimize"></div>
+    <div class="titlebar-dot green" data-i18n-title="titlebar.dot.maximize"></div>
+    <div class="titlebar-title" data-i18n="titlebar.path.portfolio"></div>
+    <button class="lang-toggle" type="button" onclick="window.toggleLang()">ESP</button>
   </div>
 
   <div class="terminal-body" id="terminalBody">
     <!-- Boot Sequence (shown only while .booting) -->
     <div class="boot-text" id="bootText"></div>
     <!-- Semantic heading for SEO (visually hidden, rendered as ASCII art) -->
-    <h1 class="sr-only">ADmiraNeXT — Diseñador de Producto, Líder de Diseño y Estratega</h1>
+    <h1 class="sr-only" data-i18n="sr.h1"></h1>
     <!-- ASCII Name -->
     <pre class="ascii-name" id="asciiName" aria-hidden="true"></pre>
 
     <!-- Welcome Box (Claude Code style) -->
     <div class="welcome-box" id="welcomeBox">
       <div class="welcome-left">
-        <h2 class="greeting">Bienvenido, visitante.</h2>
+        <h2 class="greeting" data-i18n="welcome.greeting"></h2>
         <pre class="pixel-rocket"> ...          ....................   :=++**###=++-:. ..............................................:
                 ................  :+*%@@@@@@@@@@@@%*=.   ..........................................:
                   ............. :+%@@@@@@@%%%#####%%@%#+:  .........................................
@@ -306,20 +443,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="welcome-right">
         <div class="welcome-section">
-          <h2 class="welcome-section-title">Manifesto</h2>
-          <div class="item"><span class="label">Quiénes</span><span>Una empresa de Everything as a Service</span></div>
-          <div class="item"><span class="label">Qué</span><span>Generamos proyectos de Physical AI</span></div>
-          <div class="item"><span class="label">Cómo</span><span>Plataforma propia de IoT + los mejores robots</span></div>
-          <div class="item"><span class="label">Por qué</span><span>Porque es nuestra pasión</span></div>
+          <h2 class="welcome-section-title" data-i18n="manifesto.title"></h2>
+          <div class="item"><span class="label" data-i18n="manifesto.who.label"></span><span data-i18n="manifesto.who.value"></span></div>
+          <div class="item"><span class="label" data-i18n="manifesto.what.label"></span><span data-i18n="manifesto.what.value"></span></div>
+          <div class="item"><span class="label" data-i18n="manifesto.how.label"></span><span data-i18n="manifesto.how.value"></span></div>
+          <div class="item"><span class="label" data-i18n="manifesto.why.label"></span><span data-i18n="manifesto.why.value"></span></div>
         </div>
         <div class="welcome-section">
-          <h2 class="welcome-section-title">Navigation</h2>
+          <h2 class="welcome-section-title" data-i18n="nav.title"></h2>
           <div class="item"><span>/about</span></div>
           <div class="item"><span>/work</span></div>
           <div class="item"><span>/clients</span></div>
           <div class="item"><span>/skills</span></div>
-          <div class="command-hint">... /help for all commands</div>
-          <div class="command-hint" style="margin-top:6px;opacity:0.5">Try /themes to change the vibe</div>
+          <div class="command-hint" data-i18n="nav.helphint"></div>
+          <div class="command-hint" style="margin-top:6px;opacity:0.5" data-i18n="nav.themehint"></div>
         </div>
       </div>
     </div>
@@ -337,6 +474,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         type="text"
         class="input-field"
         id="cmdInput"
+        data-i18n-placeholder="prompt.placeholder"
         placeholder='Type a command... try "/help"'
         autocomplete="off"
         spellcheck="false"

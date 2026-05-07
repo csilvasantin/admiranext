@@ -252,6 +252,28 @@
       letter-spacing: 0.5px;
     }
 
+    /* Language toggle (titlebar far right) */
+    .lang-toggle {
+      flex-shrink: 0;
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 3px 9px;
+      font-family: inherit;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+    .lang-toggle:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: rgba(232,168,124,0.06);
+    }
+    .lang-toggle:active { transform: translateY(1px); }
+
     /* Scrollable content */
     .terminal-body {
       flex: 1;
