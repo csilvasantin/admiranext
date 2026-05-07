@@ -284,7 +284,7 @@
   };
 
   // ============ EMAIL OBFUSCATION ============
-  const _e = ['contacto', 'admiranext.com'].join('@');
+  const _e = ['info', 'admira.com'].join('@');
   function mailto() { return 'mai' + 'lto:' + _e; }
 
   // ============ DOM ============
