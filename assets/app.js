@@ -417,6 +417,12 @@
   ];
 
   async function runBoot() {
+    // Esperar a que el gate de acceso esté desbloqueado antes de hacer nada
+    // que pueda robarle el foco al input del password (cmdInput.focus() etc.)
+    // o capturarle el Enter (los keydown globales del boot animation).
+    if (window.__gateUnlocked && typeof window.__gateUnlocked.then === 'function') {
+      await window.__gateUnlocked;
+    }
     // Check if we're on a deep-link route (e.g. /about, /work)
     const routeCmd = document.body.dataset.route;
     const isDeepLink = routeCmd && routeCmd.length > 0;
