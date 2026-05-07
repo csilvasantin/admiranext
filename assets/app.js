@@ -2112,19 +2112,16 @@
         const result = cmd.fn();
         if (result === null) return; // /clear
       } else {
+        const _T = (typeof window.t === 'function') ? window.t : function(k){return k;};
         const err = document.createElement('div');
         err.className = 'output-line red';
-        err.textContent = `  Command not found: "${input.trim()}"`;
+        err.textContent = `  ${_T('error.notfound').replace('{cmd}', input.trim())}`;
         block.appendChild(err);
         const hint = document.createElement('div');
         hint.className = 'output-line dim';
-        const errorBreadcrumbs = [
-          'Type /help to see available commands',
-          'Type /help to see available commands. Hint: some Unix commands work here too...',
-          'Type /help to see available commands. Or try something unexpected.',
-          'Type /help — or don\'t. Some commands aren\'t listed there.',
-        ];
-        hint.textContent = '  ' + errorBreadcrumbs[Math.floor(Math.random() * errorBreadcrumbs.length)];
+        const breadcrumbKeys = ['error.hint1', 'error.hint2', 'error.hint3', 'error.hint4'];
+        const k = breadcrumbKeys[Math.floor(Math.random() * breadcrumbKeys.length)];
+        hint.textContent = '  ' + _T(k);
         block.appendChild(hint);
       }
       outputArea.appendChild(block);
