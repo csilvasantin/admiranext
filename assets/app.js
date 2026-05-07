@@ -14,18 +14,18 @@
     '/articles': 'articles',
   };
   const ROUTE_TITLES = {
-    '': 'Replicante | Diseñador de Producto y Líder de Sistemas de Diseño',
-    'about': 'Sobre Replicante | 15 años en Diseño de Producto',
-    'work': 'Trabajo | 12 Proyectos en 6 Países | Replicante',
-    'clients': 'Clientes | Más de 30 Empresas | Replicante',
-    'skills': 'Habilidades | Sistemas de Diseño, UX, Diseño de Producto | Replicante',
-    'contact': 'Contacto Replicante | Diseño y Consultoría',
-    'social': 'Perfiles Sociales | Replicante',
-    'philosophy': 'Filosofía de Diseño | Replicante',
-    'testimonials': 'Testimonios | Lo que dicen Clientes y Colegas | Replicante',
-    'awards': 'Premios y Reconocimientos | Replicante',
-    'privacy': 'Política de Privacidad | Replicante',
-    'articles': 'Artículos sobre Sistemas de Diseño, UX y Estrategia | Replicante',
+    '': 'ADmiraNeXT | Diseñador de Producto y Líder de Sistemas de Diseño',
+    'about': 'Sobre ADmiraNeXT | 15 años en Diseño de Producto',
+    'work': 'Trabajo | 12 Proyectos en 6 Países | ADmiraNeXT',
+    'clients': 'Clientes | Más de 30 Empresas | ADmiraNeXT',
+    'skills': 'Habilidades | Sistemas de Diseño, UX, Diseño de Producto | ADmiraNeXT',
+    'contact': 'Contacto ADmiraNeXT | Diseño y Consultoría',
+    'social': 'Perfiles Sociales | ADmiraNeXT',
+    'philosophy': 'Filosofía de Diseño | ADmiraNeXT',
+    'testimonials': 'Testimonios | Lo que dicen Clientes y Colegas | ADmiraNeXT',
+    'awards': 'Premios y Reconocimientos | ADmiraNeXT',
+    'privacy': 'Política de Privacidad | ADmiraNeXT',
+    'articles': 'Artículos sobre Sistemas de Diseño, UX y Estrategia | ADmiraNeXT',
   };
 
   function updateUrl(command) {
@@ -63,7 +63,7 @@
       fn: cmdHelp
     },
     '/about': {
-      desc: '¿Quién es Replicante?',
+      desc: '¿Quién es ADmiraNeXT?',
       fn: cmdAbout
     },
     '/work': {
@@ -284,7 +284,7 @@
   };
 
   // ============ EMAIL OBFUSCATION ============
-  const _e = ['contacto', 'replicante.com'].join('@');
+  const _e = ['contacto', 'admiranext.com'].join('@');
   function mailto() { return 'mai' + 'lto:' + _e; }
 
   // ============ DOM ============
@@ -582,7 +582,7 @@
 
   function cmdAbout() {
     return [
-      { text: 'Sobre Replicante', cls: 'heading' },
+      { text: 'Sobre ADmiraNeXT', cls: 'heading' },
       { text: '' },
       { text: '  Diseñador de producto con más de 15 años construyendo interfaces que la gente realmente quiere usar. Cofundador de Product Rocket, con sede en Iasi, Rumania — trabajando en toda Europa, EE. UU., Israel y Emiratos Árabes Unidos.' },
       { text: '' },
@@ -771,7 +771,7 @@
       { icon: 'fb', name: 'Facebook', url: 'https://www.facebook.com/im.vladburca', color: 'blue', handle: '/im.vladburca' },
       { icon: 'ig', name: 'Instagram', url: 'https://www.instagram.com/vlad.burca/', color: 'purple', handle: '@vlad.burca' },
       { icon: '🚀', name: 'Product Rocket', url: 'https://productrocket.ro', color: 'accent', handle: 'productrocket.ro' },
-      { icon: '🌐', name: 'Sitio Web', url: 'https://replicante.com', color: 'green', handle: 'replicante.com' },
+      { icon: '🌐', name: 'Sitio Web', url: 'https://admiranext.com', color: 'green', handle: 'admiranext.com' },
     ];
 
     links.forEach(l => {
@@ -802,7 +802,7 @@
     const container = document.createElement('div');
     container.innerHTML = `
       <div class="output-line heading">Premios y Reconocimientos</div>
-      <div class="output-line dim" style="margin-bottom:12px">  replicante.com — 2026</div>
+      <div class="output-line dim" style="margin-bottom:12px">  admiranext.com — 2026</div>
     `;
 
     const awards = [
@@ -891,50 +891,50 @@
       {
         name: 'Jessica Ibbotson',
         title: 'Soporte Educativo, Dribbble',
-        relation: 'Gestionó a Replicante directamente',
-        quote: 'Replicante fue uno de los mentores originales del curso de Sistemas de Diseño. Como un experto claro en su campo, Replicante esculpió cada lección con claridad y precisión, transformando la complejidad en capacidad de enseñanza. Su influencia no se detuvo en impartir conocimientos; permeó el tejido mismo del programa de mentoría, convirtiéndolo en un entorno enriquecedor donde los diseñadores emergentes podían florecer. Lo que distingue a Replicante es su capacidad excepcional para forjar conexiones personales con sus estudiantes. Su pasión por el diseño es infecciosa, sirviendo como una fuente constante de motivación e inspiración para quienes lo rodean.',
+        relation: 'Gestionó a ADmiraNeXT directamente',
+        quote: 'ADmiraNeXT fue uno de los mentores originales del curso de Sistemas de Diseño. Como un experto claro en su campo, ADmiraNeXT esculpió cada lección con claridad y precisión, transformando la complejidad en capacidad de enseñanza. Su influencia no se detuvo en impartir conocimientos; permeó el tejido mismo del programa de mentoría, convirtiéndolo en un entorno enriquecedor donde los diseñadores emergentes podían florecer. Lo que distingue a ADmiraNeXT es su capacidad excepcional para forjar conexiones personales con sus estudiantes. Su pasión por el diseño es infecciosa, sirviendo como una fuente constante de motivación e inspiración para quienes lo rodean.',
         color: 'accent',
       },
       {
         name: 'Adrian Banu',
         title: 'VP de Producto en Optymyze',
-        relation: 'Superior de Replicante',
-        quote: 'Es un experto en Diseño de Producto de primer nivel cuyo trabajo realmente marca la diferencia en cada proyecto que toca. Lo impresionante de Replicante no es solo su habilidad para hacer que las cosas se vean bien, sino también cómo piensa en toda la experiencia del usuario de principio a fin. Replicante también es excelente comunicándose. Realmente escucha lo que todos tienen que decir, se toma el tiempo para analizar las cosas antes de tomar decisiones y siempre propone soluciones inteligentes para cualquier problema.',
+        relation: 'Superior de ADmiraNeXT',
+        quote: 'Es un experto en Diseño de Producto de primer nivel cuyo trabajo realmente marca la diferencia en cada proyecto que toca. Lo impresionante de ADmiraNeXT no es solo su habilidad para hacer que las cosas se vean bien, sino también cómo piensa en toda la experiencia del usuario de principio a fin. ADmiraNeXT también es excelente comunicándose. Realmente escucha lo que todos tienen que decir, se toma el tiempo para analizar las cosas antes de tomar decisiones y siempre propone soluciones inteligentes para cualquier problema.',
         color: 'blue',
       },
       {
         name: 'Vlad Hilitanu',
         title: 'Diseñador de Experiencia Principal, EPAM Systems',
         relation: 'Trabajaron juntos',
-        quote: 'Replicante posee una rara combinación de creatividad, experiencia técnica y habilidades de liderazgo que lo hacen destacar en el campo del diseño UX. Su profundo conocimiento de los principios y metodologías de diseño le permite ofrecer de manera constante soluciones intuitivas y centradas en el usuario. Replicante fomenta un entorno de trabajo colaborativo donde las ideas se intercambian libremente y todos se sienten empoderados para contribuir con su mejor trabajo.',
+        quote: 'ADmiraNeXT posee una rara combinación de creatividad, experiencia técnica y habilidades de liderazgo que lo hacen destacar en el campo del diseño UX. Su profundo conocimiento de los principios y metodologías de diseño le permite ofrecer de manera constante soluciones intuitivas y centradas en el usuario. ADmiraNeXT fomenta un entorno de trabajo colaborativo donde las ideas se intercambian libremente y todos se sienten empoderados para contribuir con su mejor trabajo.',
         color: 'green',
       },
       {
         name: 'Ionut Patrascoiu',
         title: 'CEO y Fundador, FameUp',
         relation: 'Cliente',
-        quote: 'Recomiendo encarecidamente a Replicante por sus destacadas habilidades en diseño UI/UX. A lo largo de nuestra colaboración, mostró cualidades de liderazgo ejemplares y demostró un enfoque proactivo en cada tarea. Fue un placer trabajar con Replicante y estoy seguro de que continuará sobresaliendo en sus futuros proyectos.',
+        quote: 'Recomiendo encarecidamente a ADmiraNeXT por sus destacadas habilidades en diseño UI/UX. A lo largo de nuestra colaboración, mostró cualidades de liderazgo ejemplares y demostró un enfoque proactivo en cada tarea. Fue un placer trabajar con ADmiraNeXT y estoy seguro de que continuará sobresaliendo en sus futuros proyectos.',
         color: 'purple',
       },
       {
         name: 'Earl Carvalho',
         title: 'Gerente de Soluciones de Producto, Aplicaciones Móviles',
-        relation: 'Trabajó con Replicante',
-        quote: 'Lo que realmente distingue a Replicante es su habilidad para pensar fuera de la caja y aportar soluciones innovadoras. Ya sea por su experiencia en UX o su enfoque inventivo para resolver problemas, Replicante impresiona constantemente. Su mentalidad abierta y disposición para escuchar lo convierten no solo en un gran gerente, sino también en un compañero de equipo invaluable.',
+        relation: 'Trabajó con ADmiraNeXT',
+        quote: 'Lo que realmente distingue a ADmiraNeXT es su habilidad para pensar fuera de la caja y aportar soluciones innovadoras. Ya sea por su experiencia en UX o su enfoque inventivo para resolver problemas, ADmiraNeXT impresiona constantemente. Su mentalidad abierta y disposición para escuchar lo convierten no solo en un gran gerente, sino también en un compañero de equipo invaluable.',
         color: 'cyan',
       },
       {
         name: 'Lavinia Gherasim',
         title: 'Ingeniera Senior de Software Java',
         relation: 'Socia de ingeniería',
-        quote: 'Sus diseños son consistentemente intuitivos, creando una experiencia sin esfuerzo para los usuarios finales. La capacidad de Replicante para comprender aspectos técnicos, a pesar de su formación no técnica, es impresionante. Esta competencia no solo facilita una colaboración más fluida con los equipos técnicos, sino que también le permite visualizar soluciones innovadoras que se integran perfectamente con las necesidades técnicas.',
+        quote: 'Sus diseños son consistentemente intuitivos, creando una experiencia sin esfuerzo para los usuarios finales. La capacidad de ADmiraNeXT para comprender aspectos técnicos, a pesar de su formación no técnica, es impresionante. Esta competencia no solo facilita una colaboración más fluida con los equipos técnicos, sino que también le permite visualizar soluciones innovadoras que se integran perfectamente con las necesidades técnicas.',
         color: 'purple',
       },
       {
         name: 'Elena Levy',
         title: 'Diseñadora de UX UI / Producto / Sistemas de Diseño',
         relation: 'Aprendiz en Dribbble',
-        quote: 'Replicante se encuentra entre los mejores mentores de diseño con los que he trabajado y aprendí mucho de él. Su paciencia y determinación para hacer que un sistema de diseño funcione de manera más inteligente en lugar de más difícil es algo que todos los diseñadores de producto e ingenieros valoran profundamente. Replicante demostró una mentalidad técnica brillante y una estética de diseño visual particularmente sofisticada.',
+        quote: 'ADmiraNeXT se encuentra entre los mejores mentores de diseño con los que he trabajado y aprendí mucho de él. Su paciencia y determinación para hacer que un sistema de diseño funcione de manera más inteligente en lugar de más difícil es algo que todos los diseñadores de producto e ingenieros valoran profundamente. ADmiraNeXT demostró una mentalidad técnica brillante y una estética de diseño visual particularmente sofisticada.',
         color: 'blue',
       },
     ];
@@ -1045,7 +1045,7 @@
     link.className = 'social-link';
     link.innerHTML = `
       <span class="social-badge blue">in</span>
-      <span class="social-name">Replicante</span>
+      <span class="social-name">ADmiraNeXT</span>
       <span class="social-handle">/in/vladburca</span>
       <span class="social-arrow">→</span>
     `;
@@ -1071,7 +1071,7 @@
     link.className = 'social-link';
     link.innerHTML = `
       <span class="social-badge blue">fb</span>
-      <span class="social-name">Replicante</span>
+      <span class="social-name">ADmiraNeXT</span>
       <span class="social-handle">/im.vladburca</span>
       <span class="social-arrow">→</span>
     `;
@@ -1097,7 +1097,7 @@
     link.className = 'social-link';
     link.innerHTML = `
       <span class="social-badge purple">ig</span>
-      <span class="social-name">Replicante</span>
+      <span class="social-name">ADmiraNeXT</span>
       <span class="social-handle">@vlad.burca</span>
       <span class="social-arrow">→</span>
     `;
@@ -1237,7 +1237,7 @@
       { text: '' },
       { text: 'Responsable del tratamiento de datos', cls: 'heading' },
       { text: '' },
-      { text: '  Replicante' },
+      { text: '  ADmiraNeXT' },
       { text: '  Product Rocket (productrocket.ro)' },
       { text: '  Str. Trei Fantani 6A, Iasi, Rumania' },
       { text: '  ' + _e },
@@ -1429,7 +1429,7 @@
     container.innerHTML = `
       <div class="output-line green">  [sudo] password for visitor: ********</div>
       <div class="output-line green">  ✓ Authentication successful.</div>
-      <div class="output-line" style="margin-top:8px">  Sending contract to Replicante...</div>
+      <div class="output-line" style="margin-top:8px">  Sending contract to ADmiraNeXT...</div>
       <div class="output-line dim" id="hireProgress">  [░░░░░░░░░░░░░░░░░░░░] 0%</div>
       <div class="output-line accent" id="hireDone" style="display:none;margin-top:8px">  ✦ Contract sent! Vlad will be in touch shortly.</div>
       <div class="output-line dim" id="hireHint" style="display:none"></div>
@@ -1590,7 +1590,7 @@
   registerHidden('git log', function() {
     return [
       { text: '  commit a1b2c3d (HEAD -> main)', cls: 'yellow' },
-      { text: '  Author: Replicante <' + _e + '>', cls: 'dim' },
+      { text: '  Author: ADmiraNeXT <' + _e + '>', cls: 'dim' },
       { text: '  Date: today', cls: 'dim' },
       { text: '' },
       { text: '      Fixed pixel that was 1px off. Again.', cls: 'accent' },
