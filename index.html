@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="ADmiraNeXT" />
-  <meta name="admiranext-version" content="AdmiraNext v26.05.07.2" />
+  <meta name="admiranext-version" content="AdmiraNext v26.05.07.3" />
   <link rel="manifest" href="site.webmanifest" />
   <script type="application/ld+json">
   {
@@ -116,6 +116,7 @@
   #password-screen button{width:100%;padding:11px;background:#ffb000;color:#1a0e00;border:0;cursor:pointer;font-weight:700;font-family:inherit;letter-spacing:.3em;font-size:13px;box-shadow:0 0 12px rgba(255,176,0,.4)}
   #password-screen button:hover{background:#ffd166}
   #password-screen #password-error{color:#ff4f4f;margin:0;font-size:11px;letter-spacing:.15em;text-shadow:0 0 6px rgba(255,79,79,.7)}
+  #password-screen .gate-hint{margin:0;color:#cc8a00;font-size:11px;letter-spacing:.12em;font-style:italic;opacity:.85;text-shadow:0 0 6px rgba(255,176,0,.35)}
   @keyframes crt-flicker{0%,90%,92%,100%{opacity:1}91%{opacity:.85}}
   @keyframes crt-blink{0%{opacity:1}50%{opacity:0}}
   @media(max-width:680px){#password-screen pre.logo{font-size:7px}}
@@ -138,6 +139,7 @@
     <p class="gate-prompt">&gt; password<span class="cursor"></span></p>
     <input type="password" id="password-input" autocomplete="current-password" autofocus>
     <button id="password-btn">DESBLOQUEAR</button>
+    <p class="gate-hint">1234 is not a password ;)</p>
     <p id="password-error" style="display:none">▲ CONTRASEÑA INCORRECTA</p>
   </div>
 </div>
