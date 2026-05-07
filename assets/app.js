@@ -1734,6 +1734,14 @@
     }
   });
 
+  // Re-translate idle hints already rendered cuando el usuario cambia idioma
+  window.addEventListener('admiranext:langchanged', function () {
+    if (typeof window.t !== 'function') return;
+    document.querySelectorAll('[data-idle-i18n]').forEach(function (el) {
+      el.textContent = '  ' + window.t(el.dataset.idleI18n);
+    });
+  });
+
   // ============ IDLE TIMER ============
 
   const idleHintKeys = ['idle.1', 'idle.2', 'idle.3', 'idle.4', 'idle.5', 'idle.6'];
@@ -1749,6 +1757,7 @@
       line.style.fontStyle = 'italic';
       const key = idleHintKeys[Math.min(idleCount, idleHintKeys.length - 1)];
       const txt = (typeof window.t === 'function' ? window.t(key) : key);
+      line.dataset.idleI18n = key;
       line.textContent = '  ' + txt;
       block.appendChild(line);
       outputArea.appendChild(block);
