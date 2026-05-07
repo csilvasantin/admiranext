@@ -232,6 +232,7 @@
     '/quien': '/about',
     '/quienes': '/about',
     '/trabajo': '/work',
+    '/trabajos': '/work',
     '/proyectos': '/work',
     '/portafolio': '/work',
     '/clientes': '/clients',
@@ -1823,14 +1824,7 @@
 
   // ============ IDLE TIMER ============
 
-  const idleHints = [
-    'Still there? Try /work to see what I\'ve built...',
-    'This terminal has more commands than you think...',
-    'Psst — ever tried typing ls in a portfolio?',
-    'The Konami code works here. Just saying.',
-    'Some commands don\'t need a slash. Try: whoami',
-    'Type /secrets if you like finding hidden things.',
-  ];
+  const idleHintKeys = ['idle.1', 'idle.2', 'idle.3', 'idle.4', 'idle.5', 'idle.6'];
 
   function resetIdleTimer() {
     clearTimeout(idleTimer);
@@ -1841,13 +1835,14 @@
       const line = document.createElement('div');
       line.className = 'output-line dim';
       line.style.fontStyle = 'italic';
-      line.textContent = '  ' + idleHints[Math.min(idleCount, idleHints.length - 1)];
+      const key = idleHintKeys[Math.min(idleCount, idleHintKeys.length - 1)];
+      const txt = (typeof window.t === 'function' ? window.t(key) : key);
+      line.textContent = '  ' + txt;
       block.appendChild(line);
       outputArea.appendChild(block);
       terminalBody.scrollTop = terminalBody.scrollHeight;
       idleCount++;
-      // Schedule next hint if more remain
-      if (idleCount < idleHints.length) {
+      if (idleCount < idleHintKeys.length) {
         idleTimer = setTimeout(showIdleHint, 45000);
       }
     }, firstDelay);

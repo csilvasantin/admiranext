@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="ADmiraNeXT" />
-  <meta name="admiranext-version" content="AdmiraNext v26.05.07.8" />
+  <meta name="admiranext-version" content="AdmiraNext v26.05.07.9" />
   <link rel="manifest" href="site.webmanifest" />
   <script type="application/ld+json">
   {
@@ -127,8 +127,18 @@
           'manifesto.why.label': 'Why',
           'manifesto.why.value': 'Because it\'s our passion',
           'nav.title': 'Navigation',
+          'nav.cmd.about': '/about',
+          'nav.cmd.work': '/work',
+          'nav.cmd.clients': '/clients',
+          'nav.cmd.skills': '/skills',
           'nav.helphint': '... /help for all commands',
           'nav.themehint': 'Try /themes to change the vibe',
+          'idle.1': 'Still there? Try /work to see what I\'ve built...',
+          'idle.2': 'This terminal has more commands than you think...',
+          'idle.3': 'Psst — ever tried typing ls in a portfolio?',
+          'idle.4': 'The Konami code works here. Just saying.',
+          'idle.5': 'Some commands don\'t need a slash. Try: whoami',
+          'idle.6': 'Type /secrets if you like finding hidden things.',
           'prompt.placeholder': 'Type a command... try "/help"',
           'gate.tag': '▶ RESTRICTED ACCESS',
           'gate.prompt': '> password',
@@ -174,8 +184,18 @@
           'manifesto.why.label': 'Por qué',
           'manifesto.why.value': 'Porque es nuestra pasión',
           'nav.title': 'Navegación',
+          'nav.cmd.about': '/acerca',
+          'nav.cmd.work': '/trabajos',
+          'nav.cmd.clients': '/clientes',
+          'nav.cmd.skills': '/habilidades',
           'nav.helphint': '... /ayuda para todos los comandos',
           'nav.themehint': 'Prueba /temas para cambiar el rollo',
+          'idle.1': '¿Sigues por aquí? Prueba /trabajos para ver lo que he construido...',
+          'idle.2': 'Este terminal tiene más comandos de los que crees...',
+          'idle.3': 'Pssst — ¿alguna vez has escrito ls en un portafolio?',
+          'idle.4': 'El código Konami funciona aquí. Solo lo digo.',
+          'idle.5': 'Algunos comandos no necesitan barra. Prueba: whoami',
+          'idle.6': 'Escribe /secretos si te gusta encontrar cosas escondidas.',
           'prompt.placeholder': 'Escribe un comando... prueba "/ayuda"',
           'gate.tag': '▶ ACCESO RESTRINGIDO',
           'gate.prompt': '> contraseña',
@@ -451,10 +471,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="welcome-section">
           <h2 class="welcome-section-title" data-i18n="nav.title"></h2>
-          <div class="item"><span>/about</span></div>
-          <div class="item"><span>/work</span></div>
-          <div class="item"><span>/clients</span></div>
-          <div class="item"><span>/skills</span></div>
+          <div class="item"><span data-i18n="nav.cmd.about"></span></div>
+          <div class="item"><span data-i18n="nav.cmd.work"></span></div>
+          <div class="item"><span data-i18n="nav.cmd.clients"></span></div>
+          <div class="item"><span data-i18n="nav.cmd.skills"></span></div>
           <div class="command-hint" data-i18n="nav.helphint"></div>
           <div class="command-hint" style="margin-top:6px;opacity:0.5" data-i18n="nav.themehint"></div>
         </div>
